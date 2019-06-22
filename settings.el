@@ -6,6 +6,8 @@
   kept-old-versions 2
   version-control t)
 
+(global-set-key "\C-x\C-b" 'buffer-menu)
+
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
