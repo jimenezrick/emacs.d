@@ -10,6 +10,12 @@
   :config
   (load-theme 'spacemacs-light t))
 
+(use-package neotree
+  :ensure t
+  :config
+  (setq neo-theme 'ascii)
+  (setq neo-smart-open t))
+
 (use-package speedbar
   :ensure t)
 
