@@ -1,7 +1,8 @@
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (define-key evil-normal-state-map (kbd "SPC") 'buffer-menu))
 
 (use-package spacemacs-theme
   :ensure t
