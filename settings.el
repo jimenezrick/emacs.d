@@ -6,6 +6,8 @@
   kept-old-versions 2
   version-control t)
 
+(global-display-line-numbers-mode)
+
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-virtual-buffers t)
