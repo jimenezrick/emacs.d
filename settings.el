@@ -6,10 +6,11 @@
   kept-old-versions 2
   version-control t)
 
-(global-set-key "\C-x\C-b" 'buffer-menu)
+;(global-set-key "\C-x\C-b" 'buffer-menu)
 
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-use-virtual-buffers t)
 (setq ido-use-filename-at-point 'guess)
 (ido-mode 1)
 
