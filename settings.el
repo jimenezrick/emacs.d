@@ -10,6 +10,7 @@
   version-control t)
 
 (global-display-line-numbers-mode)
+(global-hl-line-mode 1)
 
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
