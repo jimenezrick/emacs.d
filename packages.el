@@ -1,8 +1,15 @@
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  (global-set-key (kbd "M-x") 'helm-M-x))
+
 (use-package evil
   :ensure t
   :config
   (evil-mode 1)
-  (define-key evil-normal-state-map (kbd "SPC") 'buffer-menu))
+  (define-key evil-normal-state-map (kbd "C-p") 'helm-mini)
+  (define-key evil-normal-state-map (kbd "SPC") 'helm-buffers-list))
 
 (use-package neotree
   :ensure t
@@ -41,12 +48,6 @@
 
 (use-package minimap
   :ensure t)
-
-(use-package helm
-  :ensure t
-  :config
-  (helm-mode 1)
-  (global-set-key (kbd "M-x") 'helm-M-x))
 
 (use-package fzf
   :ensure t)
