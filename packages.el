@@ -41,7 +41,10 @@
   :ensure t)
 
 (use-package helm
-  :ensure t)
+  :ensure t
+  :config
+  (helm-mode 1)
+  (global-set-key (kbd "M-x") 'helm-M-x))
 
 (use-package fzf
   :ensure t)
