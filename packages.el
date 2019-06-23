@@ -1,5 +1,3 @@
-(require 'my-util)
-
 (use-package evil
   :ensure t
   :config
@@ -51,10 +49,5 @@
 (use-package helm
   :ensure t)
 
-;; Dependencies for helm-fzf
-(use-package dash
+(use-package fzf
   :ensure t)
-(use-package s
-  :ensure t)
-(add-to-list 'load-path (my-get-fullpath "extra/helm-fzf"))
-(require 'helm-fzf)
