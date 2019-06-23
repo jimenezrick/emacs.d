@@ -11,6 +11,7 @@
 
 (global-display-line-numbers-mode)
 (global-hl-line-mode 1)
+(column-number-mode t)
 
 (setq show-paren-delay 0)
 (show-paren-mode 1)

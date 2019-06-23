@@ -90,6 +90,11 @@
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+(use-package idle-highlight-mode
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'idle-highlight-mode))
+
 ;; --- Color themes
 (use-package plan9-theme
   :ensure t)
