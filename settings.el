@@ -12,6 +12,9 @@
 (global-display-line-numbers-mode)
 (global-hl-line-mode 1)
 
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
