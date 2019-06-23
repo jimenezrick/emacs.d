@@ -31,11 +31,10 @@
   (setq neo-theme 'arrow)
   (setq neo-smart-open t))
 
-(use-package speedbar
+(use-package sr-speedbar
   :ensure t
   :config
-  (semantic-mode)
-  (require 'semantic/sb))
+  (setq speedbar-use-images nil))
 
 (use-package dashboard
   :ensure t
