@@ -4,12 +4,6 @@
   (evil-mode 1)
   (define-key evil-normal-state-map (kbd "SPC") 'buffer-menu))
 
-(use-package spacemacs-theme
-  :ensure t
-  :no-require t
-  :config
-  (load-theme 'spacemacs-light t))
-
 (use-package neotree
   :ensure t
   :config
@@ -51,3 +45,12 @@
 
 (use-package fzf
   :ensure t)
+
+(use-package plan9-theme
+  :ensure t)
+
+(use-package spacemacs-theme
+  :ensure t
+  :no-require t
+  :config
+  (load-theme 'spacemacs-light t))
