@@ -1,3 +1,6 @@
+(require 'my-util)
+
+; FIXME: (my-get-fullpath "backup")))
 (setq
   backup-by-copying t
   backup-directory-alist '(("." . "~/.emacs.d/backup"))
