@@ -17,8 +17,10 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
+  (if (display-graphic-p)
+    (setq dashboard-startup-banner 'logo)
+    (setq dashboard-startup-banner nil))
   (setq dashboard-center-content t)
-  (setq dashboard-startup-banner 'logo)
   (setq dashboard-banner-logo-title nil)
   (setq dashboard-set-init-info nil)
   (setq dashboard-set-footer nil)
