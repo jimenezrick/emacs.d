@@ -11,8 +11,18 @@
   :ensure t
   :config
   (evil-mode 1)
+  (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
+  (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
+  (define-key evil-insert-state-map (kbd "C-x o") 'company-complete)
   (define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini))
+
+(use-package key-chord
+  :ensure t
+  :config
+  (key-chord-mode 1)
+  (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
+  (key-chord-define evil-normal-state-map  "kj" 'save-buffer))
 
 (use-package neotree
   :ensure t
