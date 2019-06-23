@@ -21,7 +21,10 @@
   (setq neo-smart-open t))
 
 (use-package speedbar
-  :ensure t)
+  :ensure t
+  :config
+  (semantic-mode)
+  (require 'semantic/sb))
 
 (use-package dashboard
   :ensure t
@@ -58,6 +61,17 @@
 (use-package magit
   :ensure t)
 
+(use-package flycheck
+  :ensure t
+  :config
+  (flycheck-mode))
+
+(use-package company
+  :ensure t
+  :config
+  (company-mode))
+
+;; --- Color themes
 (use-package plan9-theme
   :ensure t)
 
@@ -66,3 +80,12 @@
   :no-require t
   :config
   (load-theme 'spacemacs-light t))
+
+;; --- Go
+(use-package go-mode
+  :ensure t
+  :config
+  (go-mode))
+
+(use-package company-go
+  :ensure t)
