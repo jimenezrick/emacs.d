@@ -2,14 +2,17 @@
   :ensure t
   :config
   (helm-mode 1)
+  (setq helm-M-x-fuzzy-match t
+	helm-buffers-fuzzy-matching t
+	helm-recentf-fuzzy-match    t)
   (global-set-key (kbd "M-x") 'helm-M-x))
 
 (use-package evil
   :ensure t
   :config
   (evil-mode 1)
-  (define-key evil-normal-state-map (kbd "C-p") 'helm-mini)
-  (define-key evil-normal-state-map (kbd "SPC") 'helm-buffers-list))
+  (define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "SPC") 'helm-mini))
 
 (use-package neotree
   :ensure t
