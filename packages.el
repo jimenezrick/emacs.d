@@ -46,6 +46,9 @@
 (use-package fzf
   :ensure t)
 
+(use-package magit
+  :ensure t)
+
 (use-package plan9-theme
   :ensure t)
 
