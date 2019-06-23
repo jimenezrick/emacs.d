@@ -1,6 +1,7 @@
 /elpa/
 /backup/
+/transient/
+/auto-save-list/
 
 /recentf
 /projectile-bookmarks.eld
-/auto-save-list/
