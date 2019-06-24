@@ -12,8 +12,10 @@
 (eval-when-compile
   (require 'use-package))
 
+(setq use-package-always-ensure t)
+
 (load (my-get-fullpath "packages"))
-(load (my-get-fullpath "packages-go"))
 (load (my-get-fullpath "packages-themes"))
+(load (my-get-fullpath "packages-go"))
 (load (my-get-fullpath "settings"))
 (load (my-get-fullpath "custom"))

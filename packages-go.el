@@ -1,14 +1,10 @@
-(use-package go-eldoc
-  :ensure t)
+(use-package go-eldoc)
 
-(use-package company-go
-  :ensure t)
+(use-package company-go)
 
-(use-package go-projectile
-  :ensure t)
+(use-package go-projectile)
 
 (use-package go-mode
-  :ensure t
   :config
   (go-mode)
 

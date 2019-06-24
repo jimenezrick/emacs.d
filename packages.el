@@ -1,5 +1,4 @@
 (use-package helm
-  :ensure t
   :config
   (helm-mode 1)
   (setq helm-M-x-fuzzy-match t
@@ -8,7 +7,6 @@
   (global-set-key (kbd "M-x") 'helm-M-x))
 
 (use-package evil
-  :ensure t
   :config
   (evil-mode 1)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
@@ -19,26 +17,22 @@
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode))
 
 (use-package key-chord
-  :ensure t
   :config
   (key-chord-mode 1)
   (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
   (key-chord-define evil-normal-state-map  "kj" 'save-buffer))
 
 (use-package neotree
-  :ensure t
   :config
   (setq neo-theme 'arrow
 	neo-smart-open t))
 
 (use-package sr-speedbar
-  :ensure t
   :config
   (setq speedbar-use-images nil))
 
 ; FIXME: initial-buffer-choice fails when a file is specified
 (use-package dashboard
-  :ensure t
   :config
   (dashboard-setup-startup-hook)
 
@@ -56,48 +50,37 @@
 			  (registers . 5))))
 
 (use-package projectile
-  :ensure t
   :config
   (projectile-mode 1))
 
 (use-package recentf
-  :ensure t
   :config
   (recentf-mode 1))
 
-(use-package minimap
-  :ensure t)
+(use-package minimap)
 
-(use-package fzf
-  :ensure t)
+(use-package fzf)
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 (use-package flycheck
-  :ensure t
   :config
   (flycheck-mode))
 
 (use-package company
-  :ensure t
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package company-quickhelp
-  :ensure t
   :config
   (company-quickhelp-mode))
 
-(use-package ace-jump-mode
-  :ensure t)
+(use-package ace-jump-mode)
 
 (use-package rainbow-delimiters
-  :ensure t
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 (use-package idle-highlight-mode
-  :ensure t
   :config
   (add-hook 'prog-mode-hook #'idle-highlight-mode))

@@ -1,14 +1,11 @@
-(use-package plan9-theme
-  :ensure t)
+(use-package plan9-theme)
 
-(use-package zerodark-theme
-  :ensure t)
+(use-package zerodark-theme)
 
-(use-package apropospriate-theme
-  :ensure t)
+(use-package apropospriate-theme)
 
 (use-package spacemacs-theme
-  :ensure t
+  ; Hack needed for this package to work
   :no-require t
   :config
 
