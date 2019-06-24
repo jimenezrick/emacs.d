@@ -4,13 +4,13 @@
 	helm-buffers-fuzzy-matching t
 	helm-recentf-fuzzy-match    t)
   :config
-  (helm-mode 1)
+  (helm-mode)
   :bind (("M-x" . helm-M-x)
 	 ("M-y" . helm-show-kill-ring)))
 
 (use-package evil
   :config
-  (evil-mode 1)
+  (evil-mode)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
@@ -27,7 +27,7 @@
 
 (use-package treemacs
   :config
-  (treemacs-tag-follow-mode 1)
+  (treemacs-tag-follow-mode)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t))
 
@@ -54,11 +54,11 @@
 
 (use-package projectile
   :config
-  (projectile-mode 1))
+  (projectile-mode))
 
 (use-package recentf
   :config
-  (recentf-mode 1))
+  (recentf-mode))
 
 (use-package minimap)
 

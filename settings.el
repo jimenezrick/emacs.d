@@ -13,11 +13,11 @@
 
 (set-default 'truncate-lines t)
 (global-display-line-numbers-mode)
-(global-hl-line-mode 1)
+(global-hl-line-mode)
 (column-number-mode t)
 
 (setq show-paren-delay 0)
-(show-paren-mode 1)
+(show-paren-mode)
 
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
