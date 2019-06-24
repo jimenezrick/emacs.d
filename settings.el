@@ -12,7 +12,6 @@
   version-control t)
 
 (setq-default truncate-lines t)
-(setq-default show-trailing-whitespace t)
 (setq-default indent-tabs-mode nil)
 
 (global-display-line-numbers-mode)

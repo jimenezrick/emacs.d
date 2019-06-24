@@ -90,7 +90,10 @@
 
 (use-package whitespace
   :init
-  (setq whitespace-style '(face tabs tab-mark))
+  (setq whitespace-style '(face trailing spaces space-mark tabs tab-mark)
+        whitespace-display-mappings
+        '((space-mark  ?\   [?·])
+          (tab-mark    ?\t  [?| ?\t])))
   :config
   (add-hook 'text-mode-hook #'whitespace-mode)
   (add-hook 'prog-mode-hook #'whitespace-mode))
