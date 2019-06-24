@@ -26,6 +26,8 @@
   (setq-local imenu-create-index-function #'ggtags-build-imenu-index))
 
 (use-package treemacs
+  :init
+  (setq treemacs-no-png-images t)
   :config
   (treemacs-tag-follow-mode)
   (treemacs-filewatch-mode t)
