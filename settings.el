@@ -11,8 +11,9 @@
   kept-old-versions 2
   version-control t)
 
-(set-default 'truncate-lines t)
-(set-default 'show-trailing-whitespace t)
+(setq-default truncate-lines t)
+(setq-default show-trailing-whitespace t)
+(setq-default indent-tabs-mode nil)
 
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
