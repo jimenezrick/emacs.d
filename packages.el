@@ -101,6 +101,9 @@
 (use-package zerodark-theme
   :ensure t)
 
+(use-package apropospriate-theme
+  :ensure t)
+
 (use-package spacemacs-theme
   :ensure t
   :no-require t
