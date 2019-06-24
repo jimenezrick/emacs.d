@@ -21,10 +21,19 @@
 
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
 
-(use-package neotree
+(use-package ggtags
   :init
-  (setq neo-theme 'arrow
-	neo-smart-open t))
+  (setq-local imenu-create-index-function #'ggtags-build-imenu-index))
+
+(use-package treemacs
+  :config
+  (treemacs-tag-follow-mode 1)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode t))
+
+(use-package treemacs-evil)
+(use-package treemacs-projectile)
+(use-package treemacs-magit)
 
 (use-package sr-speedbar
   :init
