@@ -12,6 +12,8 @@
   version-control t)
 
 (set-default 'truncate-lines t)
+(set-default 'show-trailing-whitespace t)
+
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)

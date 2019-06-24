@@ -8,7 +8,7 @@
   :init
   (defun go-mode-setup ()
     (go-eldoc-setup)
-    (add-hook 'before-save-hook 'gofmt-before-save) 
+    (add-hook 'before-save-hook 'gofmt-before-save)
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook 'gofmt-before-save)
     (define-key evil-normal-state-map (kbd "C-]") 'godef-jump))
