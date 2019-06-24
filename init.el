@@ -18,4 +18,6 @@
 (load (my-get-fullpath "packages-themes"))
 (load (my-get-fullpath "packages-go"))
 (load (my-get-fullpath "settings"))
-(load (my-get-fullpath "custom"))
+
+(setq custom-file (my-get-fullpath "custom.el"))
+(load custom-file)
