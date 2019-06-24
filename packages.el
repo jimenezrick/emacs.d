@@ -88,6 +88,10 @@
   :config
   (add-hook 'prog-mode-hook #'idle-highlight-mode))
 
+(use-package whitespace
+  :init
+  (setq whitespace-style '(trailing tabs newline tab-mark newline-mark)))
+
 (use-package which-key
   :config
   (which-key-mode)
