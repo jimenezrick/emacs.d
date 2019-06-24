@@ -28,8 +28,8 @@
 (use-package neotree
   :ensure t
   :config
-  (setq neo-theme 'arrow)
-  (setq neo-smart-open t))
+  (setq neo-theme 'arrow
+	neo-smart-open t)
 
 (use-package sr-speedbar
   :ensure t
