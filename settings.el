@@ -1,5 +1,7 @@
 (require 'my-util)
 
+(setq inhibit-startup-screen t)
+
 ; FIXME: (my-get-fullpath "backup")))
 (setq
   backup-by-copying t

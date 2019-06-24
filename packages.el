@@ -29,7 +29,7 @@
   :ensure t
   :config
   (setq neo-theme 'arrow
-	neo-smart-open t)
+	neo-smart-open t))
 
 (use-package sr-speedbar
   :ensure t
