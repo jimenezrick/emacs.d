@@ -1,12 +1,12 @@
 (use-package helm
   :init
   (setq helm-M-x-fuzzy-match t
-	helm-buffers-fuzzy-matching t
-	helm-recentf-fuzzy-match    t)
+        helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match    t)
   :config
   (helm-mode)
   :bind (("M-x" . helm-M-x)
-	 ("M-y" . helm-show-kill-ring)))
+         ("M-y" . helm-show-kill-ring)))
 
 (use-package evil
   :config
@@ -42,15 +42,15 @@
     (setq dashboard-startup-banner 'logo)
     (setq dashboard-startup-banner nil))
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
-	dashboard-banner-logo-title nil
-	dashboard-set-init-info nil
-	dashboard-set-footer nil
-	dashboard-items '((recents . 10)
-			  (bookmarks . 5)
-			  (projects . 5)
-			  (registers . 5))))
-  :config
-  (dashboard-setup-startup-hook)
+        dashboard-banner-logo-title nil
+        dashboard-set-init-info nil
+        dashboard-set-footer nil
+        dashboard-items '((recents . 10)
+                          (bookmarks . 5)
+                          (projects . 5)
+                          (registers . 5))))
+:config
+(dashboard-setup-startup-hook)
 
 (use-package projectile
   :config
@@ -90,7 +90,9 @@
 
 (use-package whitespace
   :init
-  (setq whitespace-style '(trailing tabs newline tab-mark newline-mark)))
+  (setq whitespace-style '(tabs tab-mark))
+  :config
+  (add-hook 'prog-mode-hook #'whitespace-mode))
 
 (use-package which-key
   :config
