@@ -13,5 +13,7 @@
   (require 'use-package))
 
 (load (my-get-fullpath "packages"))
+(load (my-get-fullpath "packages-go"))
+(load (my-get-fullpath "packages-themes"))
 (load (my-get-fullpath "settings"))
 (load (my-get-fullpath "custom"))

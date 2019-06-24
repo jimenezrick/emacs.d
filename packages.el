@@ -13,7 +13,7 @@
   (evil-mode 1)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
-  (define-key evil-insert-state-map (kbd "C-x o") 'company-complete)
+  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
   (define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode))
@@ -36,13 +36,16 @@
   :config
   (setq speedbar-use-images nil))
 
+; FIXME: initial-buffer-choice fails when a file is specified
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
+
   (if (display-graphic-p)
     (setq dashboard-startup-banner 'logo)
     (setq dashboard-startup-banner nil))
+
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
 	dashboard-banner-logo-title nil
 	dashboard-set-init-info nil
@@ -79,7 +82,12 @@
 (use-package company
   :ensure t
   :config
-  (company-mode))
+  (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (company-quickhelp-mode))
 
 (use-package ace-jump-mode
   :ensure t)
@@ -93,40 +101,3 @@
   :ensure t
   :config
   (add-hook 'prog-mode-hook #'idle-highlight-mode))
-
-;; --- Color themes
-(use-package plan9-theme
-  :ensure t)
-
-(use-package zerodark-theme
-  :ensure t)
-
-(use-package apropospriate-theme
-  :ensure t)
-
-(use-package spacemacs-theme
-  :ensure t
-  :no-require t
-  :config
-
-  (defun load-my-theme (&optional frame)
-    (unless frame (setq frame (selected-frame)))
-    (if (display-graphic-p frame)
-	(load-theme 'spacemacs-light t)
-      (load-theme 'spacemacs-light t)))
-
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-		(lambda (frame)
-		  (with-selected-frame frame
-		    (load-my-theme frame))))
-    (load-my-theme)))
-
-;; --- Go
-(use-package go-mode
-  :ensure t
-  :config
-  (go-mode))
-
-(use-package company-go
-  :ensure t)
