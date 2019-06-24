@@ -16,7 +16,7 @@
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
   (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
 
-  (define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
 
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
@@ -34,10 +34,6 @@
 (use-package treemacs-evil)
 (use-package treemacs-projectile)
 (use-package treemacs-magit)
-
-(use-package sr-speedbar
-  :init
-  (setq speedbar-use-images nil))
 
 ; FIXME: initial-buffer-choice fails when a file is specified
 (use-package dashboard
@@ -91,3 +87,8 @@
 (use-package idle-highlight-mode
   :config
   (add-hook 'prog-mode-hook #'idle-highlight-mode))
+
+(use-package which-key
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right))
