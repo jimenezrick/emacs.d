@@ -43,14 +43,14 @@
   (if (display-graphic-p)
     (setq dashboard-startup-banner 'logo)
     (setq dashboard-startup-banner nil))
-  (setq dashboard-center-content t)
-  (setq dashboard-banner-logo-title nil)
-  (setq dashboard-set-init-info nil)
-  (setq dashboard-set-footer nil)
-  (setq dashboard-items '((recents . 10)
-                        (bookmarks . 5)
-                        (projects . 5)
-                        (registers . 5))))
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+	dashboard-banner-logo-title nil
+	dashboard-set-init-info nil
+	dashboard-set-footer nil
+	dashboard-items '((recents . 10)
+			  (bookmarks . 5)
+			  (projects . 5)
+			  (registers . 5))))
 
 (use-package projectile
   :ensure t
