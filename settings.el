@@ -11,6 +11,7 @@
   kept-old-versions 2
   version-control t)
 
+(set-default 'truncate-lines t)
 (global-display-line-numbers-mode)
 (global-hl-line-mode 1)
 (column-number-mode t)
