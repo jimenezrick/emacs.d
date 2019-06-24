@@ -108,7 +108,16 @@
   :ensure t
   :no-require t
   :config
-  (load-theme 'spacemacs-light t))
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+		(lambda (frame)
+		  (select-frame frame)
+		  (if (display-graphic-p frame)
+		      (load-theme 'spacemacs-light t)
+		    (load-theme 'spacemacs-dark t))))
+    (if (display-graphic-p)
+	(load-theme 'spacemacs-light t)
+      (load-theme 'spacemacs-dark t))))
 
 ;; --- Go
 (use-package go-mode
