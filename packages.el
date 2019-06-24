@@ -98,6 +98,9 @@
 (use-package plan9-theme
   :ensure t)
 
+(use-package zerodark-theme
+  :ensure t)
+
 (use-package spacemacs-theme
   :ensure t
   :no-require t
