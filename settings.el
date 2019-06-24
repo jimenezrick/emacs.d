@@ -22,4 +22,4 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(global-set-key (kbd "<f2>") 'save-buffer)
+(bind-key "<f2>" 'save-buffer)

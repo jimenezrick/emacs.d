@@ -1,43 +1,41 @@
 (use-package helm
-  :config
-  (helm-mode 1)
+  :init
   (setq helm-M-x-fuzzy-match t
 	helm-buffers-fuzzy-matching t
 	helm-recentf-fuzzy-match    t)
-  (global-set-key (kbd "M-x") 'helm-M-x))
+  :config
+  (helm-mode 1)
+  :bind (("M-x" . helm-M-x)
+	 ("M-y" . helm-show-kill-ring)))
 
 (use-package evil
   :config
   (evil-mode 1)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
-  
-  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
+  (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
+  (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
 
   (define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
 
-  (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
-  (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state))
+  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
 
 (use-package neotree
-  :config
+  :init
   (setq neo-theme 'arrow
 	neo-smart-open t))
 
 (use-package sr-speedbar
-  :config
+  :init
   (setq speedbar-use-images nil))
 
 ; FIXME: initial-buffer-choice fails when a file is specified
 (use-package dashboard
-  :config
-  (dashboard-setup-startup-hook)
-
+  :init
   (if (display-graphic-p)
     (setq dashboard-startup-banner 'logo)
     (setq dashboard-startup-banner nil))
-
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
 	dashboard-banner-logo-title nil
 	dashboard-set-init-info nil
@@ -46,6 +44,8 @@
 			  (bookmarks . 5)
 			  (projects . 5)
 			  (registers . 5))))
+  :config
+  (dashboard-setup-startup-hook)
 
 (use-package projectile
   :config
