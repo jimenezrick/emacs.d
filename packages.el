@@ -90,8 +90,9 @@
 
 (use-package whitespace
   :init
-  (setq whitespace-style '(tabs tab-mark))
+  (setq whitespace-style '(face tabs tab-mark))
   :config
+  (add-hook 'text-mode-hook #'whitespace-mode)
   (add-hook 'prog-mode-hook #'whitespace-mode))
 
 (use-package which-key
