@@ -127,7 +127,9 @@
   (which-key-mode)
   (which-key-setup-side-window-right))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode)))
 
 (use-package goto-chg)
 
