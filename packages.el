@@ -21,6 +21,11 @@
 
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
 
+(use-package evil-numbers
+  :config
+  (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
+
 (use-package evil-nerd-commenter
   :config
   (evilnc-default-hotkeys))
