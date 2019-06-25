@@ -21,6 +21,10 @@
 
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
 
+(use-package evil-nerd-commenter
+  :config
+  (evilnc-default-hotkeys))
+
 (use-package ggtags
   :init
   (setq-local imenu-create-index-function #'ggtags-build-imenu-index))
