@@ -80,6 +80,10 @@
   :config
   (company-quickhelp-mode))
 
+(use-package company-quickhelp
+  :config
+  (company-quickhelp-mode))
+
 (use-package ace-jump-mode)
 
 (use-package rainbow-delimiters
@@ -92,7 +96,7 @@
 
 (use-package whitespace
   :init
-  (setq whitespace-style '(face trailing spaces space-mark tabs tab-mark)
+  (setq whitespace-style '(face tabs tab-mark trailing)
         whitespace-display-mappings
         '((space-mark  ?\   [?·])
           (tab-mark    ?\t  [?| ?\t])))
