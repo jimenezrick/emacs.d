@@ -128,3 +128,12 @@
   (which-key-setup-side-window-right))
 
 (use-package yaml-mode)
+
+(use-package goto-chg)
+
+(use-package undo-tree
+  :custom
+  (undo-tree-visualizer-diff t)
+  (undo-tree-visualizer-timestamps t)
+  :config
+  (global-undo-tree-mode))
