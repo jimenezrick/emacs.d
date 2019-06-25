@@ -1,8 +1,8 @@
 (use-package helm
-  :init
-  (setq helm-M-x-fuzzy-match t
-        helm-buffers-fuzzy-matching t
-        helm-recentf-fuzzy-match    t)
+  :custom
+  (helm-M-x-fuzzy-match t)
+  (helm-buffers-fuzzy-matching t)
+  (helm-recentf-fuzzy-match    t)
   :config
   (helm-mode)
   :bind (("M-x" . helm-M-x)
@@ -26,8 +26,8 @@
   (setq-local imenu-create-index-function #'ggtags-build-imenu-index))
 
 (use-package treemacs
-  :init
-  (setq treemacs-no-png-images t)
+  :custom
+  (treemacs-no-png-images t)
   :config
   (treemacs-tag-follow-mode)
   (treemacs-filewatch-mode t)
@@ -105,11 +105,11 @@
   (add-hook 'prog-mode-hook #'idle-highlight-mode))
 
 (use-package whitespace
-  :init
-  (setq whitespace-style '(face tabs tab-mark trailing)
-        whitespace-display-mappings
-        '((space-mark  ?\   [?·])
-          (tab-mark    ?\t  [?| ?\t])))
+  :custom
+  (whitespace-style '(face tabs tab-mark trailing))
+  (whitespace-display-mappings
+   '((space-mark  ?\   [?·])
+     (tab-mark    ?\t  [?| ?\t])))
   :config
   (add-hook 'text-mode-hook #'whitespace-mode)
   (add-hook 'prog-mode-hook #'whitespace-mode))
