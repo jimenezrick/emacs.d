@@ -122,3 +122,5 @@
   :config
   (which-key-mode)
   (which-key-setup-side-window-right))
+
+(use-package yaml-mode)
