@@ -93,11 +93,10 @@
   (company-selection-wrap-around t)
   :config
   (add-hook 'after-init-hook 'global-company-mode)
-  :bind
-  (:map company-active-map
-        ([tab] . company-complete-common-or-cycle)
-        ("C-p" . company-select-previous-or-abort)
-        ("C-n" . company-select-next-or-abort)))
+  :bind (:map company-active-map
+              ([tab] . company-complete-common-or-cycle)
+              ("C-p" . company-select-previous-or-abort)
+              ("C-n" . company-select-next-or-abort)))
 
 (use-package company-quickhelp
   :config
