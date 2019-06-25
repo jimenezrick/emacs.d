@@ -70,7 +70,7 @@
 
 (use-package flycheck
   :config
-  (flycheck-mode))
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package company
   :custom
