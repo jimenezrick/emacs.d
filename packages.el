@@ -41,7 +41,7 @@
 (use-package dashboard
   :init
   (if (display-graphic-p)
-    (setq dashboard-startup-banner 'logo)
+      (setq dashboard-startup-banner 'logo)
     (setq dashboard-startup-banner nil))
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
         dashboard-banner-logo-title nil
@@ -50,9 +50,9 @@
         dashboard-items '((recents . 10)
                           (bookmarks . 5)
                           (projects . 5)
-                          (registers . 5))))
-:config
-(dashboard-setup-startup-hook)
+                          (registers . 5)))
+  :config
+  (dashboard-setup-startup-hook))
 
 (use-package projectile
   :config
@@ -73,12 +73,22 @@
   (flycheck-mode))
 
 (use-package company
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-require-match nil)
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-tooltip-limit 20)
+  (company-tooltip-align-annotations t)
+  (company-echo-delay 0)
+  (company-selection-wrap-around t)
   :config
-  (add-hook 'after-init-hook 'global-company-mode))
-
-(use-package company-quickhelp
-  :config
-  (company-quickhelp-mode))
+  (add-hook 'after-init-hook 'global-company-mode)
+  :bind
+  (:map company-active-map
+        ([tab] . company-complete-common-or-cycle)
+        ("C-p" . company-select-previous-or-abort)
+        ("C-n" . company-select-next-or-abort)))
 
 (use-package company-quickhelp
   :config
