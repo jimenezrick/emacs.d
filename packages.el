@@ -15,15 +15,15 @@
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
   (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
-
+  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
 
-  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete))
+  (add-to-list 'evil-insert-state-modes 'git-commit-mode))
 
 (use-package evil-numbers
   :config
-  (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 
 (use-package evil-nerd-commenter
