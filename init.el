@@ -1,7 +1,7 @@
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'my-util)
 
-(load (my-get-fullpath "repos"))
+(load (expand-file-name "repos" user-emacs-directory))
 (package-initialize)
 
 (when (not (package-installed-p 'use-package))
@@ -14,10 +14,10 @@
 
 (setq use-package-always-ensure t)
 
-(load (my-get-fullpath "packages"))
-(load (my-get-fullpath "packages-themes"))
-(load (my-get-fullpath "packages-go"))
-(load (my-get-fullpath "settings"))
+(load (expand-file-name "packages" user-emacs-directory))
+(load (expand-file-name "packages-themes" user-emacs-directory))
+(load (expand-file-name "packages-go" user-emacs-directory))
+(load (expand-file-name "settings" user-emacs-directory))
 
-(setq custom-file (my-get-fullpath "custom.el"))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)

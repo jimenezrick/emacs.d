@@ -1,11 +1,8 @@
-(require 'my-util)
-
 (setq inhibit-startup-screen t)
 
-; FIXME: (my-get-fullpath "backup")))
 (setq
   backup-by-copying t
-  backup-directory-alist '(("." . "~/.emacs.d/backup"))
+  backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
   delete-old-versions t
   kept-new-versions 6
   kept-old-versions 2
