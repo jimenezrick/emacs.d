@@ -132,6 +132,8 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode)))
 
+(use-package protobuf-mode)
+
 (use-package goto-chg)
 
 (use-package undo-tree
