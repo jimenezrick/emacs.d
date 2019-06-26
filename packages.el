@@ -142,3 +142,7 @@
   (undo-tree-visualizer-timestamps t)
   :config
   (global-undo-tree-mode))
+
+(use-package relative-buffers
+  :config
+  (global-relative-buffers-mode))
