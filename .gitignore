@@ -6,6 +6,7 @@
 /.cache/
 /gotools/
 
+/custom.el
 /recentf
 /projectile-bookmarks.eld
 /projectile.cache
