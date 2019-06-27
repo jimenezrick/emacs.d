@@ -1,6 +1,6 @@
-(setq inhibit-startup-screen t)
+(setq-default inhibit-startup-screen t)
 
-(setq
+(setq-default
   backup-by-copying t
   backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
   delete-old-versions t
@@ -15,8 +15,10 @@
 (global-hl-line-mode)
 (column-number-mode t)
 
-(setq show-paren-delay 0)
+(setq-default show-paren-delay 0)
 (show-paren-mode)
+
+(setq-default x-select-enable-clipboard t)
 
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
