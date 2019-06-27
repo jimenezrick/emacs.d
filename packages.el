@@ -16,6 +16,7 @@
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
   (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
+  (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
 
@@ -96,6 +97,7 @@
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
               ([tab] . company-complete-common-or-cycle)
+              ("C-f" . company-filter-candidates)
               ("C-p" . company-select-previous-or-abort)
               ("C-n" . company-select-next-or-abort)))
 
