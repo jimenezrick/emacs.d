@@ -32,8 +32,6 @@
   (evilnc-default-hotkeys))
 
 (use-package ggtags
-  :init
-  (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
   :config
   (add-hook 'text-mode-hook #'ggtags-mode)
   (add-hook 'prog-mode-hook #'ggtags-mode))
