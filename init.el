@@ -20,4 +20,5 @@
 (load (expand-file-name "settings" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))
