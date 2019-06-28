@@ -22,7 +22,7 @@
 
 (setq-default tramp-default-method "ssh")
 
-(set-frame-font "Inconsolata-12")
+(set-frame-font "Inconsolata-12" t t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
