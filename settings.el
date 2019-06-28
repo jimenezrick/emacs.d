@@ -15,6 +15,8 @@
 (global-hl-line-mode)
 (column-number-mode t)
 
+(add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
 (setq-default show-paren-delay 0)
 (show-paren-mode)
 
