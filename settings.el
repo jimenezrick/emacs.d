@@ -20,6 +20,8 @@
 
 (setq-default x-select-enable-clipboard t)
 
+(setq-default tramp-default-method "ssh")
+
 (set-frame-font "Inconsolata-12")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
