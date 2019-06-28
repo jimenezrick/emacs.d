@@ -94,6 +94,8 @@
   (company-tooltip-align-annotations t)
   (company-echo-delay 0)
   (company-selection-wrap-around t)
+  (company-dabbrev-downcase nil)
+  (company-dabbrev-ignore-case nil)
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
