@@ -20,6 +20,11 @@
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
 
+  (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
+
   (add-to-list 'evil-insert-state-modes 'git-commit-mode))
 
 (use-package evil-numbers
