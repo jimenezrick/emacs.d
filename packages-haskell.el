@@ -28,6 +28,9 @@
   :config
   (add-hook 'haskell-mode-hook #'hindent-mode))
 
+(use-package dhall-mode
+  :mode "\\.dhall\\'")
+
 ;; Fix hoogle doc when completing with company-ghci
 (eval-after-load "company-ghci"
   '(defun company-ghci/hoogle-info (symbol)
