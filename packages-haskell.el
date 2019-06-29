@@ -24,9 +24,6 @@
   (push 'company-ghci company-backends)
   (add-hook 'haskell-interactive-mode-hook 'company-mode))
 
-;; TODO: try!
-;; (use-package dante)
-
 (use-package hindent
   :config
   (add-hook 'haskell-mode-hook #'hindent-mode))
