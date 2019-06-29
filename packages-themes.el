@@ -1,6 +1,9 @@
-(use-package plan9-theme)
-(use-package zerodark-theme)
-(use-package apropospriate-theme)
+(use-package plan9-theme
+  :no-require t)
+(use-package zerodark-theme
+  :no-require t)
+(use-package apropospriate-theme
+  :no-require t)
 
 (use-package spacemacs-theme
   ; Hack needed for this package to work
