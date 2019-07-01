@@ -9,8 +9,6 @@
   version-control t)
 
 (setq-default truncate-lines t)
-(setq-default indent-tabs-mode nil)
-
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)
