@@ -9,6 +9,8 @@
          ("M-y" . helm-show-kill-ring)))
 
 (use-package evil
+  :custom
+  (evil-want-C-u-scroll t)
   :config
   (evil-mode)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
