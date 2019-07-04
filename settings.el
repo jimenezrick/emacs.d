@@ -8,7 +8,11 @@
   kept-old-versions 2
   version-control t)
 
-(setq-default truncate-lines t)
+(setq-default
+ indent-tabs-mode nil
+ require-final-newline t
+ truncate-lines t)
+
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)
