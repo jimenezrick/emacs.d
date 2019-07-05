@@ -11,8 +11,10 @@
 (use-package evil
   :custom
   (evil-want-C-u-scroll t)
+  (evil-want-fine-undo t)
   :config
   (evil-mode)
+  (define-key evil-insert-state-map (kbd "C-k") 'comment-indent-new-line)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
   (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
