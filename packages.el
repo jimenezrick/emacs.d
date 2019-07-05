@@ -127,6 +127,10 @@
   :config
   (add-hook 'prog-mode-hook #'idle-highlight-mode))
 
+(use-package hl-todo
+  :config
+  (add-hook 'prog-mode-hook #'hl-todo-mode))
+
 (use-package whitespace
   :custom
   (whitespace-style '(face tabs tab-mark trailing))
