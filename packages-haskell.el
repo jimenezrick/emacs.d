@@ -44,3 +44,17 @@
   '(defun company-ghci/hoogle-info (symbol)
      (when (executable-find "hoogle")
        (shell-command-to-string (format "hoogle --info \"%s\"" symbol)))))
+
+(use-package popup
+  :after (company-ghci)
+  :config
+  (defun describe-thing-in-popup ()
+    (let* ((thing (symbol-at-point))
+           (description (company-ghci/hoogle-info thing)))
+      (popup-tip description
+                 :point (point)
+                 :around t
+                 :height 30
+                 :scroll-bar t
+                 :margin t)))
+  (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (describe-thing-in-popup))))
