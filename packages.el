@@ -48,10 +48,10 @@
 (use-package treemacs
   :custom
   (treemacs-no-png-images t)
-  :config
-  (treemacs-tag-follow-mode)
-  (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode t))
+  (treemacs-missing-project-action 'remove)
+  (treemacs-recenter-after-file-follow t)
+  (treemacs-recenter-after-tag-follow t)
+  (treemacs-tag-follow-mode t))
 
 (use-package treemacs-evil)
 (use-package treemacs-projectile)
