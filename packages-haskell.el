@@ -43,16 +43,11 @@
 (use-package dhall-mode
   :mode "\\.dhall\\'")
 
-(use-package popup
+(use-package pos-tip
   :after (company-ghci)
+  :custom
+  (x-gtk-use-system-tooltips nil)
   :config
   (defun describe-thing-in-popup ()
-    (let* ((thing (symbol-at-point))
-           (description (company-ghci/hoogle-info thing)))
-      (popup-tip description
-                 :point (point)
-                 :around t
-                 :height 30
-                 :scroll-bar t
-                 :margin t)))
+    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
   (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (describe-thing-in-popup))))
