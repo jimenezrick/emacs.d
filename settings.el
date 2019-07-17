@@ -18,6 +18,9 @@
 (column-number-mode t)
 
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'sh-mode-hook #'(lambda () (setq
+                                      indent-tabs-mode t
+                                      sh-basic-offset 8)))
 
 (setq-default show-paren-delay 0)
 (show-paren-mode)
