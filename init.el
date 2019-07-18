@@ -16,6 +16,7 @@
 (load (expand-file-name "packages" user-emacs-directory))
 (load (expand-file-name "packages-themes" user-emacs-directory))
 (load (expand-file-name "packages-haskell" user-emacs-directory))
+(load (expand-file-name "packages-rust" user-emacs-directory))
 (load (expand-file-name "packages-go" user-emacs-directory))
 (load (expand-file-name "settings" user-emacs-directory))
 
