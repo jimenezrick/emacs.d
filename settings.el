@@ -25,7 +25,10 @@
 (setq-default show-paren-delay 0)
 (show-paren-mode)
 
-(setq-default x-select-enable-clipboard t)
+(setq-default
+ x-select-enable-clipboard t
+ x-select-enable-primary t
+ mouse-drag-copy-region t)
 
 (setq-default tramp-default-method "ssh")
 
