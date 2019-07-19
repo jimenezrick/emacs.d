@@ -28,10 +28,6 @@
 
 (use-package company-ghci
   :config
-  ;; Fix hoogle doc quoting symbol when completing with company-ghci
-  (defun company-ghci/hoogle-info (symbol)
-    (when (executable-find "hoogle")
-      (shell-command-to-string (format "hoogle --info \"%s\"" symbol))))
   (push 'company-ghci company-backends)
   (add-hook 'haskell-interactive-mode-hook 'company-mode))
 
