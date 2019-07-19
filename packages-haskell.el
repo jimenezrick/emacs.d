@@ -27,9 +27,15 @@
   (add-hook 'haskell-mode-hook #'flycheck-haskell-setup))
 
 (use-package company-ghci
+  :after (pos-tip)
   :config
+  (defun show-hoogle-info-in-popup ()
+    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
+  (defun company-ghci-setup ()
+    (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (show-hoogle-info-in-popup))))
   (push 'company-ghci company-backends)
-  (add-hook 'haskell-interactive-mode-hook 'company-mode))
+  (add-hook 'haskell-interactive-mode-hook 'company-mode)
+  (add-hook 'haskell-mode-hook 'company-ghci-setup))
 
 (use-package hindent
   :config
@@ -38,10 +44,3 @@
 
 (use-package dhall-mode
   :mode "\\.dhall\\'")
-
-(use-package pos-tip
-  :after (company-ghci)
-  :config
-  (defun describe-thing-in-popup ()
-    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
-  (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (describe-thing-in-popup))))
