@@ -8,6 +8,10 @@
 
 (use-package racer
   :config
-  (add-hook 'rust-mode-hook #'racer-mode)
+  (defun rust-mode-setup ()
+    (racer-mode)
+    (define-key evil-normal-state-map (kbd "C-]") 'racer-find-definition)
+    (define-key evil-normal-state-map (kbd "C-;") 'racer-describe-tooltip))
+  (add-hook 'rust-mode-hook #'rust-mode-setup)
   (add-hook 'racer-mode-hook #'eldoc-mode)
   (add-hook 'racer-mode-hook #'company-mode))
