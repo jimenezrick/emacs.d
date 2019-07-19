@@ -41,8 +41,6 @@
 
 (use-package pos-tip
   :after (company-ghci)
-  :custom
-  (x-gtk-use-system-tooltips nil)
   :config
   (defun describe-thing-in-popup ()
     (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
