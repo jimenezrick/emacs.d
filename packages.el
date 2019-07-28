@@ -110,8 +110,8 @@
   :bind (:map company-active-map
               ([tab] . company-complete-common-or-cycle)
               ("C-f" . company-filter-candidates)
-              ("C-p" . company-select-previous-or-abort)
-              ("C-n" . company-select-next-or-abort)))
+              ("C-p" . company-select-previous)
+              ("C-n" . company-select-next)))
 
 (use-package company-quickhelp
   :config
