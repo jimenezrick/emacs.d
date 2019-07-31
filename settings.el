@@ -17,6 +17,8 @@
 (global-hl-line-mode)
 (column-number-mode t)
 
+(add-hook 'text-mode-hook #'flyspell-mode)
+(add-hook 'prog-mode-hook #'flyspell-prog-mode)
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'sh-mode-hook #'(lambda () (setq
                                       indent-tabs-mode t
