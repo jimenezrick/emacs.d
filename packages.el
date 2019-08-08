@@ -168,3 +168,18 @@
 (use-package flyspell-popup
   :config
   (add-hook 'flyspell-mode-hook #'flyspell-popup-auto-correct-mode))
+
+(use-package markdown-mode
+  :commands
+  (markdown-mode gfm-mode)
+  :mode
+  (("README\\.md\\'" . gfm-mode)
+   ("\\.md\\'" . markdown-mode)
+   ("\\.markdown\\'" . markdown-mode))
+  :custom
+  (markdown-command "pandoc")
+  (markdown-hide-markup t))
+
+(use-package pandoc-mode
+  :config
+  (add-hook 'markdown-mode-hook #'pandoc-mode))
