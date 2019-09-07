@@ -40,3 +40,5 @@
 (setq-default x-gtk-use-system-tooltips nil)
 
 (bind-key "<f2>" 'save-buffer)
+
+(add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
