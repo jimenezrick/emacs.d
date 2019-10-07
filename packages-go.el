@@ -15,6 +15,7 @@
     (go-projectile-tools-add-path)
     (add-hook 'before-save-hook 'gofmt-before-save)
     (define-key evil-normal-state-map (kbd "C-]") 'godef-jump)
+    (define-key evil-normal-state-map (kbd "C-;") 'godoc-at-point)
     (set (make-local-variable 'company-backends) '(company-go)) (company-mode))
   :config
   (go-mode)
