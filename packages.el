@@ -157,8 +157,8 @@
   (which-key-setup-side-window-right))
 
 (use-package yaml-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode)))
+  :mode
+  (("\\.sls\\'" . yaml-mode)))
 
 (use-package protobuf-mode)
 
