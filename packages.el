@@ -194,4 +194,11 @@
   :config
   (add-hook 'markdown-mode-hook #'pandoc-mode))
 
-(use-package org)
+(use-package org
+  :custom
+  (org-confirm-babel-evaluate nil)
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (shell . t))))
