@@ -1,7 +1,9 @@
 (use-package plan9-theme
   :no-require t)
+
 (use-package zerodark-theme
   :no-require t)
+
 (use-package apropospriate-theme
   :no-require t)
 
