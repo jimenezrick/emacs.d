@@ -31,7 +31,7 @@
   :after (pos-tip)
   :config
   (defun show-hoogle-info-in-popup ()
-    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
+    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point)) nil nil nil -1))
   (defun company-ghci-setup ()
     (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (show-hoogle-info-in-popup))))
   (push 'company-ghci company-backends)
