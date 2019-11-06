@@ -6,7 +6,8 @@
   :config
   (helm-mode)
   :bind (("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring)
+         ("C-c y" . helm-show-kill-ring)
+         ("C-c j" . helm-all-mark-rings)
          ("C-x C-f" . helm-find-files)
          :map helm-map
          ("<tab>" . helm-execute-persistent-action)
@@ -14,7 +15,7 @@
 
 (use-package helm-git-grep
   :bind (("C-c ." . helm-git-grep-at-point)
-         ("C-x C-g" . helm-git-grep)))
+         ("C-c g" . helm-git-grep)))
 
 (use-package helm-ls-git)
 
