@@ -34,6 +34,8 @@
 
 (setq-default tramp-default-method "ssh")
 
+(setq-default tags-revert-without-query t)
+
 (set-frame-font "Inconsolata-12" t t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)

@@ -15,7 +15,6 @@
   (defun haskell-mode-setup ()
     (interactive-haskell-mode)
     (setq tab-width 2)
-    (setq tags-revert-without-query t)
     (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
     (define-key evil-normal-state-map (kbd "C-]") 'haskell-mode-goto-loc)
     (define-key evil-normal-state-map (kbd "C-c C-]") 'haskell-mode-tag-find)
