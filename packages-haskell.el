@@ -37,10 +37,9 @@
   (add-hook 'haskell-interactive-mode-hook 'company-mode)
   (add-hook 'haskell-mode-hook 'company-ghci-setup))
 
-(use-package hindent
-  :config
-  (setq-default hindent-reformat-buffer-on-save t)
-  (add-hook 'haskell-mode-hook #'hindent-mode))
+(use-package ormolu
+  :load-path "lisp/ormolu"
+  :hook (haskell-mode . ormolu-format-on-save-mode))
 
 (use-package dhall-mode
   :mode "\\.dhall\\'")
