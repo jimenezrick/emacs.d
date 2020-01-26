@@ -27,6 +27,7 @@
   (evil-want-fine-undo t)
   :config
   (evil-mode)
+
   (define-key evil-insert-state-map (kbd "C-k") 'comment-indent-new-line)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
@@ -36,6 +37,7 @@
   (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
+  (define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
 
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
