@@ -3,8 +3,10 @@
   (helm-M-x-fuzzy-match t)
   (helm-buffers-fuzzy-matching t)
   (helm-recentf-fuzzy-match t)
+  (helm-split-window-in-side-p t)
   :config
   (helm-mode)
+  (helm-autoresize-mode)
   :bind (("M-x" . helm-M-x)
          ("C-c y" . helm-show-kill-ring)
          ("C-c j" . helm-all-mark-rings)
