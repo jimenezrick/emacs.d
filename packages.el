@@ -207,3 +207,7 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (shell . t))))
+
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
