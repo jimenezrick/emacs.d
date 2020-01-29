@@ -1,4 +1,6 @@
-(setq-default inhibit-startup-screen t)
+(setq-default
+ inhibit-startup-screen t
+ initial-scratch-message ";; Eval sexp with C-x C-e\n")
 
 (setq-default
   backup-by-copying t
