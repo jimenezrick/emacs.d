@@ -202,6 +202,10 @@
 (use-package org
   :custom
   (org-confirm-babel-evaluate nil)
+  (org-startup-indented t)
+  (org-src-tab-acts-natively t)
+  (org-hide-emphasis-markers t)
+  (org-pretty-entities t)
   :config
   (org-babel-do-load-languages
    'org-babel-load-languages
