@@ -211,3 +211,10 @@
 (use-package exec-path-from-shell
   :config
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
+
+(use-package highlight-indent-guides
+  :custom
+  (highlight-indent-guides-method 'column)
+  (highlight-indent-guides-responsive 'top)
+  :config
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
