@@ -18,6 +18,7 @@
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)
+(blink-cursor-mode -1)
 
 (add-hook 'text-mode-hook #'flyspell-mode)
 (add-hook 'prog-mode-hook #'flyspell-prog-mode)
