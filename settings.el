@@ -3,12 +3,12 @@
  initial-scratch-message ";; Eval sexp with C-x C-e\n")
 
 (setq-default
-  backup-by-copying t
-  backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
-  delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
+ backup-by-copying t
+ backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)
 
 (setq-default
  indent-tabs-mode nil
