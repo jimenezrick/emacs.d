@@ -212,6 +212,12 @@
    '((emacs-lisp . t)
      (shell . t))))
 
+(use-package org-bullets
+  :custom
+  (org-ellipsis "⤵")
+  :config
+  (add-hook 'org-mode-hook 'org-bullets-mode))
+
 (use-package exec-path-from-shell
   :config
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
