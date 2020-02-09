@@ -2,6 +2,8 @@
  inhibit-startup-screen t
  initial-scratch-message ";; Eval sexp with C-x C-e and buffer with M-x eval-buffer\n")
 
+(savehist-mode)
+
 (setq-default
  backup-by-copying t
  backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
