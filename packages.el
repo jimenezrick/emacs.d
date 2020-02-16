@@ -74,6 +74,7 @@
 
 (use-package dashboard
   :custom
+  (dashboard-startup-banner 'logo)
   (dashboard-banner-logo-title nil)
   (dashboard-set-init-info nil)
   (dashboard-set-footer nil)
@@ -82,9 +83,6 @@
                      (projects . 5)
                      (registers . 5)))
   :init
-  (if (display-graphic-p)
-      (setq dashboard-startup-banner 'logo)
-    (setq dashboard-startup-banner nil))
   (if (< (length command-line-args) 2)
       (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
   :config
