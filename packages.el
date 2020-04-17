@@ -203,6 +203,7 @@
   (org-startup-indented t)
   (org-src-tab-acts-natively t)
   (org-hide-emphasis-markers t)
+  (org-hide-leading-stars t)
   (org-pretty-entities t)
   :config
   (org-babel-do-load-languages
