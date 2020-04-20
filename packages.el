@@ -15,6 +15,8 @@
          ("<tab>" . helm-execute-persistent-action)
          ("<backtab>" . helm-select-action)))
 
+(use-package helm-xref)
+
 (use-package helm-git-grep
   :bind (("C-c ." . helm-git-grep-at-point)
          ("C-c g" . helm-git-grep)))
