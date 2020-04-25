@@ -3,6 +3,7 @@
   (helm-M-x-fuzzy-match t)
   (helm-buffers-fuzzy-matching t)
   (helm-recentf-fuzzy-match t)
+  (helm-etags-fuzzy-match t)
   (helm-split-window-in-side-p t)
   :config
   (helm-mode)
