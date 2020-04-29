@@ -5,16 +5,16 @@
   (haskell-process-auto-import-loaded-modules t)
   (haskell-process-log t)
   (haskell-tags-on-save t)
-
-  (haskell-indentation-layout-offset 4)
-  (haskell-indentation-starter-offset 4)
-  (haskell-indentation-left-offset 4)
-  (haskell-indentation-where-pre-offset 4)
-  (haskell-indentation-where-post-offset 4)
   :config
   (defun haskell-mode-setup ()
+    (haskell-indentation-mode -1)
     (interactive-haskell-mode)
+
+    (setq-local tab-stop-list '(2 4))
+    (setq indent-line-function 'indent-relative)
     (setq tab-width 2)
+    (setq-local evil-shift-width 2)
+
     (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
     (define-key evil-normal-state-map (kbd "C-]") 'haskell-mode-goto-loc)
     (define-key evil-normal-state-map (kbd "C-c C-]") 'haskell-mode-tag-find)
