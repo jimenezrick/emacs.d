@@ -230,3 +230,16 @@
   (highlight-indent-guides-responsive 'top)
   :config
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+
+(use-package elfeed
+  :custom
+  (elfeed-feeds '(("https://news.ycombinator.com/rss" HN)
+                  ("https://lwn.net/headlines/rss" LWN)
+                  ("https://elpais.com/rss/elpais/portada.xml" EP)
+                  ("https://rss.elconfidencial.com" EC)
+                  ("https://www.eldiario.es/rss" ED)
+                  ("http://feeds.bbci.co.uk/news/rss.xml" BBC)
+                  ("https://www.telegraph.co.uk/rss.xml" TLG)
+                  ("https://www.ft.com/?format=rss" FT)
+                  ("https://www.reddit.com/domain/bloomberg.com.rss" BBG)))
+  (elfeed-search-filter "@2-days-ago"))
