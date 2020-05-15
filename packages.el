@@ -241,5 +241,6 @@
                   ("http://feeds.bbci.co.uk/news/rss.xml" BBC)
                   ("https://www.telegraph.co.uk/rss.xml" TLG)
                   ("https://www.ft.com/?format=rss" FT)
-                  ("https://www.reddit.com/domain/bloomberg.com.rss" BBG)))
+                  ("https://www.reddit.com/domain/bloomberg.com.rss" BBG)
+                  ("https://feeds.feedburner.com/zerohedge/feed?format=xml" ZH)))
   (elfeed-search-filter "@2-days-ago"))

@@ -4,6 +4,7 @@
 /auto-save-list/
 /semanticdb/
 /.cache/
+/url/
 /gotools/
 
 /custom.el
