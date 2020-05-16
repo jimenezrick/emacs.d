@@ -1,7 +1,7 @@
 (use-package haskell-mode
   :custom
   (haskell-process-type 'cabal-repl)
-  (haskell-process-suggest-remove-import-lines t)
+  (haskell-process-load-or-reload-prompt t)
   (haskell-process-auto-import-loaded-modules t)
   (haskell-process-log t)
   (haskell-tags-on-save t)
@@ -32,8 +32,8 @@
   (defun show-hoogle-info-in-popup ()
     (pos-tip-show (company-ghci/hoogle-info (symbol-at-point)) nil nil nil -1))
   (defun company-ghci-setup ()
+    (push 'company-ghci company-backends)
     (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (show-hoogle-info-in-popup))))
-  (push 'company-ghci company-backends)
   (add-hook 'haskell-interactive-mode-hook 'company-mode)
   (add-hook 'haskell-mode-hook 'company-ghci-setup))
 
