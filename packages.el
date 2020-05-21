@@ -233,7 +233,6 @@
 
 (use-package elfeed
   :custom
-  (truncate-lines nil)
   (elfeed-feeds '(("https://news.ycombinator.com/rss" HN tech)
                   ("https://lwn.net/headlines/rss" LWN tech)
                   ("https://elpais.com/rss/elpais/portada.xml" EP news es)
