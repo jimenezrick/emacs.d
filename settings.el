@@ -41,7 +41,7 @@
 
 (setq-default tags-revert-without-query t)
 
-(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
+(add-to-list 'default-frame-alist '(font . "Hack-11"))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default x-gtk-use-system-tooltips nil)
