@@ -177,10 +177,6 @@
   :config
   (global-undo-tree-mode))
 
-(use-package relative-buffers
-  :config
-  (global-relative-buffers-mode))
-
 (use-package flyspell-popup
   :config
   (add-hook 'flyspell-mode-hook #'flyspell-popup-auto-correct-mode))
