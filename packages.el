@@ -208,6 +208,7 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
+     (calc . t)
      (haskell . t)
      (shell . t))))
 
