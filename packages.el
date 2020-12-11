@@ -30,6 +30,7 @@
   (evil-want-fine-undo t)
   :config
   (evil-mode)
+  (evil-set-undo-system 'undo-tree)
 
   (define-key evil-insert-state-map (kbd "C-k") 'comment-indent-new-line)
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
