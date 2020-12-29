@@ -19,7 +19,8 @@
     (define-key evil-normal-state-map (kbd "C-]") 'haskell-mode-goto-loc)
     (define-key evil-normal-state-map (kbd "C-c C-]") 'haskell-mode-tag-find)
     (define-key evil-normal-state-map (kbd "C-c C-t") 'haskell-mode-show-type-at))
-  (add-hook 'haskell-mode-hook 'haskell-mode-setup))
+  (add-hook 'haskell-mode-hook 'haskell-mode-setup)
+  (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode))
 
 (use-package flycheck-haskell
   :config
