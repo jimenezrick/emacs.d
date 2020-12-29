@@ -40,6 +40,8 @@
 
 (setq-default tramp-default-method "ssh")
 
+(setq-default imenu-auto-rescan t)
+
 (setq-default tags-revert-without-query t)
 
 (add-to-list 'default-frame-alist '(font . "Hack-11"))
