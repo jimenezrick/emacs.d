@@ -39,8 +39,9 @@
   (add-hook 'haskell-mode-hook 'company-ghci-setup))
 
 (use-package ormolu
-  :load-path "lisp/ormolu"
-  :hook (haskell-mode . ormolu-format-on-save-mode))
+  :hook (haskell-mode . ormolu-format-on-save-mode)
+  :bind (:map haskell-mode-map
+              ("C-c r" . ormolu-format-buffer)))
 
 (use-package dhall-mode
   :mode "\\.dhall\\'")
