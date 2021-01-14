@@ -18,6 +18,7 @@
 (load (expand-file-name "packages-haskell" user-emacs-directory))
 (load (expand-file-name "packages-rust" user-emacs-directory))
 (load (expand-file-name "packages-go" user-emacs-directory))
+(load (expand-file-name "packages-work" user-emacs-directory))
 (load (expand-file-name "settings" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
