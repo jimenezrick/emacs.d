@@ -7,6 +7,10 @@
   (add-hook 'rust-mode-hook #'flycheck-rust-setup))
 
 (use-package racer
+  :custom
+  ;; FIXME: https://github.com/racer-rust/emacs-racer/issues/85
+  (racer-rust-src-path (concat (string-trim (shell-command-to-string "rustc --print sysroot"))
+                               "/lib/rustlib/src/rust/library"))
   :config
   (defun rust-mode-setup ()
     (racer-mode)
