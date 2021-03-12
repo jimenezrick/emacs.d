@@ -26,6 +26,7 @@
 
 (use-package evil
   :custom
+  (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
   (evil-want-fine-undo t)
   :config
@@ -49,6 +50,11 @@
   (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
 
   (add-to-list 'evil-insert-state-modes 'git-commit-mode))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 
 (use-package evil-numbers
   :config
