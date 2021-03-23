@@ -14,7 +14,7 @@
          ("C-x C-f" . helm-find-files)
          :map helm-map
          ("<tab>" . helm-execute-persistent-action)
-         ("<backtab>" . helm-select-action)))
+         ("C-z" . helm-select-action)))
 
 (use-package helm-xref)
 
@@ -48,6 +48,8 @@
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "C-w t") 'tab-new)
+  (define-key evil-normal-state-map (kbd "C-w f") 'make-frame)
 
   (add-to-list 'evil-insert-state-modes 'git-commit-mode))
 
