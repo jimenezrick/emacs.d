@@ -48,6 +48,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default x-gtk-use-system-tooltips nil)
+(winner-mode)
 
 (bind-key "<f2>" 'save-buffer)
 
