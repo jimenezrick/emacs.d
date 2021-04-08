@@ -1,4 +1,4 @@
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
 (load (expand-file-name "repos" user-emacs-directory))
 (package-initialize)
