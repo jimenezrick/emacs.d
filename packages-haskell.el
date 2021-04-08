@@ -28,10 +28,10 @@
   (add-hook 'haskell-mode-hook #'flycheck-haskell-setup))
 
 (use-package company-ghci
-  :after (pos-tip)
+  :after pos-tip
   :config
   (defun show-hoogle-info-in-popup ()
-    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point)) nil nil nil -1))
+    (pos-tip-show (company-ghci/hoogle-info (symbol-at-point))))
   (defun company-ghci-setup ()
     (push 'company-ghci company-backends)
     (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (show-hoogle-info-in-popup))))

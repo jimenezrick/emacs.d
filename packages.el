@@ -251,3 +251,15 @@
                   ("https://www.reddit.com/domain/bloomberg.com.rss" BBG fin)
                   ("https://feeds.feedburner.com/zerohedge/feed?format=xml" ZH fin)))
   (elfeed-search-filter "@2-days-ago +news"))
+
+(use-package pos-tip
+  :config
+  (defun describe-thing-in-popup ()
+    (interactive)
+    (let* ((thing (symbol-at-point))
+           (help-xref-following t)
+           (description (with-temp-buffer
+                          (help-mode)
+                          (describe-symbol thing)
+                          (buffer-string))))
+      (pos-tip-show description))))
