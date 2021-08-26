@@ -30,6 +30,13 @@
   (evil-want-C-u-scroll t)
   (evil-want-fine-undo t)
   :config
+  (defun my-helm-mini ()
+    (if (not (projectile-project-p))
+        (setq-local helm-mini-default-sources '(helm-source-buffers-list
+                                                helm-source-recentf
+                                                helm-source-buffer-not-found)))
+    (helm-mini))
+
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
 
@@ -41,7 +48,7 @@
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
   (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
-  (define-key evil-normal-state-map (kbd "SPC") 'helm-mini)
+  (define-key evil-normal-state-map (kbd "SPC") (lambda () (interactive) (my-helm-mini)))
   (define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
 
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
@@ -103,6 +110,17 @@
 (use-package projectile
   :config
   (projectile-mode))
+
+(use-package helm-projectile
+  :custom
+  (helm-mini-default-sources '(helm-source-projectile-buffers-list
+                               helm-source-buffers-list
+                               helm-source-projectile-recentf-list
+                               helm-source-recentf
+                               helm-source-projectile-projects
+                               helm-source-buffer-not-found))
+  :config
+  (helm-projectile-on))
 
 (use-package recentf
   :config
@@ -226,6 +244,8 @@
   (org-ellipsis "⤵")
   :config
   (add-hook 'org-mode-hook 'org-bullets-mode))
+
+(use-package org-ql)
 
 (use-package exec-path-from-shell
   :config
