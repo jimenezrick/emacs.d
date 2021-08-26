@@ -44,7 +44,9 @@
 
 (setq-default tags-revert-without-query t)
 
-(add-to-list 'default-frame-alist '(font . "Hack-11"))
+(set-face-font 'default "Hack-11")
+(set-face-font 'variable-pitch "URW Palladio L-14")
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq-default x-gtk-use-system-tooltips nil)

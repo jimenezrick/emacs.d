@@ -239,6 +239,10 @@
      (haskell . t)
      (shell . t))))
 
+(use-package org-variable-pitch
+  :config
+  (add-hook 'after-init-hook #'org-variable-pitch-setup))
+
 (use-package org-bullets
   :custom
   (org-ellipsis "⤵")
