@@ -45,7 +45,7 @@
 (setq-default tags-revert-without-query t)
 
 (set-face-font 'default "Hack-11")
-(set-face-font 'variable-pitch "URW Palladio L-14")
+(set-face-font 'variable-pitch "Cardo-14")
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
