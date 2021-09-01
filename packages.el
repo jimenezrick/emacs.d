@@ -287,3 +287,5 @@
                           (describe-symbol thing)
                           (buffer-string))))
       (pos-tip-show description))))
+
+(use-package eglot)
