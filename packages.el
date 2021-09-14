@@ -237,7 +237,8 @@
    '((emacs-lisp . t)
      (calc . t)
      (haskell . t)
-     (shell . t))))
+     (shell . t)))
+  (add-hook 'org-mode-hook 'visual-line-mode))
 
 (use-package org-variable-pitch
   :config
