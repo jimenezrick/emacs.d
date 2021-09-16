@@ -18,5 +18,4 @@
     (define-key evil-normal-state-map (kbd "C-;") 'godoc-at-point)
     (set (make-local-variable 'company-backends) '(company-go)) (company-mode))
   :config
-  (go-mode)
   (add-hook 'go-mode-hook 'go-mode-setup))
