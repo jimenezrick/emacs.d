@@ -44,8 +44,8 @@
 
 (setq-default tags-revert-without-query t)
 
-(set-face-font 'default "Hack-11")
-(set-face-font 'variable-pitch "Cardo-14")
+(set-face-attribute 'default nil :family "Hack" :height 110)
+(set-face-attribute 'variable-pitch nil :family "Libertinus Serif" :height 140)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
