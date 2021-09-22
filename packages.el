@@ -232,6 +232,20 @@
   (org-hide-leading-stars t)
   (org-pretty-entities t)
   :config
+  (custom-theme-set-faces
+   'user
+   `(org-level-1 ((t (:foreground "black" :font "Libertinus Sans" :height 1.75))))
+   `(org-level-2 ((t (:foreground "black" :font "Libertinus Sans" :height 1.5))))
+   `(org-level-3 ((t (:foreground "black" :font "Libertinus Sans" :height 1.25))))
+   `(org-level-4 ((t (:foreground "black" :font "Libertinus Sans" :height 1.1))))
+   `(org-block-begin-line ((t (:height 0.75))))
+   `(org-block-end-line ((t (:height 0.75))))
+   `(org-block ((t (:height 0.75))))
+   `(org-table ((t (:height 0.75))))
+   `(org-verbatim ((t (:height 0.75))))
+   `(org-code ((t (:height 0.75))))
+   `(org-meta-line ((t (:height 0.75))))
+   )
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
@@ -247,6 +261,7 @@
 (use-package org-bullets
   :custom
   (org-ellipsis "⤵")
+  (org-bullets-bullet-list '("◉" "○" "●" "◈" "◇" "◆"))
   :config
   (add-hook 'org-mode-hook 'org-bullets-mode))
 
