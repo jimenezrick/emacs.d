@@ -38,6 +38,7 @@
  x-select-enable-primary t
  mouse-drag-copy-region t)
 
+(setq-default auth-source-save-behavior nil)
 (setq-default tramp-default-method "ssh")
 
 (setq-default imenu-auto-rescan t)
