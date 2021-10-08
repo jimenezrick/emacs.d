@@ -1,1 +1,3 @@
-(use-package lua-mode)
+(use-package terraform-mode)
+
+(use-package terraform-doc)
