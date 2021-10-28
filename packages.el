@@ -85,7 +85,8 @@
   (treemacs-missing-project-action 'remove)
   (treemacs-recenter-after-file-follow t)
   (treemacs-recenter-after-tag-follow t)
-  (treemacs-tag-follow-mode t))
+  (treemacs-tag-follow-mode t)
+  (treemacs-default-visit-action 'treemacs-visit-node-in-most-recently-used-window))
 
 (use-package treemacs-evil)
 (use-package treemacs-projectile)
