@@ -306,3 +306,5 @@
       (pos-tip-show description))))
 
 (use-package eglot)
+
+(use-package vterm)
