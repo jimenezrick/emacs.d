@@ -56,3 +56,5 @@
 (bind-key "<f2>" 'save-buffer)
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
+
+(setq-default max-specpdl-size 3200)
