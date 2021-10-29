@@ -11,6 +11,8 @@
   :bind (("M-x" . helm-M-x)
          ("C-c y" . helm-show-kill-ring)
          ("C-c j" . helm-all-mark-rings)
+         ("C-c t" . helm-imenu-in-all-buffers)
+         ("C-c T" . imenu-list-smart-toggle)
          ("C-x C-f" . helm-find-files)
          :map helm-map
          ("<tab>" . helm-execute-persistent-action)
@@ -84,8 +86,7 @@
   (treemacs-no-png-images t)
   (treemacs-missing-project-action 'remove)
   (treemacs-recenter-after-file-follow t)
-  (treemacs-recenter-after-tag-follow t)
-  (treemacs-tag-follow-mode t)
+  (treemacs-follow-mode t)
   (treemacs-default-visit-action 'treemacs-visit-node-in-most-recently-used-window))
 
 (use-package treemacs-evil)
@@ -308,3 +309,8 @@
 (use-package eglot)
 
 (use-package vterm)
+
+(use-package imenu-list
+  :custom
+  (imenu-list-auto-resize nil)
+  (imenu-list-size 40))
