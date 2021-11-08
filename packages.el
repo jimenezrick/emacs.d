@@ -57,8 +57,10 @@
   (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
-  (define-key evil-normal-state-map (kbd "C-w t") 'tab-new)
   (define-key evil-normal-state-map (kbd "C-w f") 'make-frame)
+  (define-key evil-normal-state-map (kbd "C-w t") 'tab-new)
+  (define-key evil-normal-state-map (kbd "S-<prior>") 'tab-previous)
+  (define-key evil-normal-state-map (kbd "S-<next>") 'tab-next)
 
   (add-to-list 'evil-insert-state-modes 'git-commit-mode))
 
