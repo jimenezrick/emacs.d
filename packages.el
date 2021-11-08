@@ -316,3 +316,7 @@
   :custom
   (imenu-list-auto-resize nil)
   (imenu-list-size 40))
+
+(use-package tab-bar-echo-area
+  :config
+  (tab-bar-echo-area-mode 1))
