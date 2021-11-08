@@ -11,8 +11,8 @@
     (interactive-haskell-mode)
 
     (setq-local tab-stop-list '(2 4))
-    (setq indent-line-function 'indent-relative)
-    (setq tab-width 2)
+    (setq-local indent-line-function 'indent-relative)
+    (setq-local tab-width 2)
     (setq-local evil-shift-width 2)
 
     (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)

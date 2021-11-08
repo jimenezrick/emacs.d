@@ -26,7 +26,7 @@
 (add-hook 'text-mode-hook #'flyspell-mode)
 (add-hook 'prog-mode-hook #'flyspell-prog-mode)
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-(add-hook 'sh-mode-hook #'(lambda () (setq
+(add-hook 'sh-mode-hook #'(lambda () (setq-local
                                       indent-tabs-mode t
                                       sh-basic-offset 8)))
 
