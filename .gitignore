@@ -3,14 +3,13 @@
 /backup/
 /transient/
 /auto-save-list/
-/semanticdb/
 /.cache/
 /url/
 /gotools/
-
 /custom.el
 /tramp
 /history
 /recentf
 /projectile-bookmarks.eld
 /projectile.cache
+/quelpa/

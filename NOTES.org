@@ -3,3 +3,6 @@
 - Wrapping lines (=M-x fill-paragraph= / =M-q=): http://ergoemacs.org/emacs/emacs_unfill-paragraph.html
 - Show the markup with =M-x visible-mode=
 - Wrap long lines with =M-x visual-line-mode=
+
+* Haskell Mode
+- Generate /TAGS/ for all the project dependencies with =codex update= command and then load them with =M-x visit-tags-table=. Jump to tag is now possible with =M-.=.

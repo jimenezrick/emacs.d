@@ -1,3 +1,5 @@
+(use-package quelpa-use-package)
+
 (use-package helm
   :custom
   (helm-M-x-fuzzy-match t)
@@ -271,6 +273,9 @@
 
 (use-package org-ql)
 
+(use-package org-super-links
+  :quelpa (org-super-links :upgrade nil :repo "toshism/org-super-links" :fetcher github :commit "develop"))
+
 (use-package exec-path-from-shell
   :config
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
@@ -320,3 +325,9 @@
 (use-package tab-bar-echo-area
   :config
   (tab-bar-echo-area-mode 1))
+
+(use-package svg-tag-mode
+  :custom
+  (svg-tag-tags
+   '((":TODO:" . ((lambda (tag) (svg-tag-make "TODO"))))))
+  :hook (org-mode text-mode))
