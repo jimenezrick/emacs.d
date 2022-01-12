@@ -240,10 +240,10 @@
   :config
   (custom-theme-set-faces
    'user
-   `(org-level-1 ((t (:foreground "black" :font "Libertinus Sans" :height 1.75))))
-   `(org-level-2 ((t (:foreground "black" :font "Libertinus Sans" :height 1.5))))
-   `(org-level-3 ((t (:foreground "black" :font "Libertinus Sans" :height 1.25))))
-   `(org-level-4 ((t (:foreground "black" :font "Libertinus Sans" :height 1.1))))
+   `(org-level-1 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.75))))
+   `(org-level-2 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.5))))
+   `(org-level-3 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.25))))
+   `(org-level-4 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.1))))
    `(org-block-begin-line ((t (:height 0.75))))
    `(org-block-end-line ((t (:height 0.75))))
    `(org-block ((t (:height 0.75))))
