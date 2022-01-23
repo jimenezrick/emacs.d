@@ -273,8 +273,19 @@
 
 (use-package org-ql)
 
+(use-package helm-org-ql)
+
+(use-package org-sidebar)
+
+(use-package org-journal)
+
 (use-package org-super-links
   :quelpa (org-super-links :upgrade nil :repo "toshism/org-super-links" :fetcher github :commit "develop"))
+
+(use-package deft
+  :custom
+  (deft-directory "~/notes")
+  (deft-recursive t))
 
 (use-package exec-path-from-shell
   :config
