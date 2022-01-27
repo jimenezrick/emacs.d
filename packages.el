@@ -113,6 +113,13 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package project
+  ;; Cannot use :hook because 'project-find-functions does not end in -hook,
+  ;; cannot use :init (must use :config) because otherwise
+  ;; project-find-functions is not yet initialized.
+  :config
+  (add-hook 'project-find-functions #'my-project-override))
+
 (use-package projectile
   :config
   (projectile-mode))

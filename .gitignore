@@ -9,7 +9,9 @@
 /custom.el
 /tramp
 /history
-/recentf
+/.org-id-locations
+/projects
 /projectile-bookmarks.eld
 /projectile.cache
 /quelpa/
+/recentf

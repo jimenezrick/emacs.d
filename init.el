@@ -1,4 +1,5 @@
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
+(require 'my-utils)
 
 (load (expand-file-name "repos" user-emacs-directory))
 (package-initialize)
