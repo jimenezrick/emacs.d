@@ -237,6 +237,8 @@
   (org-hide-emphasis-markers t)
   (org-hide-leading-stars t)
   (org-pretty-entities t)
+  (org-id-link-to-org-use-id t)
+  (org-agenda-files '("~/notes"))
   :config
   (custom-theme-set-faces
    'user
