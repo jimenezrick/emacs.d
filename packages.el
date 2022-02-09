@@ -87,7 +87,6 @@
 
 (use-package treemacs
   :custom
-  (treemacs-no-png-images t)
   (treemacs-missing-project-action 'remove)
   (treemacs-recenter-after-file-follow t)
   (treemacs-follow-mode t)
@@ -96,6 +95,10 @@
 (use-package treemacs-evil)
 (use-package treemacs-projectile)
 (use-package treemacs-magit)
+(use-package treemacs-all-the-icons
+  :if (display-graphic-p)
+  :config
+  (treemacs-load-theme 'all-the-icons))
 
 (use-package dashboard
   :custom
