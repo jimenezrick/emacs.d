@@ -1,4 +1,6 @@
-(use-package quelpa-use-package)
+(use-package quelpa-use-package
+  :custom
+  (quelpa-update-melpa-p nil))
 
 (use-package helm
   :custom
