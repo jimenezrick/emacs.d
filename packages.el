@@ -314,12 +314,7 @@
 
 (use-package elfeed
   :custom
-  (elfeed-feeds '(("https://news.ycombinator.com/rss" HN tech)
-                  ("https://lwn.net/headlines/rss" LWN tech)
-                  ("https://elpais.com/rss/elpais/portada.xml" EP news es)
-                  ("https://rss.elconfidencial.com" EC news es)
-                  ("https://www.eldiario.es/rss" ED news es)
-                  ("http://feeds.bbci.co.uk/news/rss.xml" BBC news uk)
+  (elfeed-feeds '(("https://elpais.com/rss/elpais/portada.xml" EP news es)
                   ("https://www.telegraph.co.uk/rss.xml" TLG news uk)
                   ("https://www.ft.com/?format=rss" FT fin)
                   ("https://www.reddit.com/domain/bloomberg.com.rss" BBG fin)
