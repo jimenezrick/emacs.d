@@ -48,11 +48,14 @@
 
 (setq-default tags-revert-without-query t)
 
+(setq-default completions-detailed t)
+
 (set-face-attribute 'default nil :family "Hack" :height 110)
 (set-face-attribute 'variable-pitch nil :family "Libertinus Serif" :height 140)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(context-menu-mode)
 (setq-default x-gtk-use-system-tooltips nil)
 (winner-mode)
 (setq-default tab-bar-show nil)
