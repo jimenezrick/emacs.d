@@ -333,7 +333,10 @@
                           (buffer-string))))
       (pos-tip-show description))))
 
-(use-package eglot)
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
+  (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
 
 (use-package vterm)
 
