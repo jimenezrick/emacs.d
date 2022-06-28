@@ -243,8 +243,6 @@
 
 (use-package org
   :custom
-  (left-margin-width 4)
-  (right-margin-width 4)
   (org-confirm-babel-evaluate nil)
   (org-startup-indented t)
   (org-src-tab-acts-natively t)
@@ -275,7 +273,10 @@
      (calc . t)
      (haskell . t)
      (shell . t)))
-  (add-hook 'org-mode-hook 'visual-line-mode))
+  (add-hook 'org-mode-hook 'visual-line-mode)
+  (add-hook 'org-mode-hook (lambda () (setq-local
+                                       left-margin-width 4
+                                       right-margin-width 4))))
 
 (use-package org-variable-pitch
   :config

@@ -10,3 +10,6 @@
 
 * Haskell Mode
 - Generate /TAGS/ for all the project dependencies with =codex update= command and then load them with =M-x visit-tags-table=. Jump to tag is now possible with =M-.=.
+
+* Color themes
+- When switching between them, disable previous themes with =M-x disable-theme= to not to have interference.
