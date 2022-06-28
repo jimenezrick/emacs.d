@@ -1,3 +1,6 @@
+(use-package almost-mono-themes
+  :no-require t)
+
 (use-package plan9-theme
   :no-require t)
 
