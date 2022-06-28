@@ -243,6 +243,8 @@
 
 (use-package org
   :custom
+  (left-margin-width 4)
+  (right-margin-width 4)
   (org-confirm-babel-evaluate nil)
   (org-startup-indented t)
   (org-src-tab-acts-natively t)
@@ -254,6 +256,7 @@
   :config
   (custom-theme-set-faces
    'user
+   `(line-number ((t (:inherit 'fixed-pitch))))
    `(org-level-1 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.75))))
    `(org-level-2 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.5))))
    `(org-level-3 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.25))))
