@@ -255,10 +255,10 @@
   (custom-theme-set-faces
    'user
    `(line-number ((t (:inherit 'fixed-pitch))))
-   `(org-level-1 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.75))))
-   `(org-level-2 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.5))))
-   `(org-level-3 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.25))))
-   `(org-level-4 ((t (:foreground "black" :distant-foreground "gainsboro" :font "Libertinus Sans" :height 1.1))))
+   `(org-level-1 ((t (:foreground "black" :distant-foreground "gainsboro" :family "Junicode" :height 1.75 :weight semi-bold))))
+   `(org-level-2 ((t (:foreground "black" :distant-foreground "gainsboro" :family "Junicode" :height 1.5 :weight semi-bold))))
+   `(org-level-3 ((t (:foreground "black" :distant-foreground "gainsboro" :family "Junicode" :height 1.25 :weight semi-bold))))
+   `(org-level-4 ((t (:foreground "black" :distant-foreground "gainsboro" :family "Junicode" :height 1.1 :weight semi-bold))))
    `(org-block-begin-line ((t (:height 0.75))))
    `(org-block-end-line ((t (:height 0.75))))
    `(org-block ((t (:height 0.75))))
