@@ -52,6 +52,7 @@
 
 (set-face-attribute 'default nil :family "Hack" :height 105)
 (set-face-attribute 'variable-pitch nil :family "Junicode" :height 130)
+(set-face-attribute 'bold nil :weight 'semibold)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
