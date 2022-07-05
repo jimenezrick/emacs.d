@@ -2,7 +2,7 @@
 - Reload config in current buffer with =M-x eval-buffer=.
 
 * Org Mode
-- Cheatsheet: http://ergoemacs.org/emacs/emacs_org_markup.html
+- Cheatsheet: http://xahlee.info/emacs/emacs/emacs_org_markup.html
 - Zettelkasten with Org: https://github.com/egh/org-mode-zettelkasten
 - Wrapping lines (=M-x fill-paragraph= / =M-q=): http://ergoemacs.org/emacs/emacs_unfill-paragraph.html
 - Show the markup with =M-x visible-mode=
