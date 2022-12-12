@@ -13,3 +13,6 @@
 
 * Color themes
 - When switching between them, disable previous themes with =M-x disable-theme= to not to have interference.
+
+* Spelling
+- Change language with =ispell-change-dictionary=
