@@ -338,6 +338,8 @@
       (pos-tip-show description))))
 
 (use-package eglot
+  :custom
+  (eglot-events-buffer-size 0)
   :config
   (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
   (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
