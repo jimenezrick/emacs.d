@@ -342,7 +342,7 @@
   (eglot-events-buffer-size 0)
   :config
   (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
-  (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
+  (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1))))
 
 (use-package vterm)
 
@@ -360,3 +360,27 @@
   (svg-tag-tags
    '((":TODO:" . ((lambda (tag) (svg-tag-make "TODO"))))))
   :hook (org-mode text-mode))
+
+(use-package jupyter)
+
+(use-package gpt
+  :custom
+  (gpt-openai-engine "code-davinci-002")
+  :config
+  (setq gpt-openai-key (getenv "GPT_OPENAI_KEY")))
+
+(use-package tree-sitter
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+(use-package tree-sitter-langs)
+
+(use-package helm-tree-sitter)
+
+(use-package flycheck-languagetool
+  ;; The service needs to be started first with:
+  ;; systemctl start languagetool.service
+  :custom
+  (flycheck-languagetool-server-jar "/usr/share/java/languagetool/languagetool-server.jar")
+  :hook (text-mode . flycheck-languagetool-setup))

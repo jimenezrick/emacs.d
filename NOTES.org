@@ -11,8 +11,20 @@
 * Haskell Mode
 - Generate /TAGS/ for all the project dependencies with =codex update= command and then load them with =M-x visit-tags-table=. Jump to tag is now possible with =M-.=.
 
-* Color themes
-- When switching between them, disable previous themes with =M-x disable-theme= to not to have interference.
+* Color Themes
+- When switching between them, disable previous themes with =M-x disable-theme= to not have interference.
 
 * Spelling
 - Change language with =ispell-change-dictionary=
+- Enable ~text-mode~ to check the grammar with ~languagetool~ (run first =systemctl start languagetool.service=).
+
+* Tree-Sitter
+- Navigate the code structure with =helm-tree-sitter=.
+- Highlight nodes of the code with =tree-sitter-query-builder=. You can see the full code structure with =tree-sitter-debug-mode=. Highlight query example for Python:
+#+BEGIN_SRC python
+(type (identifier) @var)
+(return_statement (call (identifier)) @var)
+#+END_SRC
+
+* GPT
+- Select a piece of text and call =gpt-dwin=.
