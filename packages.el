@@ -249,6 +249,7 @@
   (org-hide-emphasis-markers t)
   (org-hide-leading-stars t)
   (org-pretty-entities t)
+  (org-startup-with-inline-images t)
   (org-id-link-to-org-use-id t)
   (org-agenda-files '("~/notes"))
   :config
@@ -272,7 +273,9 @@
    '((emacs-lisp . t)
      (calc . t)
      (haskell . t)
-     (shell . t)))
+     (shell . t)
+     (jupyter . t)))
+  (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
   (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'org-mode-hook (lambda () (setq-local
                                        left-margin-width 4
