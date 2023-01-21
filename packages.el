@@ -377,7 +377,8 @@
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
-(use-package tree-sitter-langs)
+(use-package tree-sitter-langs
+  :quelpa (tree-sitter-langs :upgrade nil :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
 
 (use-package helm-tree-sitter)
 
