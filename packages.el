@@ -98,7 +98,7 @@
 (use-package treemacs-projectile)
 (use-package treemacs-magit)
 (use-package treemacs-all-the-icons
-  :if (display-graphic-p)
+  :if window-system
   :config
   (treemacs-load-theme 'all-the-icons))
 
@@ -173,6 +173,10 @@
               ("C-f" . company-filter-candidates)
               ("C-p" . company-select-previous)
               ("C-n" . company-select-next)))
+
+(use-package company-box
+  :if window-system
+  :hook (company-mode . company-box-mode))
 
 (use-package company-quickhelp
   :config
