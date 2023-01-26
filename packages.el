@@ -334,6 +334,13 @@
 
 (use-package pos-tip
   :config
+  (defun show-command-region-in-popup ()
+    (interactive)
+    (if (use-region-p)
+        (pos-tip-show
+         (shell-command-to-string
+          (buffer-substring-no-properties (region-beginning) (region-end))))
+      (message "No active region")))
   (defun describe-thing-in-popup ()
     (interactive)
     (let* ((thing (symbol-at-point))
@@ -345,7 +352,8 @@
       (pos-tip-show description)))
   (defun my-elisp-setup ()
     (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (describe-thing-in-popup))))
-  (add-hook 'emacs-lisp-mode-hook 'my-elisp-setup))
+  (add-hook 'emacs-lisp-mode-hook 'my-elisp-setup)
+  (define-key evil-normal-state-map (kbd "C-'") (lambda () (interactive) (show-command-region-in-popup))))
 
 (use-package eglot
   :custom
