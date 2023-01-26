@@ -342,7 +342,10 @@
                           (help-mode)
                           (describe-symbol thing)
                           (buffer-string))))
-      (pos-tip-show description))))
+      (pos-tip-show description)))
+  (defun my-elisp-setup ()
+    (define-key evil-normal-state-map (kbd "C-;") (lambda () (interactive) (describe-thing-in-popup))))
+  (add-hook 'emacs-lisp-mode-hook 'my-elisp-setup))
 
 (use-package eglot
   :custom
