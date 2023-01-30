@@ -26,7 +26,9 @@
 
 (use-package helm-git-grep
   :bind (("C-c ." . helm-git-grep-at-point)
-         ("C-c g" . helm-git-grep)))
+         ("C-c g" . helm-git-grep)
+         :map c-mode-base-map
+         ("C-c ." . nil)))
 
 (use-package helm-ls-git)
 
