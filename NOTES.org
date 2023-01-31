@@ -32,3 +32,6 @@
 * Jupyter Notebooks
 - First convert a notebook to Org with =pandoc notebook.ipynb -o notebook.org=.
 - Execute its code blocks using https://github.com/nnicandro/emacs-jupyter.
+
+* Tabs
+- Select with: =M-x tab-switch=.
