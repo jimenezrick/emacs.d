@@ -405,3 +405,5 @@
   :custom
   (flycheck-languagetool-server-jar "/usr/share/java/languagetool/languagetool-server.jar")
   :hook (text-mode . flycheck-languagetool-setup))
+
+(use-package reformatter)
