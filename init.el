@@ -15,11 +15,12 @@
 (setq use-package-always-ensure t)
 
 (load (expand-file-name "packages" user-emacs-directory))
-(load (expand-file-name "packages-themes" user-emacs-directory))
 (load (expand-file-name "packages-haskell" user-emacs-directory))
 (load (expand-file-name "packages-rust" user-emacs-directory))
 (load (expand-file-name "packages-go" user-emacs-directory))
-(load (expand-file-name "packages-work" user-emacs-directory))
+(load (expand-file-name "packages-python" user-emacs-directory))
+(load (expand-file-name "packages-devops" user-emacs-directory))
+(load (expand-file-name "packages-themes" user-emacs-directory))
 (load (expand-file-name "settings" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
