@@ -94,7 +94,10 @@
   (treemacs-missing-project-action 'remove)
   (treemacs-recenter-after-file-follow t)
   (treemacs-follow-mode t)
-  (treemacs-default-visit-action 'treemacs-visit-node-in-most-recently-used-window))
+  (treemacs-default-visit-action 'treemacs-visit-node-in-most-recently-used-window)
+  :config
+  (with-eval-after-load 'treemacs
+    (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)))
 
 (use-package treemacs-evil)
 (use-package treemacs-projectile)
