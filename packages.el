@@ -407,3 +407,10 @@
   :hook (text-mode . flycheck-languagetool-setup))
 
 (use-package reformatter)
+
+(use-package yasnippet
+  :config
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode))
+
+(use-package yasnippet-snippets)
