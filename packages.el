@@ -392,6 +392,10 @@
   :config
   (setq gpt-openai-key (getenv "GPT_OPENAI_KEY")))
 
+(use-package codegpt
+  :config
+  (setq openai-key (getenv "GPT_OPENAI_KEY")))
+
 (use-package tree-sitter
   :config
   (global-tree-sitter-mode)
@@ -401,6 +405,8 @@
   :quelpa (tree-sitter-langs :upgrade nil :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
 
 (use-package helm-tree-sitter)
+
+(use-package ts-fold)
 
 (use-package flycheck-languagetool
   ;; The service needs to be started first with:
