@@ -406,7 +406,9 @@
 
 (use-package helm-tree-sitter)
 
-(use-package ts-fold)
+(use-package ts-fold
+  :config
+  (add-hook 'tree-sitter-after-on-hook #'ts-fold-indicators-mode))
 
 (use-package flycheck-languagetool
   ;; The service needs to be started first with:
