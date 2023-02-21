@@ -187,6 +187,14 @@
   :config
   (company-quickhelp-mode))
 
+(use-package company-quickhelp-terminal
+  :if (not window-system)
+  :custom
+  (company-quickhelp-use-propertized-text nil)
+  :config
+  (with-eval-after-load 'company-quickhelp
+    (company-quickhelp-terminal-mode 1)))
+
 (use-package ace-jump-mode)
 
 (use-package rainbow-delimiters
