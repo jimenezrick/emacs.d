@@ -318,7 +318,7 @@
 (use-package org-journal)
 
 (use-package org-super-links
-  :quelpa (org-super-links :upgrade nil :repo "toshism/org-super-links" :fetcher github :commit "develop"))
+  :quelpa (org-super-links :repo "toshism/org-super-links" :fetcher github :commit "develop"))
 
 (use-package deft
   :custom
@@ -410,7 +410,7 @@
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package tree-sitter-langs
-  :quelpa (tree-sitter-langs :upgrade nil :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
+  :quelpa (tree-sitter-langs :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
 
 (use-package helm-tree-sitter)
 
