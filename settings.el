@@ -67,5 +67,5 @@
 
 (setq-default max-specpdl-size 3200)
 
-; Enable to show a backtrace on any error
-;(setq debug-on-error t)
+;; Enable to show a backtrace on any error
+;;(setq debug-on-error t)
