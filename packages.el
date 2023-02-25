@@ -3,6 +3,7 @@
   (quelpa-update-melpa-p nil))
 
 (use-package helm
+  :disabled
   :custom
   (helm-M-x-fuzzy-match t)
   (helm-buffers-fuzzy-matching t)
@@ -38,13 +39,6 @@
   (evil-want-C-u-scroll t)
   (evil-want-fine-undo t)
   :config
-  (defun my-helm-mini ()
-    (if (not (projectile-project-p))
-        (setq-local helm-mini-default-sources '(helm-source-buffers-list
-                                                helm-source-recentf
-                                                helm-source-buffer-not-found)))
-    (helm-mini))
-
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
 
@@ -56,7 +50,8 @@
   (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
   (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
-  (define-key evil-normal-state-map (kbd "SPC") (lambda () (interactive) (my-helm-mini)))
+  (define-key evil-normal-state-map (kbd "C-c SPC") 'tab-switch)
+  (define-key evil-normal-state-map (kbd "SPC") 'switch-to-buffer)
   (define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
 
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)

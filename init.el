@@ -17,6 +17,7 @@
 (setq use-package-compute-statistics t)
 
 (load (expand-file-name "packages" user-emacs-directory))
+(load (expand-file-name "packages-completion" user-emacs-directory))
 (load (expand-file-name "packages-haskell" user-emacs-directory))
 (load (expand-file-name "packages-rust" user-emacs-directory))
 (load (expand-file-name "packages-go" user-emacs-directory))
