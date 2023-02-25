@@ -7,7 +7,8 @@
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (setq  package-selected-packages '(use-package))
-  (package-install-selected-packages))
+  (package-install-selected-packages)
+  (setq fresh-install t))
 
 (eval-when-compile
   (require 'use-package))
@@ -27,3 +28,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
+
+(if (bound-and-true-p fresh-install)
+    (all-the-icons-install-fonts))
