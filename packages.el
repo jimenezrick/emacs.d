@@ -108,9 +108,9 @@
   (dashboard-banner-logo-title nil)
   (dashboard-set-init-info nil)
   (dashboard-set-footer nil)
-  (dashboard-items '((recents . 10)
+  (dashboard-items '((recents . 15)
+                     (projects . 10)
                      (bookmarks . 5)
-                     (projects . 5)
                      (registers . 5)))
   :init
   (if (< (length command-line-args) 2)
