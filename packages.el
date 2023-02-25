@@ -392,7 +392,8 @@
    '((":TODO:" . ((lambda (tag) (svg-tag-make "TODO"))))))
   :hook (org-mode text-mode))
 
-(use-package jupyter)
+(use-package jupyter
+  :disabled)
 
 (use-package gpt
   :custom
@@ -419,6 +420,7 @@
   (add-hook 'tree-sitter-after-on-hook #'ts-fold-indicators-mode))
 
 (use-package flycheck-languagetool
+  :disabled
   ;; The service needs to be started first with:
   ;; systemctl start languagetool.service
   :custom
