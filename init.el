@@ -13,6 +13,7 @@
   (require 'use-package))
 
 (setq use-package-always-ensure t)
+(setq use-package-compute-statistics t)
 
 (load (expand-file-name "packages" user-emacs-directory))
 (load (expand-file-name "packages-haskell" user-emacs-directory))
