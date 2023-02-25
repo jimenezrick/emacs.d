@@ -51,7 +51,7 @@
   (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
   (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
   (define-key evil-normal-state-map (kbd "C-c SPC") 'tab-switch)
-  (define-key evil-normal-state-map (kbd "SPC") 'switch-to-buffer)
+  (define-key evil-normal-state-map (kbd "SPC") 'consult-buffer)
   (define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
 
   (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
@@ -368,6 +368,8 @@
   (eglot-events-buffer-size 0)
   :config
   (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
+  ;; TODO: Emacs 29
+  ;;(add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
   (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1))))
 
 (use-package vterm)
