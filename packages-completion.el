@@ -2,6 +2,8 @@
   :custom
   (vertico-count 20)
   (vertico-resize t)
+  :bind (:map vertico-map
+              ("C-w" . backward-kill-word))
   :init
   (vertico-mode)
   (savehist-mode))

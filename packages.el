@@ -63,7 +63,9 @@
   (define-key evil-normal-state-map (kbd "S-<prior>") 'tab-previous)
   (define-key evil-normal-state-map (kbd "S-<next>") 'tab-next)
 
-  (add-to-list 'evil-insert-state-modes 'git-commit-mode))
+  (add-to-list 'evil-insert-state-modes 'git-commit-mode)
+  :bind (:map evil-normal-state-map
+              ("C-." . nil)))
 
 (use-package evil-collection
   :after evil
