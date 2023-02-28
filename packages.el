@@ -41,30 +41,31 @@
   :config
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
-
-  (define-key evil-insert-state-map (kbd "C-k") 'comment-indent-new-line)
-  (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 6)))
-  (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 6)))
-  (define-key evil-normal-state-map (kbd "s") 'ace-jump-mode)
-  (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-x C-o") 'company-complete)
-  (define-key evil-insert-state-map (kbd "C-x C-f") 'company-files)
-  (define-key evil-normal-state-map (kbd "C-p") 'fzf-git-files)
-  (define-key evil-normal-state-map (kbd "C-c SPC") 'tab-switch)
-  (define-key evil-normal-state-map (kbd "SPC") 'consult-buffer)
-  (define-key evil-normal-state-map (kbd "M-.") 'xref-find-definitions)
-
-  (define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
-  (define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
-  (define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
-  (define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
-  (define-key evil-normal-state-map (kbd "C-w f") 'make-frame)
-  (define-key evil-normal-state-map (kbd "C-w t") 'tab-new)
-  (define-key evil-normal-state-map (kbd "S-<prior>") 'tab-previous)
-  (define-key evil-normal-state-map (kbd "S-<next>") 'tab-next)
-
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
-  :bind (:map evil-normal-state-map
+  :bind (:map evil-insert-state-map
+              ("C-k" 'comment-indent-new-line)
+              ("C-j" 'evil-normal-state)
+              ("C-x C-o" 'company-complete)
+              ("C-x C-f" 'company-files)
+         :map evil-normal-state-map
+              ("C-j" (lambda () (interactive) (evil-next-line 6)))
+              ("C-k" (lambda () (interactive) (evil-previous-line 6)))
+              ("s" 'ace-jump-mode)
+
+              ("C-p" 'fzf-git-files)
+              ("C-c SPC" 'tab-switch)
+              ("SPC" 'consult-buffer)
+              ("M-." 'xref-find-definitions)
+
+              ("C-w C-h" 'evil-window-left)
+              ("C-w C-l" 'evil-window-right)
+              ("C-w C-k" 'evil-window-up)
+              ("C-w C-j" 'evil-window-down)
+              ("C-w f" 'make-frame)
+              ("C-w t" 'tab-new)
+              ("S-<prior>" 'tab-previous)
+              ("S-<next>" 'tab-next)
+
               ("C-." . nil)))
 
 (use-package evil-collection
