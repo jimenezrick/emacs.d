@@ -79,11 +79,6 @@
   :config
   (evilnc-default-hotkeys))
 
-(use-package ggtags
-  :config
-  (add-hook 'text-mode-hook #'ggtags-mode)
-  (add-hook 'prog-mode-hook #'ggtags-mode))
-
 (use-package treemacs
   :custom
   (treemacs-missing-project-action 'remove)
@@ -432,3 +427,16 @@
   (add-hook 'prog-mode-hook #'yas-minor-mode))
 
 (use-package yasnippet-snippets)
+
+(use-package citre
+  :custom
+  (citre-project-root-function #'projectile-project-root)
+  (citre-default-create-tags-file-location 'project-cache)
+  (citre-use-project-root-when-creating-tags t)
+  (citre-prompt-language-for-ctags-command t)
+  :bind (:map citre-mode-map
+              ("C-x c j" . citre-jump)
+              ("C-x c J" . citre-jump-back)
+              ("C-x c p" . citre-peek) ;; Use later citre-peek-through
+              ("C-x c u" . citre-create-tags-file))
+  :hook (prog-mode))
