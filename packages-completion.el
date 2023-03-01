@@ -54,7 +54,9 @@
 
 (use-package consult
   :after evil
-  :bind (:map evil-normal-state-map
+  :bind (:map global-map
+              ("C-c l" . nil)
+         :map evil-normal-state-map
               ("C-c f" . consult-find)
               ("C-c g" . consult-git-grep)
               ("C-c G" . consult-grep)
@@ -134,10 +136,8 @@
 
 
 (use-package embark
-  :bind
-  (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+  :bind (("C-;" . embark-act)
+         ([remap describe-bindings] . embark-bindings))
   :init
   ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)

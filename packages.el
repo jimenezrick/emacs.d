@@ -12,16 +12,12 @@
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
-  :bind (:map global-map
-              ("C-c l" . nil)
-         :map evil-insert-state-map
+  :bind (:map evil-insert-state-map
               ("C-k" . 'comment-indent-new-line)
               ("C-j" . 'evil-normal-state)
               ("C-x C-o" . 'company-complete)
               ("C-x C-f" . 'company-files)
          :map evil-normal-state-map
-              ("C-." . nil)
-
               ("C-j" . (lambda () (interactive) (evil-next-line 6)))
               ("C-k" . (lambda () (interactive) (evil-previous-line 6)))
               ("s" . 'ace-jump-mode)
@@ -397,12 +393,12 @@
   (citre-use-project-root-when-creating-tags t)
   (citre-prompt-language-for-ctags-command t)
   :bind (:map citre-mode-map
-              ("C-x c j" . citre-jump)
-              ("C-x c J" . citre-jump-back)
-              ("C-x c p" . citre-peek) ;; Use later citre-peek-through
-              ("C-x c c" . citre-create-tags-file)
-              ("C-x c u" . citre-update-tags-file))
+              ("C-c j" . citre-jump)
+              ("C-c J" . citre-jump-back)
+              ("C-c ." . citre-peek) ;; Use later citre-peek-through
+              ("C-c c" . citre-create-tags-file)
+              ("C-c u" . citre-update-tags-file))
   :hook (prog-mode))
 
 (use-package helpful
-  :bind ([remap describe-symbol] . helpful-symbol))
+  :bind (([remap describe-symbol] . helpful-symbol)))
