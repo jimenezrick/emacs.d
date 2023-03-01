@@ -2,36 +2,6 @@
   :custom
   (quelpa-update-melpa-p nil))
 
-(use-package helm
-  :disabled
-  :custom
-  (helm-M-x-fuzzy-match t)
-  (helm-buffers-fuzzy-matching t)
-  (helm-recentf-fuzzy-match t)
-  (helm-etags-fuzzy-match t)
-  (helm-split-window-in-side-p t)
-  :config
-  (helm-mode)
-  (helm-autoresize-mode)
-  :bind (("M-x" . helm-M-x)
-         ("C-c j" . helm-all-mark-rings)
-         ("C-c t" . helm-imenu-in-all-buffers)
-         ("C-c T" . imenu-list-smart-toggle)
-         ("C-x C-f" . helm-find-files)
-         :map helm-map
-         ("<tab>" . helm-execute-persistent-action)
-         ("C-z" . helm-select-action)))
-
-(use-package helm-xref)
-
-(use-package helm-git-grep
-  :bind (("C-c ." . helm-git-grep-at-point)
-         ("C-c g" . helm-git-grep)
-         :map c-mode-base-map
-         ("C-c ." . nil)))
-
-(use-package helm-ls-git)
-
 (use-package evil
   :after (consult evil-nerd-commenter)
   :custom
@@ -140,17 +110,6 @@
 (use-package projectile
   :config
   (projectile-mode))
-
-(use-package helm-projectile
-  :custom
-  (helm-mini-default-sources '(helm-source-projectile-buffers-list
-                               helm-source-buffers-list
-                               helm-source-projectile-recentf-list
-                               helm-source-recentf
-                               helm-source-projectile-projects
-                               helm-source-buffer-not-found))
-  :config
-  (helm-projectile-on))
 
 (use-package recentf
   :config
@@ -318,8 +277,6 @@
 
 (use-package org-ql)
 
-(use-package helm-org-ql)
-
 (use-package org-sidebar)
 
 (use-package org-journal)
@@ -421,8 +378,6 @@
 
 (use-package tree-sitter-langs
   :quelpa (tree-sitter-langs :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
-
-(use-package helm-tree-sitter)
 
 (use-package ts-fold
   :config
