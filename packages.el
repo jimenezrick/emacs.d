@@ -4,9 +4,10 @@
 
 (use-package evil
   :custom
-  (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
   (evil-want-fine-undo t)
+  :init
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
