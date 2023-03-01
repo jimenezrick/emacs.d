@@ -333,8 +333,10 @@
 
 (use-package imenu-list
   :custom
+  (imenu-auto-rescan t)
   (imenu-list-auto-resize nil)
-  (imenu-list-size 40))
+  (imenu-list-size 40)
+  :bind (("C-c T" . imenu-list-smart-toggle)))
 
 (use-package tab-bar-echo-area
   :config
@@ -398,5 +400,6 @@
               ("C-x c j" . citre-jump)
               ("C-x c J" . citre-jump-back)
               ("C-x c p" . citre-peek) ;; Use later citre-peek-through
-              ("C-x c u" . citre-create-tags-file))
+              ("C-x c c" . citre-create-tags-file)
+              ("C-x c u" . citre-update-tags-file))
   :hook (prog-mode))

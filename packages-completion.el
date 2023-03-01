@@ -3,14 +3,13 @@
   (vertico-count 20)
   (vertico-resize t)
   :bind (:map vertico-map
+              ("C-u" . backward-kill-sentence)
               ("C-w" . backward-kill-word))
   :init
   (vertico-mode)
   (savehist-mode))
 
 (use-package emacs
-  :bind (:map c-mode-base-map
-              ("C-c ." . nil))
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
   ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
@@ -56,9 +55,11 @@
 (use-package consult
   :after evil
   :bind (:map evil-normal-state-map
+              ("C-c f" . consult-find)
               ("C-c g" . consult-git-grep)
               ("C-c G" . consult-grep)
               ("C-c r" . consult-isearch-history)
+              ("C-c t" . consult-imenu)
               ("SPC" . 'consult-buffer)
               ("C-c y" . consult-yank-from-kill-ring)
               ("C-c o" . consult-outline)

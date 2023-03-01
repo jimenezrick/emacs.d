@@ -46,8 +46,6 @@
 (setq-default auth-source-save-behavior nil)
 (setq-default tramp-default-method "ssh")
 
-(setq-default imenu-auto-rescan t)
-
 (setq-default tags-revert-without-query t)
 
 (setq-default completions-detailed t)
