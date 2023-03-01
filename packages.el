@@ -16,8 +16,6 @@
               ("C-c l" . nil)
          :map c-mode-base-map
               ("C-c ." . nil)
-         :map consult-narrow-map
-              ("C-c m" . nil)
          :map evil-insert-state-map
               ("C-k" . 'comment-indent-new-line)
               ("C-j" . 'evil-normal-state)
@@ -29,8 +27,6 @@
               ("C-j" . (lambda () (interactive) (evil-next-line 6)))
               ("C-k" . (lambda () (interactive) (evil-previous-line 6)))
               ("s" . 'ace-jump-mode)
-
-              ("M-;" . evilnc-comment-or-uncomment-lines)
 
               ("C-c g" . consult-git-grep)
               ("C-c G" . consult-grep)
@@ -64,7 +60,10 @@
   (define-key evil-normal-state-map (kbd "C-c C-=") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c C--") 'evil-numbers/dec-at-pt))
 
-(use-package evil-nerd-commenter)
+(use-package evil-nerd-commenter
+  :after evil
+  :bind (:map evil-normal-state-map
+              ("M-;" . evilnc-comment-or-uncomment-lines)))
 
 (use-package treemacs
   :custom
