@@ -35,3 +35,9 @@
 
 * Tabs
 - Select with: =M-x tab-switch=.
+
+* TODO
+- Plus:
+  https://github.com/minad/corfu
+  https://github.com/minad/cape
+  https://github.com/minad/consult#auxiliary-packages (enable extensions)
