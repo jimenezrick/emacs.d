@@ -257,7 +257,8 @@
      (calc . t)
      (haskell . t)
      (shell . t)
-     (jupyter . t)))
+     ;;(jupyter . t)
+     ))
   (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
   (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'org-mode-hook (lambda () (setq-local
