@@ -18,6 +18,8 @@
               ("C-x C-o" . 'company-complete)
               ("C-x C-f" . 'company-files)
          :map evil-normal-state-map
+              ("C-." . nil)
+
               ("C-j" . (lambda () (interactive) (evil-next-line 6)))
               ("C-k" . (lambda () (interactive) (evil-previous-line 6)))
               ("s" . 'ace-jump-mode)
@@ -187,6 +189,10 @@
   (undo-tree-visualizer-timestamps t)
   :config
   (global-undo-tree-mode))
+
+(use-package flyspell
+  :bind (:map flyspell-mode-map
+              ("C-." . nil)))
 
 (use-package flyspell-popup
   :config

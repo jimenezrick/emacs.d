@@ -134,7 +134,6 @@
 
 
 
-
 (use-package embark
   :bind (("C-." . embark-act)
          ([remap describe-bindings] . embark-bindings))
