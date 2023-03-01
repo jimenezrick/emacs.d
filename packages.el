@@ -3,7 +3,6 @@
   (quelpa-update-melpa-p nil))
 
 (use-package evil
-  :after (consult evil-nerd-commenter)
   :custom
   (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
@@ -14,8 +13,6 @@
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
   :bind (:map global-map
               ("C-c l" . nil)
-         :map c-mode-base-map
-              ("C-c ." . nil)
          :map evil-insert-state-map
               ("C-k" . 'comment-indent-new-line)
               ("C-j" . 'evil-normal-state)
@@ -28,17 +25,8 @@
               ("C-k" . (lambda () (interactive) (evil-previous-line 6)))
               ("s" . 'ace-jump-mode)
 
-              ("C-c g" . consult-git-grep)
-              ("C-c G" . consult-grep)
-
               ("C-p" . 'fzf-git-files)
               ("C-c SPC" . 'tab-switch)
-              ("SPC" . 'consult-buffer)
-              ("C-c y" . consult-yank-from-kill-ring)
-              ("C-c o" . consult-outline)
-              ("C-c m" . consult-mark)
-              ("C-c l" . consult-line)
-              ("C-c L" . consult-line-multi)
               ("M-." . 'xref-find-definitions)
 
               ("C-w C-h" . 'evil-window-left)
@@ -61,7 +49,6 @@
   (define-key evil-normal-state-map (kbd "C-c C--") 'evil-numbers/dec-at-pt))
 
 (use-package evil-nerd-commenter
-  :after evil
   :bind (:map evil-normal-state-map
               ("M-;" . evilnc-comment-or-uncomment-lines)))
 
