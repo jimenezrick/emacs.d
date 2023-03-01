@@ -136,7 +136,7 @@
 
 
 (use-package embark
-  :bind (("C-;" . embark-act)
+  :bind (("C-." . embark-act)
          ([remap describe-bindings] . embark-bindings))
   :init
   ;; Optionally replace the key help with a completing-read interface
