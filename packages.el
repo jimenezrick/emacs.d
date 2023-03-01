@@ -14,7 +14,6 @@
   (helm-mode)
   (helm-autoresize-mode)
   :bind (("M-x" . helm-M-x)
-         ("C-c y" . helm-show-kill-ring)
          ("C-c j" . helm-all-mark-rings)
          ("C-c t" . helm-imenu-in-all-buffers)
          ("C-c T" . imenu-list-smart-toggle)
@@ -34,6 +33,7 @@
 (use-package helm-ls-git)
 
 (use-package evil
+  :after (consult evil-nerd-commenter)
   :custom
   (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
@@ -42,31 +42,47 @@
   (evil-mode)
   (evil-set-undo-system 'undo-tree)
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
-  :bind (:map evil-insert-state-map
-              ("C-k" 'comment-indent-new-line)
-              ("C-j" 'evil-normal-state)
-              ("C-x C-o" 'company-complete)
-              ("C-x C-f" 'company-files)
+  :bind (:map global-map
+              ("C-c l" . nil)
+         :map c-mode-base-map
+              ("C-c ." . nil)
+         :map consult-narrow-map
+              ("C-c m" . nil)
+         :map evil-insert-state-map
+              ("C-k" . 'comment-indent-new-line)
+              ("C-j" . 'evil-normal-state)
+              ("C-x C-o" . 'company-complete)
+              ("C-x C-f" . 'company-files)
          :map evil-normal-state-map
-              ("C-j" (lambda () (interactive) (evil-next-line 6)))
-              ("C-k" (lambda () (interactive) (evil-previous-line 6)))
-              ("s" 'ace-jump-mode)
+              ("C-." . nil)
 
-              ("C-p" 'fzf-git-files)
-              ("C-c SPC" 'tab-switch)
-              ("SPC" 'consult-buffer)
-              ("M-." 'xref-find-definitions)
+              ("C-j" . (lambda () (interactive) (evil-next-line 6)))
+              ("C-k" . (lambda () (interactive) (evil-previous-line 6)))
+              ("s" . 'ace-jump-mode)
 
-              ("C-w C-h" 'evil-window-left)
-              ("C-w C-l" 'evil-window-right)
-              ("C-w C-k" 'evil-window-up)
-              ("C-w C-j" 'evil-window-down)
-              ("C-w f" 'make-frame)
-              ("C-w t" 'tab-new)
-              ("S-<prior>" 'tab-previous)
-              ("S-<next>" 'tab-next)
+              ("M-;" . evilnc-comment-or-uncomment-lines)
 
-              ("C-." . nil)))
+              ("C-c g" . consult-git-grep)
+              ("C-c G" . consult-grep)
+
+              ("C-p" . 'fzf-git-files)
+              ("C-c SPC" . 'tab-switch)
+              ("SPC" . 'consult-buffer)
+              ("C-c y" . consult-yank-from-kill-ring)
+              ("C-c o" . consult-outline)
+              ("C-c m" . consult-mark)
+              ("C-c l" . consult-line)
+              ("C-c L" . consult-line-multi)
+              ("M-." . 'xref-find-definitions)
+
+              ("C-w C-h" . 'evil-window-left)
+              ("C-w C-l" . 'evil-window-right)
+              ("C-w C-k" . 'evil-window-up)
+              ("C-w C-j" . 'evil-window-down)
+              ("C-w f" . 'make-frame)
+              ("C-w t" . 'tab-new)
+              ("S-<prior>" . 'tab-previous)
+              ("S-<next>" . 'tab-next)))
 
 (use-package evil-collection
   :after evil
@@ -78,9 +94,7 @@
   (define-key evil-normal-state-map (kbd "C-c C-=") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c C--") 'evil-numbers/dec-at-pt))
 
-(use-package evil-nerd-commenter
-  :config
-  (evilnc-default-hotkeys))
+(use-package evil-nerd-commenter)
 
 (use-package treemacs
   :custom
