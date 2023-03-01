@@ -403,3 +403,6 @@
               ("C-x c c" . citre-create-tags-file)
               ("C-x c u" . citre-update-tags-file))
   :hook (prog-mode))
+
+(use-package helpful
+  :bind ([remap describe-symbol] . helpful-symbol))
