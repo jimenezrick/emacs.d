@@ -58,6 +58,7 @@
               ("C-c r" . consult-isearch-history)
               ("C-c i" . consult-imenu)
               ("C-c I" . consult-imenu-multi)
+              ("C-c t" . xref-find-apropos)
               ("SPC" . consult-buffer)
               ("C-c y" . consult-yank-from-kill-ring)
               ("C-c o" . consult-outline)
