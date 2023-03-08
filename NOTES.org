@@ -37,7 +37,10 @@
 - Select with: =M-x tab-switch=.
 
 * TODO
-- Plus:
+- To try:
   https://github.com/minad/corfu
   https://github.com/minad/cape
-  https://github.com/minad/consult#auxiliary-packages (enable extensions)
+
+- Maybe:
+  https://github.com/TommyX12/company-tabnine
+  https://github.com/zerolfx/copilot.el
