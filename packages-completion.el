@@ -105,6 +105,25 @@
   (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
 )
 
+(use-package all-the-icons-completion
+  :after marginalia
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init
+  (all-the-icons-completion-mode))
+(use-package consult-dir
+  :bind (("C-x C-d" . consult-dir)
+         :map vertico-map
+         ("C-x C-d" . consult-dir)
+         ("C-x C-j" . consult-dir-jump-file)))
+(use-package consult-projectile)
+(use-package consult-eglot)
+(use-package consult-lsp)
+(use-package consult-flycheck)
+(use-package consult-flyspell)
+(use-package consult-company
+  :bind (:map company-mode-map
+              ([remap completion-at-point] . consult-company)))
+
 (use-package embark
   :bind (("C-." . embark-act) ;; Use later embark-collect
          ([remap describe-bindings] . embark-bindings))
