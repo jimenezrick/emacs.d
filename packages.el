@@ -173,7 +173,7 @@
 (use-package which-key
   :config
   (which-key-mode)
-  (which-key-setup-side-window-right))
+  (which-key-setup-minibuffer))
 
 (use-package yaml-mode
   :mode
