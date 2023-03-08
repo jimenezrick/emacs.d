@@ -53,7 +53,7 @@
               ("C-c l" . nil)
          :map evil-normal-state-map
               ("C-c f" . consult-find)
-              ("C-c g" . consult-git-grep)
+              ("C-c g" . consult-ripgrep)
               ("C-c G" . consult-grep)
               ("C-c r" . consult-isearch-history)
               ("C-c i" . consult-imenu)
@@ -98,12 +98,11 @@
    :preview-key '(:debounce 0.4 any))
 
   ;; Optionally configure the narrowing key.
-  ;; Both < and C-+ work reasonably well.
-  (setq consult-narrow-key "<") ;; "C-+"
+  (setq consult-narrow-key "C-+")
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
-  ;; (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
+  (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
 )
 
 (use-package embark
