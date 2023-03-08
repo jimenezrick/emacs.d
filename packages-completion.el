@@ -98,7 +98,7 @@
    :preview-key '(:debounce 0.4 any))
 
   ;; Optionally configure the narrowing key.
-  (setq consult-narrow-key "C-+")
+  (setq consult-narrow-key "<")
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
