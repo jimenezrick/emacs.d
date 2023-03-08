@@ -408,3 +408,7 @@
 
 (use-package helpful
   :bind (([remap describe-symbol] . helpful-symbol)))
+
+(use-package symbol-overlay)
+
+(use-package literate-calc-mode)
