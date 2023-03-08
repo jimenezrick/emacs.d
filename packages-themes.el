@@ -10,6 +10,9 @@
 (use-package apropospriate-theme
   :no-require t)
 
+(use-package ef-themes
+  :no-require t)
+
 (use-package spacemacs-theme
   :no-require t  ; Hack needed for this package to work
   :init

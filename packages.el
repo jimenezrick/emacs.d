@@ -173,7 +173,7 @@
 (use-package which-key
   :config
   (which-key-mode)
-  (which-key-setup-side-window-right))
+  (which-key-setup-minibuffer))
 
 (use-package yaml-mode
   :mode
@@ -408,3 +408,7 @@
 
 (use-package helpful
   :bind (([remap describe-symbol] . helpful-symbol)))
+
+(use-package symbol-overlay)
+
+(use-package literate-calc-mode)
