@@ -328,9 +328,9 @@
   (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1))))
 
 (use-package vterm)
-(use-package vterm-toggle
-  :bind (("C-c s" . vterm-toggle)
-         ("C-c S" . vterm-toggle-cd)))
+(use-package multi-vterm
+  :bind (("C-c s" . multi-vterm)
+         ("C-c S" . multi-vterm-dedicated-toggle)))
 
 (use-package imenu-list
   :custom
