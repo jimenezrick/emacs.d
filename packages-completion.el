@@ -120,9 +120,6 @@
 (use-package consult-lsp)
 (use-package consult-flycheck)
 (use-package consult-flyspell)
-(use-package consult-company
-  :bind (:map company-mode-map
-              ([remap completion-at-point] . consult-company)))
 
 (use-package embark
   :bind (("C-." . embark-act) ;; Use later embark-collect
