@@ -130,10 +130,6 @@
               ("C-p" . company-select-previous)
               ("C-n" . company-select-next)))
 
-(use-package company-box
-  :if window-system
-  :hook (company-mode . company-box-mode))
-
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode))
