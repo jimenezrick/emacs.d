@@ -53,6 +53,7 @@
               ("C-c l" . nil)
          :map evil-normal-state-map
               ("C-c f" . consult-find)
+              ("C-c p" . consult-projectile-switch-project)
               ("C-c g" . consult-ripgrep)
               ("C-c G" . consult-grep)
               ("C-c r" . consult-isearch-history)
