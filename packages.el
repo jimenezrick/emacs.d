@@ -411,3 +411,5 @@
 (use-package symbol-overlay)
 
 (use-package literate-calc-mode)
+
+(use-package sr-speedbar)
