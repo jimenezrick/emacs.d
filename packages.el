@@ -352,16 +352,6 @@
 (use-package jupyter
   :disabled)
 
-(use-package gpt
-  :custom
-  (gpt-openai-engine "code-davinci-002")
-  :config
-  (setq gpt-openai-key (getenv "GPT_OPENAI_KEY")))
-
-(use-package codegpt
-  :config
-  (setq openai-key (getenv "GPT_OPENAI_KEY")))
-
 (use-package tree-sitter
   :config
   (global-tree-sitter-mode)
