@@ -4,7 +4,6 @@
   (haskell-process-load-or-reload-prompt t)
   (haskell-process-auto-import-loaded-modules t)
   (haskell-process-log t)
-  (haskell-tags-on-save t)
   :config
   (defun haskell-mode-setup ()
     (haskell-indentation-mode -1)
