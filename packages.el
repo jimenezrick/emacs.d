@@ -401,3 +401,9 @@
 (use-package symbol-overlay)
 
 (use-package literate-calc-mode)
+
+(use-package gptel
+  :custom
+  (gptel-api-key (getenv "GPT_OPENAI_KEY")))
+
+(use-package annotate)
