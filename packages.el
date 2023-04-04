@@ -4,6 +4,7 @@
 
 (use-package evil
   :custom
+  (evil-symbol-word-search t)
   (evil-want-C-u-scroll t)
   (evil-want-fine-undo t)
   :init
