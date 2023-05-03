@@ -187,13 +187,9 @@
   :config
   (global-undo-tree-mode))
 
-(use-package flyspell
-  :bind (:map flyspell-mode-map
-              ("C-." . nil)))
-
-(use-package flyspell-popup
-  :config
-  (add-hook 'flyspell-mode-hook #'flyspell-popup-auto-correct-mode))
+(use-package jinx
+  :hook (emacs-startup . global-jinx-mode)
+  :bind ([remap ispell-word] . jinx-correct))
 
 (use-package markdown-mode
   :commands

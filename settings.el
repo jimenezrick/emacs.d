@@ -26,8 +26,6 @@
 (blink-cursor-mode -1)
 (setq-default visible-bell t)
 
-(add-hook 'text-mode-hook #'flyspell-mode)
-(add-hook 'prog-mode-hook #'flyspell-prog-mode)
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (setq-local
                                           python-indent-guess-indent-offset-verbose nil)))

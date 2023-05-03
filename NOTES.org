@@ -15,7 +15,8 @@
 - When switching between them, disable previous themes with =M-x disable-theme= to not have interference.
 
 * Spelling
-- Change language with =ispell-change-dictionary=
+- Correct closest misspelled word with =z ==.
+- Change language with =jinx-languages=.
 - Enable ~text-mode~ to check the grammar with ~languagetool~ (run first =systemctl start languagetool.service=).
 
 * Tree-Sitter

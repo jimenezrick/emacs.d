@@ -120,7 +120,6 @@
 (use-package consult-eglot)
 (use-package consult-lsp)
 (use-package consult-flycheck)
-(use-package consult-flyspell)
 
 (use-package embark
   :bind (("C-." . embark-act) ;; Use later embark-collect
