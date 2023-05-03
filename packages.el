@@ -211,6 +211,7 @@
   (org-confirm-babel-evaluate nil)
   (org-startup-indented t)
   (org-src-tab-acts-natively t)
+  (org-src-preserve-indentation t)
   (org-hide-emphasis-markers t)
   (org-hide-leading-stars t)
   (org-pretty-entities t)
