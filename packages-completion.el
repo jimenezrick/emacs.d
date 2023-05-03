@@ -122,7 +122,7 @@
 (use-package consult-flycheck)
 
 (use-package embark
-  :bind (("C-." . embark-act) ;; Use later embark-collect
+  :bind (("C-." . embark-act) ; Use later embark-collect
          ([remap describe-bindings] . embark-bindings))
   :init
   ;; Optionally replace the key help with a completing-read interface

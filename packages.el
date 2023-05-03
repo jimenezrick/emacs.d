@@ -387,7 +387,7 @@
   :bind (:map citre-mode-map
               ("C-c j" . citre-jump)
               ("C-c J" . citre-jump-back)
-              ("C-c ." . citre-peek) ;; Use later citre-peek-through
+              ("C-c ." . citre-peek) ; Use later citre-peek-through
               ("C-c c" . citre-create-tags-file)
               ("C-c u" . citre-update-tags-file))
   :hook (prog-mode))
