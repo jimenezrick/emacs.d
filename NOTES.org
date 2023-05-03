@@ -36,3 +36,7 @@
 
 * Tabs
 - Select with: =M-x tab-switch=.
+
+* Emacs packages
+- Refresh repos with: =package-refresh-contents=.
+- Upgrade all new available versions with: =package-list-packages= and later press =U x=.
