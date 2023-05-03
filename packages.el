@@ -408,6 +408,7 @@
   :commands (org-ai-mode
              org-ai-global-mode)
   :custom
+  (org-ai-openai-api-token (getenv "GPT_OPENAI_KEY"))
   (org-ai-default-chat-model "gpt-4")
   :init
   (add-hook 'org-mode-hook #'org-ai-mode)
