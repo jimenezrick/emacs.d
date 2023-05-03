@@ -404,4 +404,15 @@
   :custom
   (gptel-api-key (getenv "GPT_OPENAI_KEY")))
 
+(use-package org-ai
+  :commands (org-ai-mode
+             org-ai-global-mode)
+  :custom
+  (org-ai-default-chat-model "gpt-4")
+  :init
+  (add-hook 'org-mode-hook #'org-ai-mode)
+  (org-ai-global-mode)
+  :config
+  (org-ai-install-yasnippets))
+
 (use-package annotate)
