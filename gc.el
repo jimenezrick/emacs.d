@@ -18,11 +18,12 @@
 ;; 16 MB and reset `gc-cons-percentage' to its original value.
 ;; Also reset `file-name-handler-alist'
 (add-hook 'emacs-startup-hook
-          '(lambda ()
-             (setq gc-cons-threshold (* 16 1024 1024)
-                   gc-cons-percentage 0.1
-                   file-name-handler-alist file-name-handler-alist-original)
-             (makunbound 'file-name-handler-alist-original)))
+          #'(lambda ()
+              (setq gc-cons-threshold (* 16 1024 1024)
+                    gc-cons-percentage 0.1
+                    file-name-handler-alist file-name-handler-alist-original)
+              (makunbound 'file-name-handler-alist-original)
+              (message (emacs-init-time "Emacs startup time: %f seconds"))))
 
 ;; It may also be wise to raise gc-cons-threshold while the minibuffer is active, so the
 ;; GC doesn’t slow down expensive commands (or completion frameworks, like helm and ivy).
