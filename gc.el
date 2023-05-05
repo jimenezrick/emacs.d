@@ -1,7 +1,7 @@
 ;;; See: https://www.reddit.com/r/emacs/comments/yzb77m/an_easy_trick_i_found_to_improve_emacs_startup/ix08uwk/
 
 ;; Enable to show when a GC happens
-(setq garbage-collection-messages t)
+;;(setq garbage-collection-messages t)
 
 ;; Avoid garbage collection during startup. The GC eats up quite a bit of time, easily
 ;; doubling the startup time. The trick is to turn up the memory threshold in order to
