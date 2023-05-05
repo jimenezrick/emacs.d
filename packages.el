@@ -380,7 +380,10 @@
 (use-package yasnippet-snippets)
 
 (use-package citre
+  :init
+  (require 'citre-config)
   :custom
+  (citre-auto-enable-citre-mode-modes '(prog-mode))
   (citre-project-root-function #'projectile-project-root)
   (citre-default-create-tags-file-location 'project-cache)
   (citre-use-project-root-when-creating-tags t)
@@ -390,8 +393,7 @@
               ("C-c J" . citre-jump-back)
               ("C-c ." . citre-peek) ; Use later citre-peek-through
               ("C-c c" . citre-create-tags-file)
-              ("C-c u" . citre-update-tags-file))
-  :hook (prog-mode))
+              ("C-c u" . citre-update-tags-file)))
 
 (use-package helpful
   :bind (([remap describe-symbol] . helpful-symbol)))
