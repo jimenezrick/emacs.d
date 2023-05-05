@@ -115,7 +115,7 @@
   :custom
   (company-begin-commands '(self-insert-command))
   (company-require-match nil)
-  (company-idle-delay .1)
+  (company-idle-delay .2)
   (company-minimum-prefix-length 2)
   (company-tooltip-limit 20)
   (company-tooltip-align-annotations t)
