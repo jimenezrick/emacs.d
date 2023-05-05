@@ -48,7 +48,7 @@
   (marginalia-mode))
 
 (use-package consult
-  :after evil
+  :after (evil flycheck)
   :bind (:map global-map
               ("C-c l" . nil)
          :map evil-normal-state-map
@@ -65,7 +65,8 @@
               ("C-c o" . consult-outline)
               ("C-c m" . consult-mark)
               ("C-c l" . consult-line)
-              ("C-c L" . consult-line-multi))
+              ("C-c L" . consult-line-multi)
+              ("C-c e" . consult-flycheck))
   :hook (completion-list-mode . consult-preview-at-point-mode)
   :init
   ;; Optionally configure the register formatting. This improves the register
