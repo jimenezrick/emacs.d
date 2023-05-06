@@ -14,6 +14,9 @@
 * Color Themes
 - When switching between them, disable previous themes with =M-x disable-theme= to not have interference.
 
+* Tags
+- With the citre-mode, see https://github.com/universal-ctags/citre/blob/master/docs/user-manual/citre-peek.md#peek-the-definition-of-a-symbol on how to navigate when using =citre-peek=.
+
 * Spelling
 - Correct closest misspelled word with =z ==.
 - Change language with =jinx-languages=.
