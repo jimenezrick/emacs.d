@@ -15,7 +15,7 @@
   (require 'use-package))
 
 (setq use-package-always-ensure t)
-(setq use-package-compute-statistics t)
+(setq use-package-compute-statistics t) ; Use later (use-package-report)
 
 (load (expand-file-name "settings" user-emacs-directory))
 (load (expand-file-name "packages" user-emacs-directory))
