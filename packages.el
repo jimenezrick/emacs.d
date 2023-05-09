@@ -126,7 +126,7 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
-              ([tab] . company-complete-common-or-cycle)
+              ([tab] . company-complete-common-or-cycle) ; Use C-M-/ for dabbrev-completion
               ("C-f" . company-filter-candidates)
               ("C-p" . company-select-previous)
               ("C-n" . company-select-next)))
