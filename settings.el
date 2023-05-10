@@ -64,5 +64,11 @@
 
 (setq-default max-specpdl-size 3200)
 
+(setq mouse-wheel-scroll-amount '(2))
+(setq mouse-wheel-progressive-speed nil)
+
+;; TODO: Emacs 29
+;;(pixel-scroll-precision-mode)
+
 ;; Enable to show a backtrace on any error
 ;;(setq debug-on-error t)
