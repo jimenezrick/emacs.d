@@ -242,7 +242,7 @@
      (shell . t)
      ;;(jupyter . t)
      ))
-  (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
+  (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images 'append)
   (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'org-mode-hook (lambda () (setq-local
                                        left-margin-width 4
