@@ -58,6 +58,11 @@
 (setq-default x-gtk-use-system-tooltips nil)
 (winner-mode)
 
+(setq-default frame-title-format
+              '((:eval (if (buffer-file-name)
+                           (abbreviate-file-name (buffer-file-name))
+                         "%b"))))
+
 (bind-key "<f2>" 'save-buffer)
 
 (add-to-list 'auto-mode-alist '("/tmp/mutt.*" . mail-mode))
