@@ -319,11 +319,14 @@
 (use-package eglot
   :custom
   (eglot-events-buffer-size 0)
+  (eglot-autoshutdown t)
   :config
   (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
+  (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
   ;; TODO: Emacs 29
   ;;(add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
-  (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1))))
+  (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1)))
+  (add-hook 'python-mode-hook 'eglot-ensure))
 
 (use-package vterm)
 (use-package multi-vterm
