@@ -109,6 +109,7 @@
 
 (use-package flycheck
   :config
+  (flycheck-add-next-checker 'python-mypy 'python-pyright 'append)
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package company
@@ -239,6 +240,7 @@
    '((emacs-lisp . t)
      (calc . t)
      (haskell . t)
+     (python . t)
      (shell . t)
      ;;(jupyter . t)
      ))
