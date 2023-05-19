@@ -424,3 +424,7 @@
   (org-ai-install-yasnippets))
 
 (use-package annotate)
+
+(use-package minions
+  :config
+  (minions-mode))
