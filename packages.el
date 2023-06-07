@@ -410,7 +410,7 @@
 (use-package gptel
   :custom
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
-  (gptel-model "gpt-3.5-turbo"))
+  (gptel-model "gpt-4"))
 
 (use-package org-ai
   :commands (org-ai-mode
