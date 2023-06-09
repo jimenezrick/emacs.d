@@ -409,6 +409,7 @@
 
 (use-package gptel
   :custom
+  (gptel-default-mode 'markdown-mode)
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
   (gptel-model "gpt-4"))
 
