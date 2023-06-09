@@ -201,7 +201,9 @@
    ("\\.markdown\\'" . markdown-mode))
   :custom
   (markdown-command "pandoc")
-  (markdown-hide-markup t))
+  (markdown-hide-markup t)
+  :config
+  (add-hook 'markdown-mode-hook #'visible-mode))
 
 (use-package pandoc-mode
   :config
