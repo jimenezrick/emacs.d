@@ -48,8 +48,8 @@
 
 (setq-default completions-detailed t)
 
-(set-face-attribute 'default nil :family "Hack" :height 105)
-(set-face-attribute 'variable-pitch nil :family "Junicode" :height 130)
+(set-face-attribute 'default nil :family "Hack" :height 70)
+(set-face-attribute 'variable-pitch nil :family "Junicode" :height 90)
 (set-face-attribute 'bold nil :weight 'semibold)
 
 (menu-bar-mode -1)
