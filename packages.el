@@ -170,8 +170,7 @@
 
 (use-package which-key
   :config
-  (which-key-mode)
-  (which-key-setup-minibuffer))
+  (which-key-mode))
 
 (use-package yaml-mode
   :mode
