@@ -412,7 +412,9 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
-  (gptel-model "gpt-4"))
+  (gptel-model "gpt-4")
+  :config
+  (add-hook 'gptel-mode-hook 'visual-line-mode))
 
 (use-package org-ai
   :commands (org-ai-mode
