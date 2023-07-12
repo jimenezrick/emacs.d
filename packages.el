@@ -125,6 +125,7 @@
   (company-dabbrev-downcase nil)
   (company-dabbrev-ignore-case nil)
   :config
+  (add-to-list 'company-backends '(company-capf :with company-dabbrev-code))
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
               ([tab] . company-complete-common-or-cycle) ; Use C-M-/ for dabbrev-completion
