@@ -69,9 +69,6 @@
 
 (setq-default max-specpdl-size 3200)
 
-;; TODO: Emacs 29
-;;(pixel-scroll-precision-mode)
-
 (setq-default
  scroll-margin 2
  scroll-step 1
