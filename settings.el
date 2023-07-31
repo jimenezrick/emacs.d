@@ -69,6 +69,8 @@
 
 (setq-default max-specpdl-size 3200)
 
+(setq-default messages-buffer-max-lines (* 16 1000))
+
 (setq-default
  scroll-margin 2
  scroll-step 1
