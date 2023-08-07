@@ -371,6 +371,16 @@
   :config
   (add-hook 'tree-sitter-after-on-hook #'ts-fold-indicators-mode))
 
+(use-package evil-textobj-tree-sitter
+  :after evil tree-sitter
+  :config
+  ;; Use it with `vaf`
+  (define-key evil-outer-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.outer"))
+  ;; Use it with `vif`
+  (define-key evil-inner-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.inner"))
+  ;; Use it with `vaa`
+  (define-key evil-outer-text-objects-map "a" (evil-textobj-tree-sitter-get-textobj ("conditional.outer" "loop.outer"))))
+
 (use-package flycheck-languagetool
   :disabled
   ;; The service needs to be started first with:
