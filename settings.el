@@ -55,8 +55,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (context-menu-mode)
-(setq-default x-gtk-use-system-tooltips nil)
 (winner-mode)
+(setq-default
+ x-gtk-use-system-tooltips nil
+ use-dialog-box nil)
 
 (setq-default frame-title-format
               '((:eval (if (buffer-file-name)
