@@ -5,6 +5,7 @@
 (load (expand-file-name "repos" user-emacs-directory))
 (package-initialize)
 
+;; Trigger a full fresh install
 (when (not (package-installed-p 'use-package))
   (package-refresh-contents)
   (setq  package-selected-packages '(use-package))
