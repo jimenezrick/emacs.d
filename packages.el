@@ -107,6 +107,8 @@
 
 (use-package magit)
 
+(use-package vdiff)
+
 (use-package flycheck
   :config
   (flycheck-add-next-checker 'python-mypy 'python-pyright 'append)
