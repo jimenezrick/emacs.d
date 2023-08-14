@@ -127,7 +127,7 @@
   (company-dabbrev-downcase nil)
   (company-dabbrev-ignore-case nil)
   :config
-  (add-to-list 'company-backends '(company-capf :with company-dabbrev-code))
+  (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
               ([tab] . company-complete-common-or-cycle) ; Use C-M-/ for dabbrev-completion
@@ -332,7 +332,7 @@
   (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
-              (add-to-list 'company-backends '(company-capf :with company-dabbrev-code))
+              (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
               (flymake-mode -1)))
   (add-hook 'python-mode-hook 'eglot-ensure))
 
