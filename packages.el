@@ -283,12 +283,15 @@
   :config
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
 
-(use-package highlight-indent-guides
+(use-package indent-bars
+  :quelpa (indent-bars :repo "jdtsmith/indent-bars" :fetcher github :commit "main")
   :custom
-  (highlight-indent-guides-method 'column)
-  (highlight-indent-guides-responsive 'top)
-  :config
-  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
+  (indent-bars-color '(highlight :face-bg t :blend 0.15))
+  (indent-bars-pattern ".")
+  (indent-bars-width-frac 0.1)
+  (indent-bars-highlight-current-depth '(:blend 0.5))
+  (indent-bars-display-on-blank-lines t)
+  :hook (prog-mode . indent-bars-mode))
 
 (use-package elfeed
   :custom
