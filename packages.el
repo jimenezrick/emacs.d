@@ -364,13 +364,11 @@
 (use-package jupyter
   :disabled)
 
-(use-package tree-sitter
+(use-package treesit-auto
+  :custom
+  (treesit-auto-install t)
   :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
-(use-package tree-sitter-langs
-  :quelpa (tree-sitter-langs :repo "emacs-tree-sitter/tree-sitter-langs" :fetcher github :commit "master"))
+  (global-treesit-auto-mode))
 
 (use-package ts-fold
   :config

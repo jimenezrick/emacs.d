@@ -32,5 +32,7 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-(if (bound-and-true-p fresh-install)
-    (all-the-icons-install-fonts))
+;; Post-install setup
+(when (bound-and-true-p fresh-install)
+  (treesit-auto-install-all)
+  (all-the-icons-install-fonts))
