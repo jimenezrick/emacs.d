@@ -368,6 +368,18 @@
   :custom
   (treesit-auto-install t)
   :config
+  (add-to-list 'treesit-auto-recipe-list
+               (make-treesit-auto-recipe
+                :lang 'haskell
+                :ts-mode 'haskell-ts-mode
+                :remap 'haskell-mode
+                :url "https://github.com/tree-sitter/tree-sitter-haskell"))
+  (add-to-list 'treesit-auto-recipe-list
+               (make-treesit-auto-recipe
+                :lang 'elisp
+                :ts-mode 'elisp-ts-mode
+                :remap 'elisp-mode
+                :url "https://github.com/Wilfred/tree-sitter-elisp"))
   (global-treesit-auto-mode))
 
 (use-package ts-fold
