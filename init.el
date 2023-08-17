@@ -6,10 +6,8 @@
 (package-initialize)
 
 ;; Trigger a full fresh install
-(when (not (package-installed-p 'use-package))
+(when (not (package-installed-p 'evil))
   (package-refresh-contents)
-  (setq  package-selected-packages '(use-package))
-  (package-install-selected-packages)
   (setq fresh-install t))
 
 (eval-when-compile
