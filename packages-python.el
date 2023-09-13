@@ -1,6 +1,7 @@
 (use-package python-black
   :after python
-  :hook (python-mode . python-black-on-save-mode))
+  :hook (python-ts-mode . python-black-on-save-mode))
 
 (use-package python-isort
-  :hook (python-mode . python-isort-on-save-mode))
+  :after python
+  :hook (python-ts-mode . python-isort-on-save-mode))

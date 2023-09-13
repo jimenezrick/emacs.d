@@ -331,13 +331,13 @@
   (eglot-autoshutdown t)
   :config
   (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
-  (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
   (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
               (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
               (flymake-mode -1)))
-  (add-hook 'python-mode-hook 'eglot-ensure))
+  (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
 (use-package vterm)
 (use-package multi-vterm

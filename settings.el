@@ -27,7 +27,7 @@
 (setq-default visible-bell t)
 
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-(add-hook 'python-mode-hook #'(lambda () (setq-local
+(add-hook 'python-ts-mode-hook #'(lambda () (setq-local
                                           python-indent-guess-indent-offset-verbose nil)))
 (add-hook 'sh-mode-hook #'(lambda () (setq-local
                                       indent-tabs-mode t
