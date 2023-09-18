@@ -461,3 +461,42 @@
 (use-package minions
   :config
   (minions-mode))
+
+(use-package shackle
+  :init
+  (setq shackle-default-alignment 'below
+        shackle-default-size 0.4
+        shackle-rules '((help-mode           :align below :select t)
+                        (helpful-mode        :align below)
+                        (compilation-mode    :select t   :size 0.25)
+                        ("*compilation*"     :select nil :size 0.25)
+                        ("*Flycheck errors*" :select nil :size 0.25)
+                        ("*scratch*"         :select nil :size 0.25)
+                        ("*Messages*"        :select nil :size 0.25)
+                        ("*Warnings*"        :select nil :size 0.25)
+                        ("*Error*"           :select nil :size 0.25)
+                        ("*Async-native-compile-log*" :select nil :size 0.25)))
+  :config
+  (shackle-mode))
+
+(use-package popper
+  :bind (("C-<return>" . popper-toggle)
+         ("C-|" . popper-toggle-type)
+         :map popper-mode-map
+         ("C-\\" . popper-cycle))
+  :custom
+  (popper-display-control nil) ; Use shackle
+  (popper-reference-buffers
+   '(help-mode
+     helpful-mode
+     compilation-mode
+     "\\*compilation\\*"
+     "\\*Flycheck errors\\*"
+     "\\*scratch\\*"
+     "\\*Messages\\*"
+     "\\*Warnings\\*"
+     "\\*Error\\*"
+     "\\*Async-native-compile-log\\*"))
+  :config
+  (popper-mode)
+  (popper-echo-mode))
