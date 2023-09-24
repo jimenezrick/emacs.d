@@ -5,6 +5,11 @@
   (haskell-process-auto-import-loaded-modules t)
   (haskell-process-log t)
   :config
+  (reformatter-define cabal-format
+    :program "cabal-fmt"
+    :args '("/dev/stdin"))
+  (add-hook 'haskell-mode-hook 'cabal-format-on-save-mode)
+
   (defun haskell-mode-setup ()
     (haskell-indentation-mode -1)
     (interactive-haskell-mode)
