@@ -10,7 +10,8 @@
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
- version-control t)
+ version-control t
+ auto-revert-avoid-polling t)
 
 (setq-default
  indent-tabs-mode nil
@@ -20,6 +21,7 @@
 (setq-default bidi-inhibit-bpa t)
 (setq-default bidi-paragraph-direction 'left-to-right)
 
+(global-auto-revert-mode)
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)
