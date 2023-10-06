@@ -476,12 +476,12 @@
         shackle-rules '((help-mode           :align below :select t)
                         (helpful-mode        :align below)
                         (compilation-mode    :select t   :size 0.25)
-                        ("*compilation*"     :select nil :size 0.25)
                         ("*Flycheck errors*" :select nil :size 0.25)
                         ("*scratch*"         :select nil :size 0.25)
                         ("*Messages*"        :select nil :size 0.25)
                         ("*Warnings*"        :select nil :size 0.25)
                         ("*Error*"           :select nil :size 0.25)
+                        ("*Compile-Log*"     :select nil :size 0.25)
                         ("*Async-native-compile-log*" :select nil :size 0.25)))
   :config
   (shackle-mode))
@@ -497,12 +497,12 @@
    '(help-mode
      helpful-mode
      compilation-mode
-     "\\*compilation\\*"
      "\\*Flycheck errors\\*"
      "\\*scratch\\*"
      "\\*Messages\\*"
      "\\*Warnings\\*"
      "\\*Error\\*"
+     "\\*Compile-Log\\*"
      "\\*Async-native-compile-log\\*"))
   :config
   (popper-mode)
