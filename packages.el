@@ -109,6 +109,13 @@
 
 (use-package vdiff)
 
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode)
+  (diff-hl-flydiff-mode)
+  (unless window-system
+    (diff-hl-margin-mode)))
+
 (use-package flycheck
   :config
   (flycheck-add-next-checker 'python-mypy 'python-pyright 'append)
