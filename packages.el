@@ -482,7 +482,8 @@
                         ("*Warnings*"        :select nil :size 0.25)
                         ("*Error*"           :select nil :size 0.25)
                         ("*Compile-Log*"     :select nil :size 0.25)
-                        ("*Async-native-compile-log*" :select nil :size 0.25)))
+                        ("*Async-native-compile-log*" :select nil :size 0.25)
+                        ("*ChatGPT*"         :select nil :size 0.25)))
   :config
   (shackle-mode))
 
@@ -503,7 +504,8 @@
      "\\*Warnings\\*"
      "\\*Error\\*"
      "\\*Compile-Log\\*"
-     "\\*Async-native-compile-log\\*"))
+     "\\*Async-native-compile-log\\*"
+     "\\*ChatGPT\\*"))
   :config
   (popper-mode)
   (popper-echo-mode))
