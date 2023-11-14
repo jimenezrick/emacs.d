@@ -470,20 +470,20 @@
   (minions-mode))
 
 (use-package shackle
-  :init
-  (setq shackle-default-alignment 'below
-        shackle-default-size 0.4
-        shackle-rules '((help-mode           :align below :select t)
-                        (helpful-mode        :align below)
-                        (compilation-mode    :select t   :size 0.25)
-                        ("*Flycheck errors*" :select nil :size 0.25)
-                        ("*scratch*"         :select nil :size 0.25)
-                        ("*Messages*"        :select nil :size 0.25)
-                        ("*Warnings*"        :select nil :size 0.25)
-                        ("*Error*"           :select nil :size 0.25)
-                        ("*Compile-Log*"     :select nil :size 0.25)
-                        ("*Async-native-compile-log*" :select nil :size 0.25)
-                        ("*ChatGPT*"         :select nil :size 0.25)))
+  :custom
+  (shackle-default-size 0.33)
+  (shackle-default-alignment 'below)
+  (shackle-rules '((help-mode                    :select nil :align t)
+                   (helpful-mode                 :select nil :align t)
+                   (compilation-mode             :select nil :align t)
+                   (vterm-mode                   :select t   :align t)
+                   ("*scratch*"                  :select nil :align t)
+                   ("*Messages*"                 :select nil :align t)
+                   ("*Warnings*"                 :select nil :align t)
+                   ("*Error*"                    :select nil :align t)
+                   ("\*.*compile-log\*"          :select nil :align t :regexp t)
+                   ("*Flycheck errors*"          :select nil :align t)
+                   ("*ChatGPT*"                  :select t   :align t)))
   :config
   (shackle-mode))
 
@@ -498,13 +498,13 @@
    '(help-mode
      helpful-mode
      compilation-mode
-     "\\*Flycheck errors\\*"
+     vterm-mode
      "\\*scratch\\*"
      "\\*Messages\\*"
      "\\*Warnings\\*"
      "\\*Error\\*"
-     "\\*Compile-Log\\*"
-     "\\*Async-native-compile-log\\*"
+     "\*.*compile-log\*"
+     "\\*Flycheck errors\\*"
      "\\*ChatGPT\\*"))
   :config
   (popper-mode)
