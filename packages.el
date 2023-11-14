@@ -371,9 +371,16 @@
 (use-package jupyter
   :disabled)
 
+; TODO: waiting for https://github.com/renzmann/treesit-auto/pull/63
 (use-package treesit-auto
+  ;; HACK: prevents loading undesired ts-modes
+  :after rust-mode rust-ts-mode
+  :init
+  (add-hook 'rust-ts-mode-hook 'rust-mode)
+
   :custom
   (treesit-auto-install t)
+  (treesit-auto-langs '(python))
   :config
   (add-to-list 'treesit-auto-recipe-list
                (make-treesit-auto-recipe
