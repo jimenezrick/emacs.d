@@ -44,3 +44,6 @@
 * Emacs packages
 - Refresh repos with: =package-refresh-contents=.
 - Upgrade all new available versions with: =package-list-packages= and later press =U x=.
+
+* TODO
+- Use ~*-ts-mode~ in all the hooks for language modes.
