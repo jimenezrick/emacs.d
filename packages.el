@@ -388,7 +388,8 @@
                 :ts-mode 'elisp-ts-mode
                 :remap 'elisp-mode
                 :url "https://github.com/Wilfred/tree-sitter-elisp"))
-  (global-treesit-auto-mode))
+  (global-treesit-auto-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package ts-fold
   :config
