@@ -33,4 +33,4 @@
 ;; Post-install setup
 (when (bound-and-true-p fresh-install)
   (treesit-auto-install-all)
-  (all-the-icons-install-fonts))
+  (all-the-icons-install-fonts t))

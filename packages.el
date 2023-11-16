@@ -346,7 +346,10 @@
               (flymake-mode -1)))
   (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
-(use-package vterm)
+(use-package vterm
+  :custom
+  (vterm-always-compile-module t))
+
 (use-package multi-vterm
   :bind (("C-c s" . multi-vterm)
          ("C-c S" . multi-vterm-dedicated-toggle)))
