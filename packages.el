@@ -468,7 +468,9 @@
   :config
   (org-ai-install-yasnippets))
 
-(use-package annotate)
+(use-package annotate
+  :config
+  (add-hook 'after-init-hook #'annotate-mode))
 
 (use-package minions
   :config
