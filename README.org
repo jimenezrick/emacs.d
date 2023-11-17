@@ -18,6 +18,12 @@
 * Tags
 - With the citre-mode, see https://github.com/universal-ctags/citre/blob/master/docs/user-manual/citre-peek.md#peek-the-definition-of-a-symbol on how to navigate when using =citre-peek=.
 
+* Annotations
+- Enable =annotate-mode=
+- Mark a region with =annotate-annotate=
+- List annotations with =annotate-show-annotation-summary=
+- Disable with =annotate-toggle-all-annotations-text=
+
 * Spelling
 - Correct closest misspelled word with =z ==.
 - Change language with =jinx-languages=.
