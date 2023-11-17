@@ -487,6 +487,7 @@
                    ("*Warnings*"                 :select nil :align t)
                    ("*Error*"                    :select nil :align t)
                    ("\*.*compile-log\*"          :select nil :align t :regexp t)
+                   ("*annotations*"              :select nil :align right)
                    ("*Flycheck errors*"          :select nil :align t)
                    ("*ChatGPT*"                  :select t   :align t)))
   :config
@@ -509,6 +510,7 @@
      "\\*Warnings\\*"
      "\\*Error\\*"
      "\*.*compile-log\*"
+     "\\*annotations\\*"
      "\\*Flycheck errors\\*"
      "\\*ChatGPT\\*"))
   :config
