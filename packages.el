@@ -491,7 +491,7 @@
                    ("\*.*compile-log\*"          :select nil :align t :regexp t)
                    ("*annotations*"              :select nil :align right)
                    ("*Flycheck errors*"          :select nil :align t)
-                   ("*ChatGPT*"                  :select t   :align t)))
+                   ("*ChatGPT*"                  :select t   :align right)))
   :config
   (shackle-mode))
 
