@@ -27,6 +27,8 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (setq-default visible-bell t)
+(setq-default enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode)
 
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-ts-mode-hook #'(lambda () (setq-local
