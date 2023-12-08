@@ -526,5 +526,4 @@
   (popper-mode)
   (popper-echo-mode))
 
-(use-package beardbolt
-  :quelpa (beardbolt :repo "joaotavora/beardbolt" :fetcher github :commit "master"))
+(use-package rmsbolt)
