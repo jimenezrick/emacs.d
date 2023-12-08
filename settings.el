@@ -29,6 +29,7 @@
 (setq-default visible-bell t)
 (setq-default enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode)
+(setq-default eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
 
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-ts-mode-hook #'(lambda () (setq-local
