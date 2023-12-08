@@ -495,6 +495,7 @@
                    ("*Error*"                    :select nil :align t)
                    ("\*.*compile-log\*"          :select nil :align t :regexp t)
                    ("*annotations*"              :select nil :align right)
+                   ("*eldoc*"                    :select nil :align t)
                    ("*Flycheck errors*"          :select nil :align t)
                    ("*ChatGPT*"                  :select t   :align right)))
   :config
@@ -518,6 +519,7 @@
      "\\*Error\\*"
      "\*.*compile-log\*"
      "\\*annotations\\*"
+     "\\*eldoc\\*"
      "\\*Flycheck errors\\*"
      "\\*ChatGPT\\*"))
   :config
