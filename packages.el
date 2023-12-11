@@ -1,7 +1,3 @@
-(use-package quelpa-use-package
-  :custom
-  (quelpa-update-melpa-p nil))
-
 (use-package evil
   :custom
   (evil-symbol-word-search t)
@@ -279,7 +275,10 @@
 (use-package org-journal)
 
 (use-package org-super-links
-  :quelpa (org-super-links :repo "toshism/org-super-links" :fetcher github :commit "develop"))
+  :ensure nil
+  :init
+  (unless (package-installed-p 'org-super-links)
+    (package-vc-install "https://github.com/toshism/org-super-links.git")))
 
 (use-package deft
   :custom
@@ -291,7 +290,10 @@
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
 
 (use-package indent-bars
-  :quelpa (indent-bars :repo "jdtsmith/indent-bars" :fetcher github :commit "main")
+  :ensure nil
+  :init
+  (unless (package-installed-p 'indent-bars)
+    (package-vc-install "https://github.com/jdtsmith/indent-bars.git"))
   :custom
   (indent-bars-color '(highlight :face-bg t :blend 0.15))
   (indent-bars-pattern ".")

@@ -16,6 +16,10 @@
 (setq use-package-always-ensure t)
 (setq use-package-compute-statistics t) ; Use later (use-package-report)
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 (load (expand-file-name "settings" user-emacs-directory))
 (load (expand-file-name "packages" user-emacs-directory))
 (load (expand-file-name "packages-completion" user-emacs-directory))
@@ -25,10 +29,6 @@
 (load (expand-file-name "packages-python" user-emacs-directory))
 (load (expand-file-name "packages-devops" user-emacs-directory))
 (load (expand-file-name "packages-themes" user-emacs-directory))
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
 
 ;; Post-install setup
 (when (bound-and-true-p fresh-install)
