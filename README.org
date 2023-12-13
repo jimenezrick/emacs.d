@@ -25,6 +25,10 @@
 - Overlay a symbol with =symbol-overlay-put=
 - Disable with =symbol-overlay-remove-all=
 
+* Merging changes
+- =ediff=: to merge changes between different files
+- =smerge-mode= / =smerge-ediff=: to merge diff3 output from git
+
 * Spelling
 - Correct closest misspelled word with =z ==.
 - Change language with =jinx-languages=.
