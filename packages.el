@@ -528,4 +528,7 @@
   (popper-mode)
   (popper-echo-mode))
 
+(use-package breadcrumb
+  :hook (prog-mode . breadcrumb-mode))
+
 (use-package rmsbolt)
