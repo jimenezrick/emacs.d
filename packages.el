@@ -426,6 +426,8 @@
 (use-package reformatter)
 
 (use-package yasnippet
+  :custom
+  (yas-verbosity 1)
   :config
   (yas-reload-all)
   (add-hook 'prog-mode-hook #'yas-minor-mode))
