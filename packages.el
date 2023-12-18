@@ -257,6 +257,9 @@
                                        left-margin-width 4
                                        right-margin-width 4))))
 
+(use-package org-appear
+  :hook (org-mode . org-appear-mode))
+
 (use-package org-variable-pitch
   :config
   (add-hook 'after-init-hook #'org-variable-pitch-setup))
