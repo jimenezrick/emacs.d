@@ -7,7 +7,7 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode)
-  (evil-set-undo-system 'undo-tree)
+  (evil-set-undo-system 'undo-redo) ; Use native redo function
   (add-to-list 'evil-insert-state-modes 'git-commit-mode)
   :bind (:map evil-insert-state-map
               ("C-k" . 'comment-indent-new-line)
@@ -186,12 +186,28 @@
 
 (use-package goto-chg)
 
-(use-package undo-tree
+(use-package vundo
   :custom
-  (undo-tree-visualizer-diff t)
-  (undo-tree-visualizer-timestamps t)
-  :config
-  (global-undo-tree-mode))
+  (vundo-compact-display t)
+  (vundo-glyph-alist vundo-unicode-symbols)
+  :bind (:map vundo-mode-map
+              ("l" . 'vundo-forward)
+              ("<right>" . 'vundo-forward)
+              ("h" . 'vundo-backward)
+              ("<left>" . 'vundo-backward)
+              ("j" . 'vundo-next)
+              ("<down>" . 'vundo-next)
+              ("k" . 'vundo-previous)
+              ("<up>" . 'vundo-previous)
+              ("<home>" . 'vundo-stem-root)
+              ("<end>" . 'vundo-stem-end)
+              ("q" . 'vundo-quit)
+              ("C-g" . 'vundo-quit)
+              ("RET" . 'vundo-confirm)
+         :map evil-normal-state-map
+              ("m" . nil) ; vundo mark
+              ("u" . nil) ; vundo unmark
+              ("d" . nil))) ; vundo diff
 
 (use-package jinx
   :hook (emacs-startup . global-jinx-mode)
