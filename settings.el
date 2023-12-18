@@ -42,6 +42,10 @@
 (show-paren-mode)
 
 (setq-default
+ search-ring-max 256
+ regexp-search-ring-max 256)
+
+(setq-default
  select-enable-clipboard t
  select-enable-primary t
  mouse-drag-copy-region t)
