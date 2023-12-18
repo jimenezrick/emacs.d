@@ -203,11 +203,7 @@
               ("<end>" . 'vundo-stem-end)
               ("q" . 'vundo-quit)
               ("C-g" . 'vundo-quit)
-              ("RET" . 'vundo-confirm)
-         :map evil-normal-state-map
-              ("m" . nil) ; vundo mark
-              ("u" . nil) ; vundo unmark
-              ("d" . nil))) ; vundo diff
+              ("RET" . 'vundo-confirm)))
 
 (use-package jinx
   :hook (emacs-startup . global-jinx-mode)
