@@ -234,7 +234,7 @@
   (org-src-preserve-indentation t)
   (org-hide-emphasis-markers t)
   (org-hide-leading-stars t)
-  (org-pretty-entities t)
+  (org-pretty-entities nil)
   (org-startup-with-inline-images t)
   (org-id-link-to-org-use-id t)
   (org-agenda-files '("~/notes"))
