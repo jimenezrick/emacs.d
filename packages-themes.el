@@ -22,7 +22,8 @@
         (if (display-graphic-p frame)
             (if (or (>= hour 21) (< hour 7))
                 (load-theme 'spacemacs-dark t)
-              (load-theme 'spacemacs-light t))))))
+              (load-theme 'spacemacs-light t))
+          (load-theme 'ef-bio t)))))
   :config
   (if (daemonp)
       (add-hook 'after-make-frame-functions 'load-my-theme)
