@@ -57,6 +57,7 @@
               ("C-c g" . consult-ripgrep)
               ("C-c G" . consult-grep)
               ("C-c r" . consult-isearch-history)
+              ("C-c R" . consult-recent-file)
               ("C-c i" . consult-imenu)
               ("C-c I" . consult-imenu-multi)
               ("C-c t" . xref-find-apropos)
