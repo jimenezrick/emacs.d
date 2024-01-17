@@ -1,29 +1,26 @@
-(use-package almost-mono-themes
-  :no-require t)
+(use-package almost-mono-themes)
 
-(use-package plan9-theme
-  :no-require t)
+(use-package plan9-theme)
 
-(use-package zerodark-theme
-  :no-require t)
+(use-package zerodark-theme)
 
-(use-package apropospriate-theme
-  :no-require t)
+(use-package apropospriate-theme)
 
-(use-package ef-themes
-  :no-require t)
+(use-package ef-themes)
 
-(use-package spacemacs-theme
-  :no-require t  ; Hack needed for this package to work
+(use-package spacemacs-theme)
+
+(use-package emacs
+  :after (consult ef-themes spacemacs-theme)
   :init
   (defun load-my-theme (&optional frame)
     (with-selected-frame (or frame (selected-frame))
       (let ((hour (string-to-number (format-time-string "%H" (current-time)))))
         (if (display-graphic-p frame)
             (if (or (>= hour 21) (< hour 7))
-                (load-theme 'spacemacs-dark t)
-              (load-theme 'spacemacs-light t))
-          (load-theme 'ef-bio t)))))
+                (consult-theme 'spacemacs-dark)
+              (consult-theme 'spacemacs-light))
+          (consult-theme 'ef-bio)))))
   :config
   (if (daemonp)
       (add-hook 'after-make-frame-functions 'load-my-theme)
