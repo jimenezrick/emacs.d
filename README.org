@@ -56,5 +56,9 @@
 - Refresh repos with: =package-refresh-contents=.
 - Upgrade all new available versions with: =package-list-packages= and later press =U x=.
 
+* Saving/restoring sessions
+- Save current session (windows/buffers) with: =desktop-save=
+- Restore session with: =desktop-change-dir=
+
 * TODO
 - Use ~*-ts-mode~ in all the hooks for language modes.
