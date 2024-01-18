@@ -549,3 +549,13 @@
   :hook (prog-mode . breadcrumb-mode))
 
 (use-package rmsbolt)
+
+(use-package eldoc-box
+  :if window-system
+  :after eldoc
+  :custom
+  (eldoc-box-lighter t)
+  (eldoc-box-only-multi-line t)
+  (eldoc-box-clear-with-C-g t)
+  :config
+  (add-hook 'eldoc-mode-hook #'eldoc-box-hover-at-point-mode))
