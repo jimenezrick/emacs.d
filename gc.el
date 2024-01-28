@@ -3,6 +3,8 @@
 ;; Enable to show when a GC happens
 ;;(setq garbage-collection-messages t)
 
+(defvar custom-gc-cons-threshold (* 64 1024 1024))
+
 ;; Avoid garbage collection during startup. The GC eats up quite a bit of time, easily
 ;; doubling the startup time. The trick is to turn up the memory threshold in order to
 ;; prevent it from running during startup.
@@ -19,7 +21,7 @@
 ;; Also reset `file-name-handler-alist'
 (add-hook 'emacs-startup-hook
           #'(lambda ()
-              (setq gc-cons-threshold (* 16 1024 1024)
+              (setq gc-cons-threshold custom-gc-cons-threshold
                     gc-cons-percentage 0.1
                     file-name-handler-alist file-name-handler-alist-original)
               (makunbound 'file-name-handler-alist-original)
@@ -34,10 +36,12 @@
   ;; Defer it so that commands launched immediately after will enjoy the
   ;; benefits.
   (run-at-time
-   1 nil (lambda () (setq gc-cons-threshold (* 16 1024 1024)))))
+   1 nil (lambda () (setq gc-cons-threshold custom-gc-cons-threshold))))
 
 (add-hook 'minibuffer-setup-hook #'defer-garbage-collection-h)
 (add-hook 'minibuffer-exit-hook #'restore-garbage-collection-h)
 
 ;; Misc performance tweaks:
-(setq read-process-output-max (* 1024 1024))
+(setq
+ read-process-output-max (* 8 1024 1024)
+ process-adaptive-read-buffering nil)
