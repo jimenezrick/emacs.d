@@ -16,7 +16,9 @@
 - When switching between them, disable previous themes with =M-x disable-theme= to not have interference.
 
 * Tags
-- With the citre-mode, see https://github.com/universal-ctags/citre/blob/master/docs/user-manual/citre-peek.md#peek-the-definition-of-a-symbol on how to navigate when using =citre-peek=.
+- Create tags with custom script =ctags-citre=.
+- Tags are not used if ~eglot~ is enabled. Disable it with =eglot-shutdown= to use tags with ~citre~.
+- With the =citre-mode=, see https://github.com/universal-ctags/citre/blob/master/docs/user-manual/citre-peek.md#peek-the-definition-of-a-symbol on how to navigate when using =citre-peek=.
 
 * Annotations and Overlays
 - Mark a region with =annotate-annotate=
