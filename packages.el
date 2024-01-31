@@ -516,7 +516,7 @@
                    ("*annotations*"              :select nil :align right)
                    ("*eldoc*"                    :select nil :align t)
                    ("*Flycheck errors*"          :select nil :align t)
-                   ("*ChatGPT*"                  :select t   :align right)))
+                   ("*ChatGPT*"                  :select t   :align below)))
   :config
   (shackle-mode))
 
