@@ -37,7 +37,6 @@
 - Enable ~text-mode~ to check the grammar with ~languagetool~ (run first =systemctl start languagetool.service=).
 
 * Tree-Sitter
-- Navigate the code structure with =helm-tree-sitter=.
 - Highlight nodes of the code with =tree-sitter-query-builder=. You can see the full code structure with =tree-sitter-debug-mode=. Highlight query example for Python:
 #+BEGIN_SRC python
 (type (identifier) @var)
