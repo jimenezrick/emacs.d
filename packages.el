@@ -351,9 +351,11 @@
 
 (use-package eglot
   :custom
-  (eglot-events-buffer-size 0)
+  (eglot-events-buffer-config '(:size 0 :format full))
+  (eglot-events-buffer-size 0) ; TODO: getting deprecated, to be removed
   (eglot-autoshutdown t)
   :config
+  (fset #'jsonrpc--log-event #'ignore)
   (add-to-list 'eglot-server-programs
                '((rust-ts-mode rust-mode) .
                  ("rust-analyzer" :initializationOptions

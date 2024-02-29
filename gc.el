@@ -42,4 +42,5 @@
 (add-hook 'minibuffer-exit-hook #'restore-garbage-collection-h)
 
 ;; Misc performance tweaks:
-(setq read-process-output-max (* 1024 1024))
+(setq read-process-output-max (* 1024 1024)
+      process-adaptive-read-buffering nil)
