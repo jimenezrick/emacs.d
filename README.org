@@ -1,4 +1,5 @@
 * Elisp Mode
+- Start REPL with =ielm=.
 - Debug config starting Emacs with: =emacs --debug-init=.
 - Reload config in current buffer with =M-x eval-buffer=.
 
