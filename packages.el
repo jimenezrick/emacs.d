@@ -370,6 +370,16 @@
               (flymake-mode -1)))
   (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
+(use-package eglot-booster
+  :after eglot
+  :ensure nil
+  :init
+  (unless (package-installed-p 'eglot-booster)
+    (package-vc-install "https://github.com/jdtsmith/eglot-booster.git"))
+  :config
+  (add-to-list 'exec-path user-emacs-directory)
+  (eglot-booster-mode))
+
 (use-package vterm
   :custom
   (vterm-always-compile-module t))
