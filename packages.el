@@ -308,8 +308,10 @@
   :ensure nil
   :init
   (unless (package-installed-p 'indent-bars)
-    (package-vc-install "https://github.com/jdtsmith/indent-bars.git"))
+    ; TODO: pinning revision, something is broken upstream
+    (package-vc-install "https://github.com/jdtsmith/indent-bars.git" "v0.2.3"))
   :custom
+  (indent-bars-treesit-support t)
   (indent-bars-color '(highlight :face-bg t :blend 0.15))
   (indent-bars-pattern ".")
   (indent-bars-width-frac 0.1)
