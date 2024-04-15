@@ -69,13 +69,13 @@
 (use-package dashboard
   :custom
   (dashboard-startup-banner 'logo)
-  (dashboard-banner-logo-title nil)
-  (dashboard-set-init-info nil)
-  (dashboard-set-footer nil)
   (dashboard-items '((recents . 15)
                      (projects . 10)
                      (bookmarks . 5)
                      (registers . 5)))
+  (dashboard-startupify-list
+   '(dashboard-insert-banner
+     dashboard-insert-items))
   :init
   (if (< (length command-line-args) 2)
       (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
