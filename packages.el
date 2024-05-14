@@ -490,7 +490,7 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
-  (gptel-model "gpt-4-1106-preview")
+  (gptel-model "gpt-4o")
   :config
   (add-hook 'gptel-mode-hook 'visual-line-mode))
 
@@ -499,7 +499,7 @@
              org-ai-global-mode)
   :custom
   (org-ai-openai-api-token (getenv "GPT_OPENAI_KEY"))
-  (org-ai-default-chat-model "gpt-4-1106-preview")
+  (org-ai-default-chat-model "gpt-4o")
   :init
   (add-hook 'org-mode-hook #'org-ai-mode)
   (org-ai-global-mode)
