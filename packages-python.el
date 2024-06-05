@@ -1,7 +1,3 @@
-(use-package python-black
+(use-package ruff-format
   :after python
-  :hook (python-ts-mode . python-black-on-save-mode))
-
-(use-package python-isort
-  :after python
-  :hook (python-ts-mode . python-isort-on-save-mode))
+  :hook (python-ts-mode . ruff-format-on-save-mode))
