@@ -82,6 +82,7 @@
 
 (setq-default messages-buffer-max-lines (* 16 1000))
 
+(pixel-scroll-precision-mode)
 (setq-default
  scroll-margin 2
  scroll-step 1
