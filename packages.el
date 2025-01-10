@@ -305,11 +305,6 @@
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
 
 (use-package indent-bars
-  :ensure nil
-  :init
-  (unless (package-installed-p 'indent-bars)
-    ; TODO: pinning revision, something is broken upstream
-    (package-vc-install "https://github.com/jdtsmith/indent-bars.git" "v0.2.3"))
   :custom
   (indent-bars-treesit-support t)
   (indent-bars-color '(highlight :face-bg t :blend 0.15))
@@ -494,17 +489,11 @@
   :config
   (add-hook 'gptel-mode-hook 'visual-line-mode))
 
-(use-package org-ai
-  :commands (org-ai-mode
-             org-ai-global-mode)
-  :custom
-  (org-ai-openai-api-token (getenv "GPT_OPENAI_KEY"))
-  (org-ai-default-chat-model "gpt-4o")
+(use-package gptel-quick
+  :ensure nil
   :init
-  (add-hook 'org-mode-hook #'org-ai-mode)
-  (org-ai-global-mode)
-  :config
-  (org-ai-install-yasnippets))
+  (unless (package-installed-p 'gptel-quick)
+    (package-vc-install "https://github.com/karthink/gptel-quick.git")))
 
 (use-package annotate
   :config
