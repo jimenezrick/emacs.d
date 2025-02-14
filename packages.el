@@ -562,3 +562,11 @@
   (eldoc-box-clear-with-C-g t)
   :config
   (add-hook 'eldoc-mode-hook #'eldoc-box-hover-at-point-mode))
+
+(use-package flycheck-overlay
+  :ensure nil
+  :after flycheck
+  :init
+  (unless (package-installed-p 'flycheck-overlay)
+    (package-vc-install "https://github.com/konrad1977/flycheck-overlay.git"))
+  :hook (flycheck-mode . flycheck-overlay-mode))
