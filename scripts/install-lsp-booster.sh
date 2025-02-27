@@ -2,7 +2,9 @@
 
 set -eu
 
-RELEASE=v0.2.0/emacs-lsp-booster_v0.2.0_x86_64-unknown-linux-musl.zip
+RELEASE=v0.2.1
+BUILD=${RELEASE}/emacs-lsp-booster_${RELEASE}_x86_64-unknown-linux-musl.zip
+URL=https://github.com/blahgeek/emacs-lsp-booster/releases/download/${BUILD}
 
-curl -L https://github.com/blahgeek/emacs-lsp-booster/releases/download/$RELEASE | funzip >~/.emacs.d/emacs-lsp-booster
+curl -L $URL | funzip >~/.emacs.d/emacs-lsp-booster
 chmod +x ~/.emacs.d/emacs-lsp-booster
