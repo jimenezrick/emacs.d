@@ -125,11 +125,13 @@
   (company-minimum-prefix-length 2)
   (company-tooltip-limit 20)
   (company-tooltip-align-annotations t)
+  (company-text-icons-add-background t)
   (company-echo-delay 0)
   (company-selection-wrap-around t)
   (company-dabbrev-downcase nil)
   (company-dabbrev-ignore-case nil)
   :config
+  (add-to-list 'company-frontends 'company-preview-frontend)
   (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
   (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
