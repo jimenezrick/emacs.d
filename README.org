@@ -45,9 +45,6 @@
 (return_statement (call (identifier)) @var)
 #+END_SRC
 
-* GPT
-- Select a piece of text and call =gpt-dwin= or =codegpt=.
-
 * Jupyter Notebooks
 - First convert a notebook to Org with =pandoc notebook.ipynb -o notebook.org=.
 - Execute its code blocks using https://github.com/nnicandro/emacs-jupyter.
