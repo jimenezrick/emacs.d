@@ -297,6 +297,14 @@
   (unless (package-installed-p 'org-super-links)
     (package-vc-install "https://github.com/toshism/org-super-links.git")))
 
+(use-package org-transclusion
+  :after org)
+
+(use-package org-transclusion-http
+  :after org-transclusion
+  :config
+  (add-to-list 'org-transclusion-extensions 'org-transclusion-http))
+
 (use-package deft
   :custom
   (deft-directory "~/notes")
