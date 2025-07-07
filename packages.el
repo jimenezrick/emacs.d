@@ -573,10 +573,6 @@
   :config
   (add-hook 'eldoc-mode-hook #'eldoc-box-hover-at-point-mode))
 
-(use-package flycheck-overlay
-  :ensure nil
+(use-package flyover
   :after flycheck
-  :init
-  (unless (package-installed-p 'flycheck-overlay)
-    (package-vc-install "https://github.com/konrad1977/flycheck-overlay.git"))
-  :hook (flycheck-mode . flycheck-overlay-mode))
+  :hook (flycheck-mode . flyover-mode))
