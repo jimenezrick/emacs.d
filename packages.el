@@ -292,10 +292,7 @@
 (use-package org-journal)
 
 (use-package org-super-links
-  :ensure nil
-  :init
-  (unless (package-installed-p 'org-super-links)
-    (package-vc-install "https://github.com/toshism/org-super-links.git")))
+  :vc (:url "https://github.com/toshism/org-super-links.git" :rev :newest))
 
 (use-package org-transclusion
   :after org)
@@ -379,10 +376,7 @@
 
 (use-package eglot-booster
   :after eglot
-  :ensure nil
-  :init
-  (unless (package-installed-p 'eglot-booster)
-    (package-vc-install "https://github.com/jdtsmith/eglot-booster.git"))
+  :vc (:url "https://github.com/jdtsmith/eglot-booster.git" :rev :newest)
   :config
   (add-to-list 'exec-path user-emacs-directory)
   (eglot-booster-mode))
@@ -500,10 +494,7 @@
   (add-hook 'gptel-mode-hook 'visual-line-mode))
 
 (use-package gptel-quick
-  :ensure nil
-  :init
-  (unless (package-installed-p 'gptel-quick)
-    (package-vc-install "https://github.com/karthink/gptel-quick.git")))
+  :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest))
 
 (use-package annotate
   :config
