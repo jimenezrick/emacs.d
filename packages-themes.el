@@ -4,6 +4,8 @@
 
 (use-package zerodark-theme)
 
+(use-package the-matrix-theme)
+
 (use-package apropospriate-theme)
 
 (use-package ef-themes)
