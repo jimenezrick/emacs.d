@@ -60,5 +60,22 @@
 - Save current session (windows/buffers) with: =desktop-save=
 - Restore session with: =desktop-change-dir=
 
+* Haskell with LSP
+- Create these two project configuration files:
+#+BEGIN_SRC yaml
+# cat hie.yaml
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:my-package"
+    - path: "./src/Main.hs"
+      component: "my-package:exe:my-app"
+# cabal.project
+packages: .
+write-ghc-environment-files: always
+#+END_SRC
+- Start =eglot= ~haskell-language-server~.
+- Alternatively start =C-c C-l= to use ~cabal-repl~ .
+
 * TODO
 - Use ~*-ts-mode~ in all the hooks for language modes.
