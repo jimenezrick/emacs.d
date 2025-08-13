@@ -68,6 +68,7 @@
 
 (use-package dashboard
   :custom
+  (dashboard-image-banner-max-width 156)
   (dashboard-startup-banner 'logo)
   (dashboard-items '((recents . 15)
                      (projects . 10)
