@@ -2,12 +2,12 @@
   "Return the full path of *file-relative-path, relative to caller's file location."
   (concat (file-name-directory (or load-file-name buffer-file-name)) @file-relative-path))
 
-(defun voice-transcribe ()
+(defun transcribe-speech ()
   "Transcribe the recorded speech with whisper.cpp inserting it into the current buffer."
   (interactive)
   (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/whisper.cpp/whisper-transcribe-to-input.sh"))
     (if (not (file-executable-p script-path))
-        (message "Error: could not find voice-transcribe script: %s" script-path)
+        (message "Error: could not find transcribe-speech script: %s" script-path)
       (insert (shell-command-to-string (concat script-path " print"))))))
 
 (defun text-to-speech ()

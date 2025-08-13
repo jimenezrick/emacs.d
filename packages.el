@@ -516,6 +516,7 @@
                    ("*Messages*"                 :select nil :align t)
                    ("*Warnings*"                 :select nil :align t)
                    ("*Error*"                    :select nil :align t)
+                   ("*Async Shell Command*"      :select nil :align t :ignore t)
                    ("\*.*compile-log\*"          :select nil :align t :regexp t)
                    ("*annotations*"              :select nil :align right)
                    ("*eldoc*"                    :select nil :align t)
@@ -540,6 +541,7 @@
      "\\*Messages\\*"
      "\\*Warnings\\*"
      "\\*Error\\*"
+     "\\*Async Shell Command\\*"
      "\*.*compile-log\*"
      "\\*annotations\\*"
      "\\*eldoc\\*"
