@@ -2,6 +2,8 @@
 
 (use-package plan9-theme)
 
+(use-package acme-theme)
+
 (use-package zerodark-theme)
 
 (use-package the-matrix-theme)
