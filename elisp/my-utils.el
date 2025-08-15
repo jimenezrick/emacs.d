@@ -5,7 +5,7 @@
 (defun transcribe-speech ()
   "Transcribe the recorded speech with whisper.cpp inserting it into the current buffer."
   (interactive)
-  (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/whisper.cpp/whisper-transcribe-to-input.sh"))
+  (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/whisper.cpp/whisper-transcribe-speech.sh"))
     (if (not (file-executable-p script-path))
         (message "Error: could not find transcribe-speech script: %s" script-path)
       (insert (shell-command-to-string (concat script-path " print"))))))
@@ -13,7 +13,7 @@
 (defun text-to-speech ()
   "Convert to speech with piper the text in the selected region, or from cursor to end of buffer if no region is selected."
   (interactive)
-  (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/piper/piper-file-speech.sh"))
+  (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/piper/piper-speech.sh"))
     (if (not (file-executable-p script-path))
         (message "Error: could not find text-to-speech script: %s" script-path)
       (let ((text-content (string-trim
