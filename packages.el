@@ -496,6 +496,7 @@
   (gptel-default-mode 'markdown-mode)
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
   (gptel-model 'gpt-4.1)
+  (gptel-expert-commands t)
   :config
   (gptel-make-openai "llama-cpp"
     :stream t
