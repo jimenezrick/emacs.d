@@ -497,6 +497,11 @@
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
   (gptel-model 'gpt-4.1)
   :config
+  (gptel-make-openai "llama-cpp"
+    :stream t
+    :protocol "http"
+    :host "localhost:8080"
+    :models '(gemma-3n-E4B-it)) ; Ignored
   (add-hook 'gptel-mode-hook 'visual-line-mode))
 
 (use-package gptel-quick
