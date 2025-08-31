@@ -229,6 +229,11 @@
   :config
   (add-hook 'markdown-mode-hook #'pandoc-mode))
 
+(use-package eww
+  :custom
+  (shr-bullet "• ")
+  (url-privacy-level 'high))
+
 (use-package org
   :custom
   (org-confirm-babel-evaluate nil)

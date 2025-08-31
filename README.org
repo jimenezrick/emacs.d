@@ -77,5 +77,10 @@ write-ghc-environment-files: always
 - Start =eglot= ~haskell-language-server~.
 - Alternatively start =C-c C-l= to use ~cabal-repl~ .
 
+* EWW browser
+- Start with: =eww= or =eww-open-in-new-buffer=.
+- Move around with: =eww-list-histories= or =eww-list-buffers=.
+- To render pages better as pure text, try: =eww-toggle-images= and =eww-readable=.
+
 * TODO
 - Use ~*-ts-mode~ in all the hooks for language modes.
