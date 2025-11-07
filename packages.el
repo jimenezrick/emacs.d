@@ -508,6 +508,15 @@
 (use-package gptel-quick
   :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest))
 
+(use-package claude-code
+  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
+  :custom
+  (claude-code-terminal-backend 'vterm)
+  (vterm-min-window-width 40)
+  :config
+  (claude-code-mode)
+  :bind-keymap ("C-c c" . claude-code-command-map))
+
 (use-package annotate
   :config
   (add-hook 'after-init-hook #'annotate-mode))
@@ -581,3 +590,35 @@
 (use-package flyover
   :after flycheck
   :hook (flycheck-mode . flyover-mode))
+
+(use-package mu4e
+  :vc (:url "https://github.com/djcb/mu" :rev "v1.12.12" :lisp-dir "mu4e")
+  :custom
+  (mu4e-maildir "~/Mail")
+  (mu4e-user-mail-address-list '("r@untroubled.be" "jimenezrick@gmail.com"))
+  (mu4e-completing-read-function 'completing-read)
+  (mu4e-confirm-quit nil)
+  (mu4e-view-auto-mark-as-read nil)
+  (mu4e-use-fancy-chars t)
+  (mu4e-compose-format-flowed t)
+  (mu4e-compose-complete-addresses t)
+  (mu4e-sent-messages-behavior 'delete) ; Don't save messages to Sent, Gmail/IMAP takes care of this
+  (mu4e-change-filenames-when-moving t)
+  (mu4e-headers-date-format "%Y/%m/%d")
+
+  (mu4e-maildir-shortcuts
+   '((:maildir "/INBOX" :key ?i)
+     (:maildir "/TODO" :key ?t)
+     (:maildir "/sent" :key ?s :name "Sent")))
+
+  (user-full-name "Ricardo Catalinas Jiménez")
+  (user-mail-address "r@untroubled.be")
+  (sendmail-program "msmtp")
+  (message-send-mail-function 'message-send-mail-with-sendmail)
+  (message-sendmail-extra-arguments '("--read-envelope-from"))
+  (message-sendmail-f-is-evil t)
+  (message-kill-buffer-on-exit t)
+  :hook (mu4e-view-rendered-hook . visual-line-mode))
+
+(use-package consult-mu
+  :vc (:url "https://github.com/armindarvish/consult-mu" :rev :newest))
