@@ -1,4 +1,5 @@
 (setq-default
+ use-short-answers t
  inhibit-startup-screen t
  initial-scratch-message ";; Eval sexp with C-x C-e and buffer with M-x eval-buffer\n")
 
