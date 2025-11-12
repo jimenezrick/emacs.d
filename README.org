@@ -82,5 +82,9 @@ write-ghc-environment-files: always
 - Move around with: =eww-list-histories= or =eww-list-buffers=.
 - To render pages better as pure text, try: =eww-toggle-images= and =eww-readable=.
 
+* Claude Code
+- Use =C-u= before =claude-code-transient= to pass context.
+- Enable ~plan mode~ with double ~shift-tab~: https://claudelog.com/mechanics/plan-mode/
+
 * TODO
 - Use ~*-ts-mode~ in all the hooks for language modes.
