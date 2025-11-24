@@ -29,6 +29,7 @@
 (load (expand-file-name "packages-python" user-emacs-directory))
 (load (expand-file-name "packages-devops" user-emacs-directory))
 (load (expand-file-name "packages-themes" user-emacs-directory))
+(load (expand-file-name "packages-llm-prompts" user-emacs-directory))
 
 ;; Post-install setup
 (when (bound-and-true-p fresh-install)

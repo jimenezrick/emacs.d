@@ -8,7 +8,9 @@
   (let ((script-path "/mnt/scratch-nvme/ricardo/WHISPER/whisper.cpp/whisper-transcribe-speech.sh"))
     (if (not (file-executable-p script-path))
         (message "Error: could not find transcribe-speech script: %s" script-path)
-      (insert (shell-command-to-string (concat script-path " print"))))))
+      (progn
+        (goto-char (1+ (point)))
+        (insert (shell-command-to-string (concat script-path " print")))))))
 
 (defun text-to-speech ()
   "Convert to speech with piper the text in the selected region, or from cursor to end of buffer if no region is selected."

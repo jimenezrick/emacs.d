@@ -395,6 +395,8 @@
   :bind (("C-c s" . multi-vterm)
          ("C-c S" . multi-vterm-dedicated-toggle)))
 
+(use-package eat)
+
 (use-package imenu-list
   :custom
   (imenu-auto-rescan t)
@@ -503,7 +505,9 @@
     :protocol "http"
     :host "localhost:8080"
     :models '(gemma-3n-E4B-it)) ; Ignored
-  (add-hook 'gptel-mode-hook 'visual-line-mode))
+  (add-hook 'gptel-mode-hook 'visual-line-mode)
+  :bind (:map gptel-mode-map
+              ("C-x t" . transcribe-speech)))
 
 (use-package gptel-quick
   :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest))
