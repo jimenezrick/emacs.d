@@ -486,6 +486,11 @@
               ("C-c c" . citre-create-tags-file)
               ("C-c u" . citre-update-tags-file)))
 
+(use-package dumb-jump
+  :custom
+  (xref-show-definitions-function #'xref-show-definitions-completing-read)
+  :hook (xref-backend-functions . dumb-jump-xref-activate))
+
 (use-package helpful
   :bind (([remap describe-symbol] . helpful-symbol)))
 
@@ -626,3 +631,5 @@
 
 (use-package consult-mu
   :vc (:url "https://github.com/armindarvish/consult-mu" :rev :newest))
+
+(use-package command-log-mode)
