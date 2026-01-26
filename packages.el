@@ -225,6 +225,11 @@
   :config
   (add-hook 'markdown-mode-hook #'visible-mode))
 
+(use-package markdown-inline-images
+  :after markdown-mode
+  :vc (:url "https://github.com/domschl/markdown-inline-images.el.git" :rev :newest)
+  :hook (markdown-mode . markdown-inline-images-mode))
+
 (use-package pandoc-mode
   :config
   (add-hook 'markdown-mode-hook #'pandoc-mode))
@@ -370,8 +375,13 @@
                '((rust-ts-mode rust-mode) .
                  ("rust-analyzer" :initializationOptions
                   (:check (:command "clippy")
+                   :diagnostics (:styleLints (:enable t))
                    :inlayHints (:expressionAdjustmentHints (:enable "always")
-                                :lifetimeElisionHints (:enable "always" :useParameterNames t))))))
+                                :lifetimeElisionHints (:enable "always" :useParameterNames t)
+                                :genericParameterHints (:lifetime (:enable t) :type (:enable t))
+                                :implicitDrops (:enable t)
+                                :implicitSizedBoundHints (:enable t)
+                                :rangeExclusiveHints (:enable t))))))
   (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
   (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
   (add-hook 'eglot-managed-mode-hook
@@ -383,6 +393,8 @@
 (use-package eglot-booster
   :after eglot
   :vc (:url "https://github.com/jdtsmith/eglot-booster.git" :rev :newest)
+  :custom
+  (eglot-booster-io-only t)
   :config
   (add-to-list 'exec-path user-emacs-directory)
   (eglot-booster-mode))
@@ -517,6 +529,10 @@
 (use-package gptel-quick
   :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest))
 
+(use-package gptel-agent
+  :after gptel
+  :config (gptel-agent-update))
+
 (use-package claude-code
   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :custom
@@ -633,3 +649,9 @@
   :vc (:url "https://github.com/armindarvish/consult-mu" :rev :newest))
 
 (use-package command-log-mode)
+
+(use-package life-calendar
+  :vc (:url "https://github.com/vshender/emacs-life-calendar" :rev :newest)
+  :custom
+  (life-calendar-week-start-day 'monday)
+  (life-calendar-years 80))

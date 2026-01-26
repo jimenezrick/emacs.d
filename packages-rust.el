@@ -1,5 +1,6 @@
 (use-package rust-mode
   :custom
+  (rust-rustfmt-switches '("--edition" "2024"))
   (rust-format-on-save t)
   :config
   (add-hook 'rust-mode-hook 'eglot-ensure))
