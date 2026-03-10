@@ -655,3 +655,7 @@
   :custom
   (life-calendar-week-start-day 'monday)
   (life-calendar-years 80))
+
+(use-package ascii-art-to-unicode)
+
+(use-package uniline)
