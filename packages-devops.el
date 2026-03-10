@@ -13,14 +13,7 @@
     :group 'jsonnet-format)
   :hook (jsonnet-mode . jsonnet-format-on-save-mode))
 
-(use-package kubernetes
-  :commands (kubernetes-overview)
-  :custom
-  (kubernetes-poll-frequency 3600)
-  (kubernetes-redraw-frequency 3600))
-
-(use-package kubernetes-evil
-  :after kubernetes)
+(use-package kele)
 
 (use-package es-mode)
 
