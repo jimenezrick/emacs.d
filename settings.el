@@ -28,6 +28,7 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (setq-default visible-bell t)
+(setq-default ring-bell-function 'ignore)
 (setq-default enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode)
 (setq-default eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
@@ -58,9 +59,9 @@
 
 (setq-default completions-detailed t)
 
-(set-face-attribute 'default nil :family "Hack" :height 70)
-(set-face-attribute 'variable-pitch nil :family "Junicode" :height 90)
-(set-face-attribute 'bold nil :weight 'semibold)
+;; (set-face-attribute 'default nil :family "Hack" :height 70)
+;; (set-face-attribute 'variable-pitch nil :family "Junicode" :height 90)
+;; (set-face-attribute 'bold nil :weight 'semibold)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
