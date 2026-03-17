@@ -319,7 +319,9 @@
   (deft-recursive t))
 
 (use-package exec-path-from-shell
+  :if window-system
   :config
+  (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
 
 (use-package indent-bars
