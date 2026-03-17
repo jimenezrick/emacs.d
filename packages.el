@@ -100,7 +100,9 @@
 
 (use-package minimap)
 
-(use-package fzf)
+(use-package fzf
+  :custom
+  (dired-use-ls-dired nil))
 
 (use-package magit)
 
@@ -322,10 +324,12 @@
   :if window-system
   :config
   (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GPT_OPENAI_KEY")
   (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
 
 (use-package indent-bars
   :custom
+  (indent-bars-no-descend-lists 'skip)
   (indent-bars-treesit-support t)
   (indent-bars-color '(highlight :face-bg t :blend 0.15))
   (indent-bars-pattern ".")
@@ -546,7 +550,6 @@
 (use-package claude-code
   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :custom
-  (claude-code-program "claude-sandbox")
   (claude-code-terminal-backend 'vterm)
   (vterm-min-window-width 40)
   :config
@@ -644,6 +647,7 @@
   :hook (flycheck-mode . flyover-mode))
 
 (use-package mu4e
+  :disabled
   :vc (:url "https://github.com/djcb/mu" :rev "v1.12.12" :lisp-dir "mu4e")
   :custom
   (mu4e-maildir "~/Mail")
@@ -673,6 +677,7 @@
   :hook (mu4e-view-rendered-hook . visual-line-mode))
 
 (use-package consult-mu
+  :disabled
   :vc (:url "https://github.com/armindarvish/consult-mu" :rev :newest))
 
 (use-package command-log-mode)

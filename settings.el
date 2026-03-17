@@ -23,6 +23,7 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (setq-default visible-bell t)
+(setq-default ring-bell-function 'ignore)
 (minibuffer-depth-indicate-mode)
 (setq-default eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
 
@@ -54,10 +55,6 @@
 (setq-default tags-revert-without-query t)
 
 (setq-default completions-detailed t)
-
-(set-face-attribute 'default nil :family "Hack" :height 70)
-(set-face-attribute 'variable-pitch nil :family "Junicode" :height 90)
-(set-face-attribute 'bold nil :weight 'semibold)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
