@@ -113,6 +113,7 @@
   :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
   :init
   (all-the-icons-completion-mode))
+
 (use-package consult-dir
   :bind (("C-x C-d" . consult-dir)
          :map vertico-map

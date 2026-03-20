@@ -516,7 +516,7 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-api-key (getenv "GPT_OPENAI_KEY"))
-  (gptel-model 'gpt-4.1)
+  (gptel-model 'gpt-5.4)
   (gptel-expert-commands t)
   :config
   (gptel-make-openai "llama-cpp"
