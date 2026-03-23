@@ -434,19 +434,13 @@
 (use-package treesit-auto
   :custom
   (treesit-auto-install t)
-  (treesit-auto-langs '(python))
   :config
-  (add-to-list 'treesit-auto-recipe-list
-               (make-treesit-auto-recipe
-                :lang 'haskell
-                :ts-mode 'haskell-ts-mode
-                :remap 'haskell-mode
-                :url "https://github.com/tree-sitter/tree-sitter-haskell"))
+  (treesit-auto-add-to-auto-mode-alist 'all)
   (add-to-list 'treesit-auto-recipe-list
                (make-treesit-auto-recipe
                 :lang 'elisp
-                :ts-mode 'elisp-ts-mode
-                :remap 'elisp-mode
+                :ts-mode 'emacs-lisp-ts-mode
+                :remap 'emacs-lisp-mode
                 :url "https://github.com/Wilfred/tree-sitter-elisp"))
   (global-treesit-auto-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
