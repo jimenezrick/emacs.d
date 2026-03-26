@@ -52,7 +52,9 @@
   :bind (:map global-map
               ("C-c l" . nil)
          :map evil-normal-state-map
+              ("C-c e" . consult-eglot-symbols)
               ("C-c f" . consult-find)
+              ("C-c F" . consult-flycheck)
               ("C-c p" . consult-projectile-switch-project)
               ("C-c g" . consult-ripgrep)
               ("C-c G" . consult-grep)
@@ -66,8 +68,7 @@
               ("C-c o" . consult-outline)
               ("C-c m" . consult-mark)
               ("C-c l" . consult-line)
-              ("C-c L" . consult-line-multi)
-              ("C-c e" . consult-flycheck))
+              ("C-c L" . consult-line-multi))
   :hook (completion-list-mode . consult-preview-at-point-mode)
   :init
   ;; Optionally configure the register formatting. This improves the register

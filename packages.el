@@ -401,6 +401,12 @@
   (add-to-list 'exec-path user-emacs-directory)
   (eglot-booster-mode))
 
+(use-package eglot-x
+  :after eglot
+  :vc (:url "https://github.com/nemethf/eglot-x.git" :rev :newest)
+  :config
+  (eglot-x-setup))
+
 (use-package vterm
   :custom
   (vterm-always-compile-module t))
