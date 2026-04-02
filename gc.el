@@ -43,4 +43,6 @@
 
 ;; Misc performance tweaks:
 (setq read-process-output-max (* 1024 1024)
-      process-adaptive-read-buffering nil)
+      process-adaptive-read-buffering nil
+      jit-lock-stealth-time 1.5
+      jit-lock-defer-time 0.1)
