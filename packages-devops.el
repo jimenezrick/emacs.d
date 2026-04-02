@@ -22,6 +22,8 @@
 (use-package kubernetes-evil
   :after kubernetes)
 
+(use-package kubed)
+
 (use-package es-mode)
 
 (use-package just-mode)
