@@ -44,5 +44,7 @@
 ;; Misc performance tweaks:
 (setq read-process-output-max (* 1024 1024)
       process-adaptive-read-buffering nil
-      jit-lock-stealth-time 1.5
-      jit-lock-defer-time 0.1)
+      redisplay-skip-fontification-on-input t)
+
+(setq-default bidi-paragraph-direction 'left-to-right)
+(setq bidi-inhibit-bpa t)

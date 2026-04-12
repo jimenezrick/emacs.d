@@ -19,9 +19,6 @@
  require-final-newline t
  truncate-lines t)
 
-(setq-default bidi-inhibit-bpa t)
-(setq-default bidi-paragraph-direction 'left-to-right)
-
 (global-auto-revert-mode)
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
