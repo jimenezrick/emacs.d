@@ -538,6 +538,7 @@
 (use-package claude-code
   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :custom
+  (claude-code-program "claude-sandbox")
   (claude-code-terminal-backend 'vterm)
   (vterm-min-window-width 40)
   :config
