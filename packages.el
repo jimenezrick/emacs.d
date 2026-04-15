@@ -545,6 +545,22 @@
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map))
 
+(use-package agent-shell
+  :custom
+  ;; TODO: sandbox command
+  ;; (agent-shell-command-prefix '("devcontainer" "exec" "--workspace-folder" "."))
+  (agent-shell-preferred-agent-config (agent-shell-anthropic-make-claude-code-config))
+  :config
+  ;; Evil state-specific RET behavior: insert mode = newline, normal mode = send
+  (evil-define-key 'insert agent-shell-mode-map (kbd "RET") #'newline)
+  (evil-define-key 'normal agent-shell-mode-map (kbd "RET") #'comint-send-input)
+
+  ;; Configure *agent-shell-diff* buffers to start in Emacs state
+  (add-hook 'diff-mode-hook
+            (lambda ()
+              (when (string-match-p "\\*agent-shell-diff\\*" (buffer-name))
+                (evil-emacs-state)))))
+
 (use-package annotate
   :config
   (add-hook 'after-init-hook #'annotate-mode))
