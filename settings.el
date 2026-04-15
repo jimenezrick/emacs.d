@@ -29,9 +29,12 @@
 (minibuffer-depth-indicate-mode)
 (setq-default eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
 
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-(add-hook 'python-ts-mode-hook #'(lambda () (setq-local
-                                          python-indent-guess-indent-offset-verbose nil)))
+(add-hook 'python-ts-mode-hook #'(lambda ()
+                                   (setq-local
+                                    python-indent-guess-indent-offset-verbose nil)))
 (add-hook 'sh-mode-hook #'(lambda () (setq-local
                                       indent-tabs-mode t
                                       sh-basic-offset 8)))

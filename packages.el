@@ -525,6 +525,7 @@
     :host "localhost:8080"
     :models '(gemma-3n-E4B-it)) ; Ignored
   (add-hook 'gptel-mode-hook 'visual-line-mode)
+  (add-hook 'gptel-mode-hook '(lambda () (auto-fill-mode -1)))
   :bind (:map gptel-mode-map
               ("C-x t" . transcribe-speech)))
 
