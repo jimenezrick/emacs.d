@@ -1,3 +1,13 @@
+(use-package savehist
+  :custom
+  (history-length 1000)
+  (history-delete-duplicates t)
+  :config
+  (add-to-list 'savehist-additional-variables 'search-ring)
+  (add-to-list 'savehist-additional-variables 'regexp-search-ring)
+  (add-to-list 'savehist-additional-variables 'kill-ring)
+  :hook (after-init-hook . savehist-mode))
+
 (use-package vertico
   :custom
   (vertico-count 20)
@@ -6,8 +16,7 @@
               ("C-u" . backward-kill-sentence)
               ("C-w" . backward-kill-word))
   :init
-  (vertico-mode)
-  (savehist-mode))
+  (vertico-mode))
 
 (use-package emacs
   :init

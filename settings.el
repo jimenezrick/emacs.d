@@ -3,8 +3,6 @@
  inhibit-startup-screen t
  initial-scratch-message ";; Eval sexp with C-x C-e and buffer with M-x eval-buffer\n")
 
-(savehist-mode)
-
 (setq-default
  backup-by-copying t
  backup-directory-alist `(("." . ,(expand-file-name "backup" user-emacs-directory)))
@@ -25,7 +23,6 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (setq-default visible-bell t)
-(setq-default enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode)
 (setq-default eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
 
