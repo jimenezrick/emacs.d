@@ -1,8 +1,9 @@
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 (require 'my-utils)
 
-(load (expand-file-name "gc" user-emacs-directory))
 (load (expand-file-name "repos" user-emacs-directory))
+(load (expand-file-name "settings" user-emacs-directory))
+(load (expand-file-name "gc" user-emacs-directory))
 (package-initialize)
 
 ;; Trigger a full fresh install
@@ -20,7 +21,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-(load (expand-file-name "settings" user-emacs-directory))
+(use-package trust-manager
+  :config
+  (add-hook 'after-init-hook #'trust-manager-mode))
+
 (load (expand-file-name "packages" user-emacs-directory))
 (load (expand-file-name "packages-completion" user-emacs-directory))
 (load (expand-file-name "packages-haskell" user-emacs-directory))
