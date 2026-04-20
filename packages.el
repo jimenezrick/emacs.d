@@ -515,15 +515,18 @@
 (use-package gptel
   :custom
   (gptel-default-mode 'markdown-mode)
-  (gptel-api-key (getenv "GPT_OPENAI_KEY"))
-  (gptel-model 'gpt-5.4)
   (gptel-expert-commands t)
+  (gptel-model 'gpt-5.4)
   :config
+  (gptel-make-openai "ChatGPT"
+    :stream t
+    :key (getenv "GPT_OPENAI_KEY"))
   (gptel-make-openai "llama-cpp"
     :stream t
     :protocol "http"
     :host "localhost:8080"
     :models '(gemma-3n-E4B-it)) ; Ignored
+  (setq gptel-backend (gptel-get-backend "ChatGPT"))
   (add-hook 'gptel-mode-hook 'visual-line-mode)
   (add-hook 'gptel-mode-hook '(lambda () (auto-fill-mode -1)))
   :bind (:map gptel-mode-map
