@@ -533,7 +533,11 @@
               ("C-x t" . transcribe-speech)))
 
 (use-package gptel-quick
-  :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest))
+  :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest)
+  :custom
+  (gptel-quick-word-count 30)
+  (gptel-quick-timeout 30)
+  (gptel-quick-use-context t))
 
 (use-package gptel-agent
   :after gptel
