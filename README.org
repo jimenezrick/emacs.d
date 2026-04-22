@@ -81,7 +81,7 @@ write-ghc-environment-files: always
 - Alternatively start =C-c C-l= to use ~cabal-repl~ .
 
 * EWW browser
-- Start with: =eww= or =eww-open-in-new-buffer=.
+- Start with: =eww=, =eww-open-in-new-buffer= or =eww-search-words=.
 - Move around with: =eww-list-histories= or =eww-list-buffers=.
 - To render pages better as pure text, try: =eww-toggle-images= and =eww-readable=.
 

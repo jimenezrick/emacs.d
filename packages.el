@@ -237,7 +237,8 @@
 (use-package eww
   :custom
   (shr-bullet "• ")
-  (url-privacy-level 'high))
+  (url-privacy-level 'high)
+  (eww-search-prefix "https://duckduckgo.com/lite/?q="))
 
 (use-package org
   :custom
