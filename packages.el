@@ -452,9 +452,11 @@
   (global-treesit-auto-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
-(use-package ts-fold
+(use-package treesit-fold
   :config
-  (add-hook 'tree-sitter-after-on-hook #'ts-fold-indicators-mode))
+  (global-treesit-fold-mode)
+  (global-treesit-fold-indicators-mode)
+  :hook (emacs-lisp-mode . outline-minor-mode))
 
 (use-package evil-textobj-tree-sitter
   :after evil tree-sitter
