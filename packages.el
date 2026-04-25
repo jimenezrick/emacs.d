@@ -468,6 +468,11 @@
   ;; Use it with `vaa`
   (define-key evil-outer-text-objects-map "a" (evil-textobj-tree-sitter-get-textobj ("conditional.outer" "loop.outer"))))
 
+(use-package occult
+  :custom
+  (occult-indicator "§")
+  (occult-auto-reveal 'expand))
+
 (use-package flycheck-languagetool
   :disabled
   ;; The service needs to be started first with:
