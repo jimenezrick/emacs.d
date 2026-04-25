@@ -626,7 +626,12 @@
   (popper-echo-mode))
 
 (use-package breadcrumb
-  :hook (prog-mode . breadcrumb-mode))
+  :init
+  (breadcrumb-mode)
+  ;; Disable on TRAMP controlled buffers because it causes problems
+  :hook (find-file-hook . (lambda ()
+                            (when (file-remote-p default-directory)
+                              (breadcrumb-local-mode -1)))))
 
 (use-package rmsbolt)
 
