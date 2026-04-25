@@ -49,7 +49,6 @@
  mouse-drag-copy-region t)
 
 (setq-default auth-source-save-behavior nil)
-(setq-default tramp-default-method "ssh")
 
 (setq-default tags-revert-without-query t)
 
