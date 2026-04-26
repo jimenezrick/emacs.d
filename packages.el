@@ -524,7 +524,7 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-expert-commands t)
-  (gptel-model 'gpt-5.4)
+  (gptel-model 'gpt-5.5)
   :config
   (gptel-make-openai "ChatGPT"
     :stream t
