@@ -1,5 +1,6 @@
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 (require 'my-utils)
+(require 'my-commands)
 
 (load (expand-file-name "repos" user-emacs-directory))
 (load (expand-file-name "settings" user-emacs-directory))
