@@ -529,6 +529,9 @@
   (gptel-make-openai "ChatGPT"
     :stream t
     :key (getenv "GPT_OPENAI_KEY"))
+  (gptel-make-anthropic "Claude"
+    :stream t
+    :key (getenv "EMACS_ANTHROPIC_API_KEY"))
   (gptel-make-openai "llama-cpp"
     :stream t
     :protocol "http"
@@ -561,21 +564,7 @@
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map))
 
-(use-package agent-shell
-  :custom
-  ;; TODO: sandbox command
-  ;; (agent-shell-command-prefix '("devcontainer" "exec" "--workspace-folder" "."))
-  (agent-shell-preferred-agent-config (agent-shell-anthropic-make-claude-code-config))
-  :config
-  ;; Evil state-specific RET behavior: insert mode = newline, normal mode = send
-  (evil-define-key 'insert agent-shell-mode-map (kbd "RET") #'newline)
-  (evil-define-key 'normal agent-shell-mode-map (kbd "RET") #'comint-send-input)
-
-  ;; Configure *agent-shell-diff* buffers to start in Emacs state
-  (add-hook 'diff-mode-hook
-            (lambda ()
-              (when (string-match-p "\\*agent-shell-diff\\*" (buffer-name))
-                (evil-emacs-state)))))
+(use-package pi-coding-agent)
 
 (use-package annotate
   :config
@@ -699,3 +688,7 @@
 (use-package ascii-art-to-unicode)
 
 (use-package uniline)
+
+(use-package tramp-rpc
+  :after tramp
+  :vc (:url "https://github.com/ArthurHeymans/emacs-tramp-rpc.git" :rev :newest :lisp-dir "lisp"))
