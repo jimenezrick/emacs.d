@@ -27,16 +27,16 @@
   (add-hook 'after-init-hook #'trust-manager-mode))
 
 (load (expand-file-name "packages" user-emacs-directory))
-(load (expand-file-name "packages-completion" user-emacs-directory))
-(load (expand-file-name "packages-haskell" user-emacs-directory))
-(load (expand-file-name "packages-rust" user-emacs-directory))
-(load (expand-file-name "packages-go" user-emacs-directory))
-(load (expand-file-name "packages-python" user-emacs-directory))
-(load (expand-file-name "packages-devops" user-emacs-directory))
-(load (expand-file-name "packages-themes" user-emacs-directory))
-(load (expand-file-name "packages-llm-prompts" user-emacs-directory))
-
+(load (expand-file-name "packages/completion" user-emacs-directory))
+(load (expand-file-name "packages/devops" user-emacs-directory))
+(load (expand-file-name "packages/go" user-emacs-directory))
+(load (expand-file-name "packages/haskell" user-emacs-directory))
+(load (expand-file-name "packages/llm" user-emacs-directory))
+(load (expand-file-name "packages/llm-prompts" user-emacs-directory))
+(load (expand-file-name "packages/python" user-emacs-directory))
+(load (expand-file-name "packages/rust" user-emacs-directory))
 (load (expand-file-name "packages/sql" user-emacs-directory))
+(load (expand-file-name "packages/themes" user-emacs-directory))
 
 ;; Post-install setup
 (when (bound-and-true-p fresh-install)
