@@ -2,11 +2,12 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-expert-commands t)
-  (gptel-model 'gpt-5.5)
+  (gptel-model 'gpt-5.4-nano)
+  (gptel-include-reasoning 'ignore)
   :config
   (gptel-make-openai "ChatGPT"
     :stream t
-    :key (getenv "GPT_OPENAI_KEY"))
+    :key (getenv "OPENAI_API_KEY"))
   (gptel-make-anthropic "Claude"
     :stream t
     :key (getenv "EMACS_ANTHROPIC_API_KEY"))
@@ -14,7 +15,7 @@
     :stream t
     :protocol "http"
     :host "localhost:8080"
-    :models '(gemma-3n-E4B-it)) ; Ignored
+    :models '(local-model)) ; Ignored
   (setq gptel-backend (gptel-get-backend "ChatGPT"))
   (add-hook 'gptel-mode-hook 'visual-line-mode)
   (add-hook 'gptel-mode-hook '(lambda () (auto-fill-mode -1)))
@@ -42,4 +43,8 @@
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map))
 
-(use-package pi-coding-agent)
+(use-package pi
+  :vc (:url "https://github.com/ananthakumaran/pi.el" :rev :newest)
+  :custom
+  (pi-executable "pi-sandbox")
+  :commands (pi-chat))
