@@ -18,6 +18,7 @@
  truncate-lines t)
 
 (global-auto-revert-mode)
+(global-visual-wrap-prefix-mode)
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (column-number-mode t)
@@ -38,6 +39,8 @@
 
 (setq-default show-paren-delay 0)
 (show-paren-mode)
+
+(kill-ring-deindent-mode)
 
 (setq-default
  search-ring-max 256
