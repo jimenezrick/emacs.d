@@ -293,7 +293,7 @@
 (use-package org-bullets
   :custom
   (org-ellipsis "⤵")
-  (org-bullets-bullet-list '("◉" "○" "●" "◈" "◇" "◆"))
+  (org-bullets-bullet-list '("§" "◉" "○" "●"))
   :config
   (add-hook 'org-mode-hook 'org-bullets-mode))
 
