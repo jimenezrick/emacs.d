@@ -1,6 +1,6 @@
-(add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
-(require 'my-utils)
-(require 'my-commands)
+(add-to-list 'load-path (expand-file-name "user-lisp" user-emacs-directory)) ; TODO: Automatic in Emacs 31.1
+(require 'utils)
+(require 'commands)
 
 (load (expand-file-name "repos" user-emacs-directory))
 (load (expand-file-name "settings" user-emacs-directory))

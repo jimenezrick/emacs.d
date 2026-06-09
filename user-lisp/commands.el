@@ -44,4 +44,35 @@
               (insert text-content))
             (async-shell-command (format "%s \"%s\"; rm -f \"%s\"" script-path temp-file temp-file))))))))
 
-(provide 'my-commands)
+(defun copy-file-line-llm ()
+  "Copy project-relative file path plus current line or selected line range.
+
+The copied format is:
+
+  @path/to/file.ext:42
+  @path/to/file.ext:42-57"
+  (interactive)
+  (let* ((file (or buffer-file-name
+                   (user-error "Current buffer is not visiting a file")))
+         (project-root (when-let ((project (project-current)))
+                         (project-root project)))
+         (relative-path (if project-root
+                            (file-relative-name file project-root)
+                          (file-name-nondirectory file)))
+         (line-text
+          (if (use-region-p)
+              (let ((start-line (line-number-at-pos (region-beginning)))
+                    (end-line (line-number-at-pos
+                               ;; If the region ends at the beginning of a line,
+                               ;; treat the previous line as the final selected line.
+                               (if (= (region-end) (line-beginning-position))
+                                   (max (point-min) (1- (region-end)))
+                                 (region-end)))))
+                (if (= start-line end-line)
+                    (number-to-string start-line)
+                  (format "%d-%d" start-line end-line)))
+            (number-to-string (line-number-at-pos)))))
+    (kill-new (format "@%s:%s" relative-path line-text))
+    (message "Copied: %s:%s" relative-path line-text)))
+
+(provide 'commands)
