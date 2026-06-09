@@ -14,6 +14,10 @@
 
 (use-package spacemacs-theme)
 
+(use-package tron-legacy-theme
+  :custom
+  (tron-legacy-theme-vivid-cursor t))
+
 (use-package emacs
   :after (consult ef-themes spacemacs-theme)
   :init
