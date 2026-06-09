@@ -110,13 +110,15 @@
    ;; :preview-key "M-."
    :preview-key '(:debounce 0.4 any))
 
+  ;; Set the project root for consult-grep
+  (setq consult-project-function (lambda (_) (vc-root-dir)))
+
   ;; Optionally configure the narrowing key.
   (setq consult-narrow-key "<")
 
   ;; Optionally make narrowing help available in the minibuffer.
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
-  (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
-)
+  (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help))
 
 (use-package all-the-icons-completion
   :after marginalia
