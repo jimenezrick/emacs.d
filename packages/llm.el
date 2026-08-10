@@ -43,8 +43,9 @@
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map))
 
-(use-package pi
-  :vc (:url "https://github.com/ananthakumaran/pi.el" :rev :newest)
+(use-package pimacs
+  :vc (:url "https://github.com/ananthakumaran/pimacs.el" :rev "v0.3.0")
   :custom
-  (pi-executable "pi-sandbox")
-  :commands (pi-chat))
+  (pimacs-executable "pi-sandbox")
+  :config
+  (evil-set-initial-state 'pimacs-chat-mode 'emacs))
