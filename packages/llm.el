@@ -2,7 +2,7 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-expert-commands t)
-  (gptel-model 'gpt-5.4-nano)
+  (gptel-model 'gpt-5.6-luna)
   (gptel-include-reasoning 'ignore)
   :config
   (gptel-make-openai "ChatGPT"
@@ -23,6 +23,7 @@
               ("C-x t" . transcribe-speech)))
 
 (use-package gptel-quick
+  :after gptel
   :vc (:url "https://github.com/karthink/gptel-quick.git" :rev :newest)
   :custom
   (gptel-quick-word-count 30)
