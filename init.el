@@ -36,6 +36,7 @@
 (load (expand-file-name "packages/haskell" user-emacs-directory))
 (load (expand-file-name "packages/llm" user-emacs-directory))
 (load (expand-file-name "packages/llm-prompts" user-emacs-directory))
+(load (expand-file-name "packages/org" user-emacs-directory))
 (load (expand-file-name "packages/python" user-emacs-directory))
 (load (expand-file-name "packages/rust" user-emacs-directory))
 (load (expand-file-name "packages/sql" user-emacs-directory))
