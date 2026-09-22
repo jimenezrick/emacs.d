@@ -10,7 +10,7 @@
     :key (getenv "OPENAI_API_KEY"))
   (gptel-make-anthropic "Claude"
     :stream t
-    :key (getenv "EMACS_ANTHROPIC_API_KEY"))
+    :key (getenv "ANTHROPIC_API_KEY"))
   (gptel-make-openai "llama-cpp"
     :stream t
     :protocol "http"
