@@ -1,13 +1,11 @@
 (use-package go-projectile)
 
-(use-package go-mode
-  :custom
-  (gofmt-command "goimports")
-  :init
-  (defun go-mode-setup ()
-    (eglot-ensure)
-    (go-projectile-tools-add-path)
-    (add-hook 'before-save-hook 'gofmt-before-save)
-    (define-key evil-normal-state-map (kbd "C-]") 'godef-jump))
+(use-package go-ts-mode
+  :hook
+  (go-ts-mode . go-format-on-save-mode)
+  (go-ts-mode . eglot-ensure)
   :config
-  (add-hook 'go-mode-hook 'go-mode-setup))
+  (go-projectile-tools-add-path)
+  (reformatter-define go-format
+    :program "goimports"
+    :args '("/dev/stdin")))
