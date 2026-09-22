@@ -3,7 +3,6 @@
 (use-package go-ts-mode
   :hook
   (go-ts-mode . go-format-on-save-mode)
-  (go-ts-mode . eglot-ensure)
   :config
   (go-projectile-tools-add-path)
   (reformatter-define go-format

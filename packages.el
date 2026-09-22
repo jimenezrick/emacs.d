@@ -293,6 +293,11 @@
   (eglot-events-buffer-config '(:size 0 :format full))
   (eglot-events-buffer-size 0) ; TODO: getting deprecated, to be removed
   (eglot-autoshutdown t)
+  :hook ((sh-mode . eglot-ensure)
+         (c-ts-mode . eglot-ensure)
+         (python-ts-mode . eglot-ensure)
+         (rust-mode . eglot-ensure)
+         (go-ts-mode . eglot-ensure))
   :config
   (fset #'jsonrpc--log-event #'ignore)
   (add-to-list 'eglot-server-programs
@@ -311,8 +316,7 @@
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
               (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
-              (flymake-mode -1)))
-  (add-hook 'python-ts-mode-hook 'eglot-ensure))
+              (flymake-mode -1))))
 
 (use-package eglot-booster
   :after eglot
