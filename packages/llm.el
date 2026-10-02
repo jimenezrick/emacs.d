@@ -2,7 +2,7 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-expert-commands t)
-  (gptel-model 'gpt-5.6-luna)
+  (gptel-model 'gpt-6-luna)
   (gptel-include-reasoning 'ignore)
   :config
   (gptel-make-openai "ChatGPT"
