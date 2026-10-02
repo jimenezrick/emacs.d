@@ -34,6 +34,14 @@
   :after gptel
   :config (gptel-agent-update))
 
+(use-package gptel-inline
+  :after gptel
+  :vc (:url "https://github.com/karthink/gptel-inline" :rev :newest))
+
+(use-package gptel-annotate
+  :after gptel
+  :vc (:url "https://github.com/karthink/gptel-annotate" :rev :newest))
+
 (use-package claude-code
   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :custom
