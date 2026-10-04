@@ -116,7 +116,8 @@
 (use-package flycheck
   :config
   (flycheck-add-next-checker 'python-mypy 'python-pyright 'append)
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  :hook ((after-init . global-flycheck-mode)
+         (after-init . global-flycheck-annotate-mode)))
 
 (use-package company
   :custom
@@ -293,7 +294,14 @@
   (eglot-events-buffer-config '(:size 0 :format full))
   (eglot-events-buffer-size 0) ; TODO: getting deprecated, to be removed
   (eglot-autoshutdown t)
-  :hook ((sh-mode . eglot-ensure)
+  :hook ((eglot-managed-mode . eglot-inlay-hints-mode)
+         (eglot-managed-mode . flycheck-eglot-mode)
+         (eglot-managed-mode . (lambda ()
+                                 (add-to-list 'company-backends
+                                              '(company-capf :with company-dabbrev-code :separate))
+                                 (flymake-mode -1)))
+         ;; Auto-start
+         (sh-mode . eglot-ensure)
          (c-ts-mode . eglot-ensure)
          (python-ts-mode . eglot-ensure)
          (rust-mode . eglot-ensure)
@@ -311,12 +319,7 @@
                                 :implicitDrops (:enable t)
                                 :implicitSizedBoundHints (:enable t)
                                 :rangeExclusiveHints (:enable t))))))
-  (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
-  (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
-  (add-hook 'eglot-managed-mode-hook
-            (lambda ()
-              (add-to-list 'company-backends '(company-capf :with company-dabbrev-code :separate))
-              (flymake-mode -1))))
+  (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio"))))
 
 (use-package eglot-booster
   :after eglot
