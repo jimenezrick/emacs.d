@@ -114,10 +114,13 @@
     (diff-hl-margin-mode)))
 
 (use-package flycheck
+  :custom
+  (flycheck-annotate-background t)
   :config
   (flycheck-add-next-checker 'python-mypy 'python-pyright 'append)
   :hook ((after-init . global-flycheck-mode)
-         (after-init . global-flycheck-annotate-mode)))
+         (after-init . global-flycheck-annotate-mode)
+         (after-init . global-flycheck-eglot-mode)))
 
 (use-package company
   :custom
@@ -295,7 +298,6 @@
   (eglot-events-buffer-size 0) ; TODO: getting deprecated, to be removed
   (eglot-autoshutdown t)
   :hook ((eglot-managed-mode . eglot-inlay-hints-mode)
-         (eglot-managed-mode . flycheck-eglot-mode)
          (eglot-managed-mode . (lambda ()
                                  (add-to-list 'company-backends
                                               '(company-capf :with company-dabbrev-code :separate))
@@ -522,10 +524,6 @@
   (eldoc-box-clear-with-C-g t)
   :config
   (add-hook 'eldoc-mode-hook #'eldoc-box-hover-at-point-mode))
-
-(use-package flyover
-  :after flycheck
-  :hook (flycheck-mode . flyover-mode))
 
 (use-package mu4e
   :vc (:url "https://github.com/djcb/mu" :rev "v1.12.12" :lisp-dir "mu4e")
