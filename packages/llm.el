@@ -2,8 +2,8 @@
   :custom
   (gptel-default-mode 'markdown-mode)
   (gptel-expert-commands t)
-  (gptel-model 'gpt-6-luna)
-  (gptel-include-reasoning 'ignore)
+  (gptel-model 'deepseek-v4.1-flash)
+  (gptel-include-reasoning nil)
   :config
   (gptel-make-openai "ChatGPT"
     :stream t
@@ -40,7 +40,7 @@
               qwen3.7-plus
               qwen3.8-flash
               qwen3.8-max))
-  (setq gptel-backend (gptel-get-backend "ChatGPT"))
+  (setq gptel-backend (gptel-get-backend "OpenCode Go"))
   (add-hook 'gptel-mode-hook 'visual-line-mode)
   (add-hook 'gptel-mode-hook '(lambda () (auto-fill-mode -1)))
   :bind (:map gptel-mode-map
