@@ -16,6 +16,30 @@
     :protocol "http"
     :host "localhost:8080"
     :models '(local-model)) ; Ignored
+  ;; See: https://github.com/karthink/gptel/issues/1547
+  (defvar-local my-opencode-session-id nil)
+  (defun my-opencode-session-header (info)
+    (with-current-buffer (plist-get info :buffer)
+      (unless my-opencode-session-id
+        (setq my-opencode-session-id
+              (format "gptel-%s"
+                      (md5 (format "%s-%s" (buffer-name) (float-time))))))
+      `(("Authorization" . ,(concat "Bearer " (gptel--get-api-key)))
+        ("x-opencode-session" . ,my-opencode-session-id))))
+  (gptel-make-openai "OpenCode Go"
+    :host "opencode.ai"
+    :endpoint "/zen/go/v1/chat/completions"
+    :key (getenv "OPENCODE_API_KEY")
+    :header #'my-opencode-session-header
+    :stream t
+    :models '(deepseek-v4.1-flash
+              glm-5.3
+              glm-5.3-flash
+              gpt-6-luna
+              kimi-k3
+              qwen3.7-plus
+              qwen3.8-flash
+              qwen3.8-max))
   (setq gptel-backend (gptel-get-backend "ChatGPT"))
   (add-hook 'gptel-mode-hook 'visual-line-mode)
   (add-hook 'gptel-mode-hook '(lambda () (auto-fill-mode -1)))
