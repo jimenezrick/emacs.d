@@ -323,15 +323,6 @@
                                 :rangeExclusiveHints (:enable t))))))
   (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio"))))
 
-(use-package eglot-booster
-  :after eglot
-  :vc (:url "https://github.com/jdtsmith/eglot-booster.git" :rev :newest)
-  :custom
-  (eglot-booster-io-only t)
-  :config
-  (add-to-list 'exec-path user-emacs-directory)
-  (eglot-booster-mode))
-
 (use-package eglot-x
   :after eglot
   :vc (:url "https://github.com/nemethf/eglot-x.git" :rev :newest)
